@@ -8,26 +8,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-
     <!-- Title -->
     <title>One Music - Modern Music HTML5 Template</title>
 
     <!-- Favicon -->
-    <link rel="stylesheet" type="text/css" href="{% static 'img/core-img/icon.png' %}">
+    <link href="{% static 'img/core-img/icon.png' %}" rel="stylesheet">
 
     <!-- Custom Stylesheet -->
-    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/animate.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/audioplayer.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/classy-nav.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/font-awesome.min.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/magnific-popup.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/one-music-icon.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/owl.carousel.min.css' %}">
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+    <link href="{% static 'css/animate.css' %}" rel="stylesheet">
+    <link href="{% static 'css/audioplayer.css' %}" rel="stylesheet">
+    <link href="{% static 'css/classy-nav.css' %}" rel="stylesheet">
+    <link href="{% static 'css/font-awesome.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/magnific-popup.css' %}" rel="stylesheet">
+    <link href="{% static 'css/one-music-icon.css' %}" rel="stylesheet">
+    <link href="{% static 'css/owl.carousel.min.css' %}" rel="stylesheet">
 
     <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap/bootstrap.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap/bootstrap.min.css' %}">
+    <link href="{% static 'css/bootstrap/bootstrap.css' %}" rel="stylesheet">
+    <link href="{% static 'css/bootstrap/bootstrap.min.css' %}" rel="stylesheet">
 
 </head>
 
@@ -72,7 +71,8 @@
                                 <ul>
                                     <li><a href="index.html">Home</a></li>
                                     <li><a href="albums-store.html">Albums</a></li>
-                                    <li><a href="#">Pages</a>
+                                    <li>
+                                        <a href="#">Pages</a>
                                         <ul class="dropdown">
                                             <li><a href="index.html">Home</a></li>
                                             <li><a href="albums-store.html">Albums</a></li>
@@ -81,12 +81,14 @@
                                             <li><a href="contact.html">Contact</a></li>
                                             <li><a href="elements.html">Elements</a></li>
                                             <li><a href="login.html">Login</a></li>
-                                            <li><a href="#">Dropdown</a>
+                                            <li>
+                                                <a href="#">Dropdown</a>
                                                 <ul class="dropdown">
                                                     <li><a href="#">Even Dropdown</a></li>
                                                     <li><a href="#">Even Dropdown</a></li>
                                                     <li><a href="#">Even Dropdown</a></li>
-                                                    <li><a href="#">Even Dropdown</a>
+                                                    <li>
+                                                        <a href="#">Even Dropdown</a>
                                                         <ul class="dropdown">
                                                             <li><a href="#">Deeply Dropdown</a></li>
                                                             <li><a href="#">Deeply Dropdown</a></li>
@@ -127,16 +129,13 @@
         </div>
     </header>
     <!-- ##### Header Area End ##### -->
-
     <!-- ##### Breadcumb Area Start ##### -->
-    <section class="breadcumb-area bg-img bg-overlay" style="background-image: url(img/bg-img/breadcumb3.jpg);">
+    <section class="breadcumb-area bg-img bg-overlay" style="background-image: url({% static 'img/bg-img/breadcumb3.jpg' %});">
         <div class="bradcumbContent">
-            <p>See what’s new</p>
             <h2>Events</h2>
         </div>
     </section>
     <!-- ##### Breadcumb Area End ##### -->
-
     <!-- ##### Events Area Start ##### -->
     <section class="events-area section-padding-100">
         <div class="container">
@@ -307,7 +306,6 @@
         </div>
     </section>
     <!-- ##### Events Area End ##### -->
-
     <!-- ##### Newsletter & Testimonials Area Start ##### -->
     <section class="newsletter-testimonials-area">
         <div class="container">
@@ -366,7 +364,6 @@
         </div>
     </section>
     <!-- ##### Newsletter & Testimonials Area End ##### -->
-
     <!-- ##### Contact Area Start ##### -->
     <section class="contact-area section-padding-100 bg-img bg-overlay bg-fixed has-bg-img" style="background-image: url(img/bg-img/bg-2.jpg);">
         <div class="container">
@@ -416,26 +413,51 @@
         </div>
     </section>
     <!-- ##### Contact Area End ##### -->
-
+    <section class="contact-area section-padding-100 bg-img bg-overlay bg-fixed has-bg-img"
+             style="background-image: url({% static 'img/bg-img/bg-2.jpg' %});">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-heading white wow fadeInUp" data-wow-delay="100ms">
+                        <h2>Be Part of the Future of Music</h2>
+                        <p>Real Change Begins with You</p>
+                        <br>
+                        <!--BUTTON-->
+                        <div class="oneMusic-buttons-area mb-100 align-items-center">
+                            <a href="https://resonate.is/join/" class="btn oneMusic-btn m-2">
+                                Join Now<i class="fa fa-angle-double-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
     <!-- ##### Footer Area Start ##### -->
     <footer class="footer-area">
         <div class="container">
             <div class="row d-flex flex-wrap align-items-center">
                 <div class="col-12 col-md-6">
                     <a href="#"><img src="img/core-img/logo.png" alt=""></a>
-                    <p class="copywrite-text"><a href="#"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+                    <p class="copywrite-text">
+                        <a href="#">
+                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                            Copyright &copy;
+                            <script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                    </p>
                 </div>
 
                 <div class="col-12 col-md-6">
                     <div class="footer-nav">
                         <ul>
-                            <li><a href="#">Home</a></li>
-                            <li><a href="#">Albums</a></li>
-                            <li><a href="#">Events</a></li>
-                            <li><a href="#">News</a></li>
-                            <li><a href="#">Contact</a></li>
+                            <li><a href="{% url 'index' %}">Home</a></li>
+                            <li><a href="{% url 'about' %}">About</a></li>
+                            <li><a href="{% url 'blog' %}">Blog</a></li>
+                            <li><a href="{% url 'build_playlist' %}">Create</a></li>
+                            <li><a href="{% url 'view_playlist' %}">View</a></li>
+                            <li><a href="{% url 'team' %}">Team</a></li>
+                            <li><a href="{% url 'contact' %}">Contact</a></li>
                         </ul>
                     </div>
                 </div>
@@ -443,7 +465,6 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
         </div>
     </footer>
     <!-- ##### Footer Area Start ##### -->
-
     <!-- ##### All Javascript Script ##### -->
     <!-- jQuery-2.2.4 js -->
     <script src="js/jquery/jquery-2.2.4.min.js"></script>

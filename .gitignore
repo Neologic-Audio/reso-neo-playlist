@@ -127,3 +127,10 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+/.vs/reso-neo-playlist/config/applicationhost.config
+/.vs/reso-neo-playlist/v17/.suo
+/.vs/reso-neo-playlist
+/.vs/ProjectSettings.json
+/.vs/PythonSettings.json
+/.vs/slnx.sqlite
+/.vs/VSWorkspaceState.json

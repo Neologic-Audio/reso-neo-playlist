@@ -37,7 +37,7 @@ class TrackGroupAdmin(dj_admin.ModelAdmin):
             {limit:10});
             '''
         db.cypher_query(tracks_query)
-
+    
     # this is a hack - use only for initial import
     def import_playlists(self, response, queryset):
         playlists_query = '''
@@ -116,7 +116,7 @@ class TagAdmin(dj_admin.ModelAdmin):
 
     import_tags.short_description = 'Import Tags (ignores queryset)'
 
-    # this is a hack
+    # this is a hack 
     def set_tg_count(self, response, queryset):
         query = '''
 			MATCH (tag:Tag)<-[:HAS_TAG]-(tg:TrackGroup)

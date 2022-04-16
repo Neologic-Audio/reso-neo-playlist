@@ -1,10 +1,11 @@
+
 from django.db import models
 from django_neomodel import DjangoNode
-from neomodel import db as db, ArrayProperty, StringProperty, IntegerProperty, Relationship, RelationshipFrom, \
-    RelationshipTo, StructuredRel, UniqueIdProperty, StructuredNode, DateTimeProperty
+from neomodel import db as db, ArrayProperty, StringProperty, IntegerProperty, Relationship, RelationshipFrom, RelationshipTo, StructuredRel, UniqueIdProperty, StructuredNode, DateTimeProperty
 
 
 class PlayList(DjangoNode):
+    
     uuid = UniqueIdProperty(primary_key=True)
     playlist_title = StringProperty()
     type = StringProperty()
@@ -12,13 +13,16 @@ class PlayList(DjangoNode):
     has_tag = RelationshipTo('PlayListTag', 'HAS_TAG')
     has_track = RelationshipTo('PlayListTracks', 'HAS_TRACK')
     owns = RelationshipFrom('PlayListUser', 'OWNS')
-
+    
     def merge_nodes(self):
+        
         query = '''
             MERGE (tag:PlayListTag)<-[:HAS_TAG]-(tg:PlayList)-[:HAS_TRACK]->(track:PlayListTracks)
             MERGE (tg)<-[:OWNS]-(u:PlayListUser) '''
 
         self.cypher(query)
+
+    
 
     def import_playlists(self):
         print("I'm in import_playlists")
@@ -30,16 +34,15 @@ class PlayList(DjangoNode):
     class Meta:
         app_label = 'tracks'
 
-
 class PlayListTracks(DjangoNode):
+
     uuid = UniqueIdProperty(primary_key=True)
     track_title = StringProperty()
-
+    
     has_track = RelationshipFrom('PlayListTracks', 'HAS_TRACK')
 
     class Meta:
         app_label = 'tracks'
-
 
 class PlayListTag(DjangoNode):
     uuid = UniqueIdProperty(primary_key=True)
@@ -52,6 +55,7 @@ class PlayListTag(DjangoNode):
     related_from = RelationshipFrom('PlayListTag', 'RELATED')
 
     def set_top_track(self):
+        
         query = f'''
             MATCH (tag:PlayListTag)
             WHERE tag.name='{self.name}'
@@ -63,10 +67,9 @@ class PlayListTag(DjangoNode):
             MERGE (tag)-[:TOP_TRACK]->(track)
             '''
         self.cypher(query)
-
+    
     class Meta:
         app_label = 'tracks'
-
 
 class PlayListUser(DjangoNode):
     uuid = UniqueIdProperty(primary_key=True)
@@ -77,7 +80,6 @@ class PlayListUser(DjangoNode):
     class Meta:
         app_label = 'tracks'
 
-
 class PlayListCountry(DjangoNode):
     uuid = UniqueIdProperty(primary_key=True)
     country_name = StringProperty()
@@ -86,7 +88,6 @@ class PlayListCountry(DjangoNode):
 
     class Meta:
         app_label = 'tracks'
-
 
 class TrackGroup(DjangoNode):
     uuid = UniqueIdProperty(primary_key=True)
@@ -106,7 +107,6 @@ class TrackGroup(DjangoNode):
 
     class Meta:
         app_label = 'tracks'
-
 
 class Tag(DjangoNode):
     uuid = UniqueIdProperty(primary_key=True)
@@ -135,11 +135,10 @@ class Tag(DjangoNode):
     class Meta:
         app_label = 'tracks'
 
-
 class Track(DjangoNode):
     uuid = UniqueIdProperty(primary_key=True)
     title = StringProperty()
-
+    
     has_track = RelationshipFrom('Track', 'HAS_TRACK')
 
     class Meta:
@@ -155,7 +154,6 @@ class RUser(DjangoNode):
     class Meta:
         app_label = 'tracks'
 
-
 class Country(DjangoNode):
     uuid = UniqueIdProperty(primary_key=True)
     name = StringProperty()
@@ -165,6 +163,3 @@ class Country(DjangoNode):
     class Meta:
         app_label = 'tracks'
 
-
-# a = PlayList()
-# a.merge_nodes()

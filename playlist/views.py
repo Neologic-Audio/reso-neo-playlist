@@ -5,12 +5,11 @@ from django.contrib import messages
 from django.http import JsonResponse, HttpResponse
 from neomodel import Traversal, match
 
-
 def index(request):
+    
     return render(request, 'index.html', {
-
+    
     })
-
 
 def build_playlist(request):
     playlist_form = PlayListForm(request.POST or None)
@@ -21,7 +20,7 @@ def build_playlist(request):
 
     if playlist_form.is_valid():
         playlist_form.save()
-
+    
     if playlisttrack_form.is_valid():
         playlisttrack_form.save()
 
@@ -34,93 +33,98 @@ def build_playlist(request):
     if playlistcountry_form.is_valid():
         playlistcountry_form.save()
 
-    context = {
-        'playlist_form': playlist_form,
-        'playlisttrack_form': playlisttrack_form,
-        'playlisttag_form': playlisttag_form,
-        'playlistuser_form': playlistuser_form,
-        'playlistcountry_form': playlistcountry_form,
-    }
+    
+    
+    
+    context={
+        'playlist_form':playlist_form,
+        'playlisttrack_form':playlisttrack_form,
+        'playlisttag_form':playlisttag_form,
+        'playlistuser_form':playlistuser_form,
+        'playlistcountry_form':playlistcountry_form,
+            }
+
 
     messages.success(request, ('Track has been Added'))
     return render(request, "build_playlist.html", context)
 
-
 def view(request):
+
     playlist = PlayList.nodes.all()
     track = PlayListTracks.nodes.all()
-    context = {
-        'playlist': playlist,
-        'track': track
-    }
-
+    context={
+        'playlist':playlist,
+        'track':track
+            }
+   
     return render(request, "view_playlist.html", context)
 
-
 def about(request):
+    
     return render(request, 'about.html', {
-
+        
     })
-
-
+    
 def contact(request):
+    
     return render(request, 'contact.html', {
-
+        
     })
-
 
 def blog(request):
+    
     return render(request, 'blog.html', {
-
+        
     })
-
 
 def elements(request):
+    
     return render(request, 'elements.html', {
-
+        
     })
-
 
 def event(request):
+    
     return render(request, 'event.html', {
-
+        
     })
-
 
 def features(request):
+    
     return render(request, 'features.html', {
-
+        
     })
-
 
 def join(request):
+    
     return render(request, 'join.html', {
-
+        
     })
-
 
 def pricing(request):
+    
     return render(request, 'pricing.html', {
-
+        
     })
-
 
 def support(request):
+    
     return render(request, 'support.html', {
-
+        
     })
-
 
 def team(request):
+    
     return render(request, 'team.html', {
-
+        
     })
+
 
 
 def player(request):
-    # tracks = Track.nodes.all()
+    #tracks = Track.nodes.all()
     return render(request, 'player.html', {
-        # 'tracks': tracks
+        #'tracks': tracks
     })
 
 
@@ -149,7 +153,6 @@ def graph(request):
 
     return JsonResponse({"nodes": nodes, "links": rels})
 
-
 # add another version of search that makes a path of tracks, same tags different countries
 
 def search(request):
@@ -158,25 +161,15 @@ def search(request):
     except KeyError:
         return JsonResponse([])
 
-    # here temporarily, we don't want to do this every time
+    #here temporarily, we don't want to do this every time
     for tags_to_update in Tag.nodes.filter(name__icontains=q):
         tags_to_update.set_top_track()
 
     tags = Tag.nodes.filter(name__icontains=q).has(top_track=True)
     return JsonResponse([{
-        'id': tag.uuid,
-        'title': tag.name,
-        'tagline': tag.top_track.single().title,
-        'released': tag.top_track.single().uuid,
+        'id': tag.uuid, 
+        'title': tag.name, 
+        'tagline': tag.top_track.single().title, 
+        'released': tag.top_track.single().uuid, 
         'label': 'movie'
     } for tag in tags], safe=False)
-
-
-def handler404(request, *args, **argv):
-    return render(request, '404.html', {
-    })
-
-
-def handler500(request, *args, **argv):
-    return render(request, '500.html', {
-    })

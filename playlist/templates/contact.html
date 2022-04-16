@@ -8,27 +8,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-
     <!-- Title -->
     <title>Contact - Resonate</title>
 
     <!-- Favicon -->
-    <link rel="stylesheet" type="text/css" href="{% static 'img/core-img/icon.png' %}">
+    <link href="{% static 'img/core-img/icon.png' %}" rel="stylesheet">
 
     <!-- Custom Stylesheet -->
-    <link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/animate.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/audioplayer.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/classy-nav.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/font-awesome.min.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/magnific-popup.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/one-music-icon.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/owl.carousel.min.css' %}">
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+    <link href="{% static 'css/animate.css' %}" rel="stylesheet">
+    <link href="{% static 'css/audioplayer.css' %}" rel="stylesheet">
+    <link href="{% static 'css/classy-nav.css' %}" rel="stylesheet">
+    <link href="{% static 'css/font-awesome.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/magnific-popup.css' %}" rel="stylesheet">
+    <link href="{% static 'css/one-music-icon.css' %}" rel="stylesheet">
+    <link href="{% static 'css/owl.carousel.min.css' %}" rel="stylesheet">
 
     <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap/bootstrap.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap/bootstrap.min.css' %}">
+    <link href="{% static 'css/bootstrap/bootstrap.css' %}" rel="stylesheet">
+    <link href="{% static 'css/bootstrap/bootstrap.min.css' %}" rel="stylesheet">
 
 </head>
 
@@ -65,12 +63,12 @@
                                 <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
                             </div>
 
-        <!-- Nav Start*************************************-->
+                            <!-- Nav Start*************************************-->
                             <div class="classynav">
                                 <ul>
-                                    <li><a href="index.html">Home</a></li>
-                                    <li><a href="about.html">About</a></li>
-                                    <li><a href="contact.html">Contact</a></li>
+                                    <li><a href="{% url 'index' %}">Home</a></li>
+                                    <li><a href="{% url 'about' %}">About</a></li>
+                                    <li><a href="{% url 'contact' %}">Contact</a></li>
                                 </ul>
                                 <div class="login-register-cart-button d-flex align-items-center">
                                     <!-- Login/Register -->
@@ -79,7 +77,7 @@
                                     </div>
                                 </div>
                             </div>
-        <!-- Nav End**************************************-->
+                            <!-- Nav End**************************************-->
                         </div>
                     </nav>
                 </div>
@@ -87,15 +85,13 @@
         </div>
     </header>
     <!-- ##### Header Area End ##### -->
-
     <!-- ##### Breadcumb Area Start ##### -->
-    <section class="breadcumb-area bg-img bg-overlay" style="background-image: url(img/bg-img/breadcumb.jpg);">
+    <section class="breadcumb-area bg-img bg-overlay" style="background-image: url({% static 'img/bg-img/breadcumb3.jpg' %});">
         <div class="bradcumbContent">
             <h2>Contact</h2>
         </div>
     </section>
     <!-- ##### Breadcumb Area End ##### -->
-
     <!-- ##### Contact Area Start ##### -->
     <section class="contact-area section-padding-100-0">
         <div class="container">
@@ -103,11 +99,10 @@
 
                 <div class="col-12 col-lg-3">
                     <div class="contact-content mb-100">
-                        <!-- Title 
+                        <!-- Title
                         <div class="contact-title mb-50">
                             <h5>Contact Info</h5>
                         </div>-->
-
                         <!-- ADDRESS INFO
                         <div class="single-contact-info d-flex align-items-center">
                             <div class="icon mr-30">
@@ -115,16 +110,14 @@
                             </div>
                             <p>777 Glades Rd, Boca Raton, FL 33431</p>
                         </div>-->
-
-                        <!-- EMAIL INFO 
+                        <!-- EMAIL INFO
                         <div class="single-contact-info d-flex align-items-center">
                             <div class="icon mr-30">
                                 <span class="icon-mail"></span>
                             </div>
                             <p>egngroup26@gmail.com</p>
                         </div>-->
-
-                        <!-- SOCIAL MEDIA LINKS 
+                        <!-- SOCIAL MEDIA LINKS
                         <div class="contact-social-info mt-50">
                             <a href="#" data-toggle="tooltip" data-placement="top" title="Pinterest"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
                             <a href="#" data-toggle="tooltip" data-placement="top" title="Facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a>
@@ -138,7 +131,7 @@
                 </div>
                 <!-- GOOGLE LINK
                 <div class="col-12 col-lg-9">
-                    <!-- ##### Google Maps ##### 
+                    <!-- ##### Google Maps #####
                     <div class="map-area mb-100">
                         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d22236.40558254599!2d-118.25292394686001!3d34.057682914027104!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2c75ddc27da13%3A0xe22fdf6f254608f4!2z4Kay4Ka4IOCmj-CmnuCnjeCmnOCnh-CmsuCnh-CmuCwg4KaV4KeN4Kav4Ka-4Kay4Ka_4Kar4KeL4Kaw4KeN4Kao4Ka_4Kav4Ka84Ka-LCDgpq7gpr7gprDgp43gppXgpr_gpqgg4Kav4KeB4KaV4KeN4Kak4Kaw4Ka-4Ka34KeN4Kaf4KeN4Kaw!5e0!3m2!1sbn!2sbd!4v1532328708137" allowfullscreen></iframe>
                     </div>
@@ -146,177 +139,190 @@
             </div>
         </div>
     </section>
-    
-    
-    <!--Contact & Info tags*****************************-->
-    
-                <div class="col-12 col-lg-6">
-                    <div class="accordions mb-100" id="accordion" role="tablist" aria-multiselectable="true">
-                        <!--VOLUNTEER TAB-->
-                        <div class="panel single-accordion">
-                            <h6><a role="button" class="collapsed" aria-expanded="true" aria-controls="collapseOne" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">Volunteer
-                                    <span class="accor-open"><i class="fa fa-plus" aria-hidden="true"></i></span>
-                                    <span class="accor-close"><i class="fa fa-minus" aria-hidden="true"></i></span>
-                                    </a></h6>
-                            <div id="collapseOne" class = "accordion-content collapse">
-                                <p>If you'd like to help out on the project please fill out the form below, sharing a few details about your background and how you'd like to get involved.</p>
-                                <!--ADD CONTACT FORM **MESSAGE PART**-->
-<section class="contact-area section-padding-100">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <!-- Contact Form Area -->
-                    <div class="contact-form-area">
-                        <form action="#" method="post">
-                            <div class="row">
-                                <div class="col-12">
-                                    <div class="form-group wow fadeInUp" data-wow-delay="400ms">
-                                        <textarea name="message" class="form-control" id="message" cols="30" rows="10" placeholder="Write your message here"></textarea>
-                                    </div>
-                                </div>
-                                <div class="col-12 text-center wow fadeInUp" data-wow-delay="500ms">
-                                    <button class="btn oneMusic-btn mt-30" type="submit">Send <i class="fa fa-angle-double-right"></i></button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-                            </div>
-                        </div>
-                        <!--GENERAL TAB-->
-                        <div class="panel single-accordion">
-                            <h6><a role="button" class="collapsed" aria-expanded="true" aria-controls="collapseTwo" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">General
-                                    <span class="accor-open"><i class="fa fa-plus" aria-hidden="true"></i></span>
-                                    <span class="accor-close"><i class="fa fa-minus" aria-hidden="true"></i></span>
-                                    </a></h6>
-                            <div id="collapseTwo" class="accordion-content collapse">
-                                
-                                <!--ADD CONTACT FORM HERE **TEXT/SUBJECT**-->
-    <section class="contact-area section-padding-100">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <!-- Contact Form Area -->
-                    <div class="contact-form-area">
-                        <form action="#" method="post">
-                            <div class="row">
-                                    <div class="col-lg-4">
-                                    <div class="form-group wow fadeInUp" data-wow-delay="300ms">
-                                        <input type="text" class="form-control" id="subject" placeholder="Subject">
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <div class="form-group wow fadeInUp" data-wow-delay="400ms">
-                                        <textarea name="message" class="form-control" id="message" cols="30" rows="10" placeholder="Write your message here"></textarea>
-                                    </div>
-                                </div>
-                                <div class="col-12 text-center wow fadeInUp" data-wow-delay="500ms">
-                                    <button class="btn oneMusic-btn mt-30" type="submit">Send <i class="fa fa-angle-double-right"></i></button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-                            </div>
-                        </div>
-                        <!--COPTRIGHT VIOLATION-->
-                        <div class="panel single-accordion">
-                            <h6>
-                                <a role="button" class="collapsed" aria-expanded="true" aria-controls="collapseThree" data-parent="#accordion" data-toggle="collapse" href="#collapseThree">Copyright violation
-                                        <span class="accor-open"><i class="fa fa-plus" aria-hidden="true"></i></span>
-                                        <span class="accor-close"><i class="fa fa-minus" aria-hidden="true"></i></span>
-                                        </a>
-                            </h6>
-                            <div id="collapseThree" class="accordion-content collapse">
-                                <p>If you believe that content on Resonate infringes your copyright, please contact our Copyright Team on copyright [at] resonate.is and include the following information.<br><br>
-                                1.The full URL and/or name/artist of the track(s) concerned<br>
-                                2.Your full name, address, email and telephone number<br>
-                                3.Explain how the track(s) infringe(s) your copyright Include the following statement: "I have a good faith belief that use of the copyrighted work described above is not authorized by the copyright owner (or by a third party who is legally entitled to do so on behalf of the copyright owner) and is not otherwise permitted by law.<br>
-                                4.I hereby confirm that I believe the track(s) identified in this email infringe(s) my copyright"<br>
-                                5.Scanned copy of your physical signature<br><br>
-                                In accordance with the Digital Millennium Copyright Act (DMCA), we only accept copyright complaints from content owners or someone officially authorized to act on their behalf.
-                                </p>
-                            </div>
-                        </div>
-                        <!--FB/GENERAL TAB-->
-                        <div class="panel single-accordion">
-                            <h6>
-                                <a role="button" class="collapsed" aria-expanded="true" aria-controls="collapseFour" data-parent="#accordion" data-toggle="collapse" href="#collapseFour">Feedback - General
-                                        <span class="accor-open"><i class="fa fa-plus" aria-hidden="true"></i></span>
-                                        <span class="accor-close"><i class="fa fa-minus" aria-hidden="true"></i></span>
-                                        </a>
-                            </h6>
-                            <div id="collapseFour" class="accordion-content collapse">
-                                <!--ADD CONTACT FORM HERE **JUST MESSAGE PART**-->
-<section class="contact-area section-padding-100">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <!-- Contact Form Area -->
-                    <div class="contact-form-area">
-                        <form action="#" method="post">
-                            <div class="row">
-                                <div class="col-12">
-                                    <div class="form-group wow fadeInUp" data-wow-delay="400ms">
-                                        <textarea name="message" class="form-control" id="message" cols="30" rows="10" placeholder="Write your message here"></textarea>
-                                    </div>
-                                </div>
-                                <div class="col-12 text-center wow fadeInUp" data-wow-delay="500ms">
-                                    <button class="btn oneMusic-btn mt-30" type="submit">Send <i class="fa fa-angle-double-right"></i></button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-                            </div>
-                        </div>
-                        <!--FB/SP TAB-->
-                        <div class="panel single-accordion">
-                            <h6><a role="button" class="collapsed" aria-expanded="true" aria-controls="collapseFive" data-toggle="collapse" data-parent="#accordion" href="#collapseFive">Feedback - Streaming Player
-                                    <span class="accor-open"><i class="fa fa-plus" aria-hidden="true"></i></span>
-                                    <span class="accor-close"><i class="fa fa-minus" aria-hidden="true"></i></span>
-                                    </a></h6>
-                            <div id="collapseFive" class="accordion-content collapse">
-                                <!--ADD CONTACT FORM HERE **JUST MESSAGE PART**-->
-<section class="contact-area section-padding-100">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <!-- Contact Form Area -->
-                    <div class="contact-form-area">
-                        <form action="#" method="post">
-                            <div class="row">
-                                <div class="col-12">
-                                    <div class="form-group wow fadeInUp" data-wow-delay="400ms">
-                                        <textarea name="message" class="form-control" id="message" cols="30" rows="10" placeholder="Write your message here"></textarea>
-                                    </div>
-                                </div>
-                                <div class="col-12 text-center wow fadeInUp" data-wow-delay="500ms">
-                                    <button class="btn oneMusic-btn mt-30" type="submit">Send <i class="fa fa-angle-double-right"></i></button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
- <!--LOGIN SECTION************************************** -->
-    <section class="contact-area section-padding-100 bg-img bg-overlay bg-fixed has-bg-img" style="background-image: url(img/bg-img/bg-2.jpg);">
+
+    <!--Contact & Info tags*****************************-->
+
+    <div class="col-12 col-lg-6">
+        <div class="accordions mb-100" id="accordion" role="tablist" aria-multiselectable="true">
+            <!--VOLUNTEER TAB-->
+            <div class="panel single-accordion">
+                <h6>
+                    <a role="button" class="collapsed" aria-expanded="true" aria-controls="collapseOne" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                        Volunteer
+                        <span class="accor-open"><i class="fa fa-plus" aria-hidden="true"></i></span>
+                        <span class="accor-close"><i class="fa fa-minus" aria-hidden="true"></i></span>
+                    </a>
+                </h6>
+                <div id="collapseOne" class="accordion-content collapse">
+                    <p>If you'd like to help out on the project please fill out the form below, sharing a few details about your background and how you'd like to get involved.</p>
+                    <!--ADD CONTACT FORM **MESSAGE PART**-->
+                    <section class="contact-area section-padding-100">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-12">
+                                    <!-- Contact Form Area -->
+                                    <div class="contact-form-area">
+                                        <form action="#" method="post">
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <div class="form-group wow fadeInUp" data-wow-delay="400ms">
+                                                        <textarea name="message" class="form-control" id="message" cols="30" rows="10" placeholder="Write your message here"></textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12 text-center wow fadeInUp" data-wow-delay="500ms">
+                                                    <button class="btn oneMusic-btn mt-30" type="submit">Send <i class="fa fa-angle-double-right"></i></button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+            <!--GENERAL TAB-->
+            <div class="panel single-accordion">
+                <h6>
+                    <a role="button" class="collapsed" aria-expanded="true" aria-controls="collapseTwo" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+                        General
+                        <span class="accor-open"><i class="fa fa-plus" aria-hidden="true"></i></span>
+                        <span class="accor-close"><i class="fa fa-minus" aria-hidden="true"></i></span>
+                    </a>
+                </h6>
+                <div id="collapseTwo" class="accordion-content collapse">
+
+                    <!--ADD CONTACT FORM HERE **TEXT/SUBJECT**-->
+                    <section class="contact-area section-padding-100">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-12">
+                                    <!-- Contact Form Area -->
+                                    <div class="contact-form-area">
+                                        <form action="#" method="post">
+                                            <div class="row">
+                                                <div class="col-lg-4">
+                                                    <div class="form-group wow fadeInUp" data-wow-delay="300ms">
+                                                        <input type="text" class="form-control" id="subject" placeholder="Subject">
+                                                    </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <div class="form-group wow fadeInUp" data-wow-delay="400ms">
+                                                        <textarea name="message" class="form-control" id="message" cols="30" rows="10" placeholder="Write your message here"></textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12 text-center wow fadeInUp" data-wow-delay="500ms">
+                                                    <button class="btn oneMusic-btn mt-30" type="submit">Send <i class="fa fa-angle-double-right"></i></button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+            <!--COPTRIGHT VIOLATION-->
+            <div class="panel single-accordion">
+                <h6>
+                    <a role="button" class="collapsed" aria-expanded="true" aria-controls="collapseThree" data-parent="#accordion" data-toggle="collapse" href="#collapseThree">
+                        Copyright violation
+                        <span class="accor-open"><i class="fa fa-plus" aria-hidden="true"></i></span>
+                        <span class="accor-close"><i class="fa fa-minus" aria-hidden="true"></i></span>
+                    </a>
+                </h6>
+                <div id="collapseThree" class="accordion-content collapse">
+                    <p>
+                        If you believe that content on Resonate infringes your copyright, please contact our Copyright Team on copyright [at] resonate.is and include the following information.<br><br>
+                        1.The full URL and/or name/artist of the track(s) concerned<br>
+                        2.Your full name, address, email and telephone number<br>
+                        3.Explain how the track(s) infringe(s) your copyright Include the following statement: "I have a good faith belief that use of the copyrighted work described above is not authorized by the copyright owner (or by a third party who is legally entitled to do so on behalf of the copyright owner) and is not otherwise permitted by law.<br>
+                        4.I hereby confirm that I believe the track(s) identified in this email infringe(s) my copyright"<br>
+                        5.Scanned copy of your physical signature<br><br>
+                        In accordance with the Digital Millennium Copyright Act (DMCA), we only accept copyright complaints from content owners or someone officially authorized to act on their behalf.
+                    </p>
+                </div>
+            </div>
+            <!--FB/GENERAL TAB-->
+            <div class="panel single-accordion">
+                <h6>
+                    <a role="button" class="collapsed" aria-expanded="true" aria-controls="collapseFour" data-parent="#accordion" data-toggle="collapse" href="#collapseFour">
+                        Feedback - General
+                        <span class="accor-open"><i class="fa fa-plus" aria-hidden="true"></i></span>
+                        <span class="accor-close"><i class="fa fa-minus" aria-hidden="true"></i></span>
+                    </a>
+                </h6>
+                <div id="collapseFour" class="accordion-content collapse">
+                    <!--ADD CONTACT FORM HERE **JUST MESSAGE PART**-->
+                    <section class="contact-area section-padding-100">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-12">
+                                    <!-- Contact Form Area -->
+                                    <div class="contact-form-area">
+                                        <form action="#" method="post">
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <div class="form-group wow fadeInUp" data-wow-delay="400ms">
+                                                        <textarea name="message" class="form-control" id="message" cols="30" rows="10" placeholder="Write your message here"></textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12 text-center wow fadeInUp" data-wow-delay="500ms">
+                                                    <button class="btn oneMusic-btn mt-30" type="submit">Send <i class="fa fa-angle-double-right"></i></button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+            <!--FB/SP TAB-->
+            <div class="panel single-accordion">
+                <h6>
+                    <a role="button" class="collapsed" aria-expanded="true" aria-controls="collapseFive" data-toggle="collapse" data-parent="#accordion" href="#collapseFive">
+                        Feedback - Streaming Player
+                        <span class="accor-open"><i class="fa fa-plus" aria-hidden="true"></i></span>
+                        <span class="accor-close"><i class="fa fa-minus" aria-hidden="true"></i></span>
+                    </a>
+                </h6>
+                <div id="collapseFive" class="accordion-content collapse">
+                    <!--ADD CONTACT FORM HERE **JUST MESSAGE PART**-->
+                    <section class="contact-area section-padding-100">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-12">
+                                    <!-- Contact Form Area -->
+                                    <div class="contact-form-area">
+                                        <form action="#" method="post">
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <div class="form-group wow fadeInUp" data-wow-delay="400ms">
+                                                        <textarea name="message" class="form-control" id="message" cols="30" rows="10" placeholder="Write your message here"></textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12 text-center wow fadeInUp" data-wow-delay="500ms">
+                                                    <button class="btn oneMusic-btn mt-30" type="submit">Send <i class="fa fa-angle-double-right"></i></button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--LOGIN SECTION************************************** -->
+    <section class="contact-area section-padding-100 bg-img bg-overlay bg-fixed has-bg-img"
+             style="background-image: url({% static 'img/bg-img/bg-2.jpg' %});">
         <div class="container">
             <div class="row">
                 <div class="col-12">
@@ -326,36 +332,40 @@
                         <br>
                         <!--BUTTON-->
                         <div class="oneMusic-buttons-area mb-100 align-items-center">
-                        <a href="login.html" class="btn oneMusic-btn m-2">Send <i class="fa fa-angle-double-right"></i></a>
-                    </div>
+                            <a href="https://resonate.is/join/" class="btn oneMusic-btn m-2">
+                                Join Now<i class="fa fa-angle-double-right"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-<!-- Contact Area End*********************************** -->
-
+    <!-- Contact Area End*********************************** -->
     <!-- ##### Footer Area Start ##### -->
     <footer class="footer-area">
         <div class="container">
             <div class="row d-flex flex-wrap align-items-center">
                 <div class="col-12 col-md-6">
-                    <p class="copywrite-text"><a href="#"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+                    <p class="copywrite-text">
+                        <a href="#">
+                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                            Copyright &copy;
+                            <script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                    </p>
                 </div>
 
                 <div class="col-12 col-md-6">
                     <div class="footer-nav">
                         <ul>
-                            <li><a href="#">Home</a></li>
-                            <li><a href="#">About</a></li>
-                            <li><a href="#">Blog</a></li>
-                            <li><a href="#">Help</a></li>
-                            <li><a href="#">Press</a></li>
-                            <li><a href="#">Team</a></li>
-                            <li><a href="#">Contact</a>
-                            </li>
+                            <li><a href="{% url 'index' %}">Home</a></li>
+                            <li><a href="{% url 'about' %}">About</a></li>
+                            <li><a href="{% url 'blog' %}">Blog</a></li>
+                            <li><a href="{% url 'build_playlist' %}">Create</a></li>
+                            <li><a href="{% url 'view_playlist' %}">View</a></li>
+                            <li><a href="{% url 'team' %}">Team</a></li>
+                            <li><a href="{% url 'contact' %}">Contact</a></li>
                         </ul>
                     </div>
                 </div>
@@ -363,7 +373,6 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
         </div>
     </footer>
     <!-- ##### Footer Area Start ##### -->
-
     <!-- jQuery 3.6.0 -->
     <script src="{% static 'js/jquery/jquery-3.6.0.js' %}"></script>
 
