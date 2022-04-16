@@ -1,0 +1,78 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <!-- Favicon -->
+    <link rel="stylesheet" type="text/css" href="{% static 'img/core-img/icon.png' %}">
+    <link rel="stylesheet"
+          href="https://neo4j-documentation.github.io/developer-resources/language-guides/assets/css/main.css">
+
+    <title>Build Playlist</title>
+</head>
+<body>
+
+<div role="navigation" class="navbar navbar-default navbar-static-top">
+    <div class="container">
+        <div class="row">
+            <div class="navbar-header col-sm-2 col-md-2">
+                <div class="navbar-brand">
+                    <div class="brand">Most <a href="https://stream.resonate.coop/releases?type=playlist"
+                                               target="_blank"><b>Playlisted</b></a> Tracks per Tag
+                    </div>
+                </div>
+
+            </div>
+            <div class="navbar-header col-sm-2 col-md-2">
+                <div class="navbar-brand">
+                    <div class="brand"><a href="{% url 'build_playlist' %}" target="_blank"><b>Build</b></a> Playlist
+                    </div>
+                </div>
+
+            </div>
+            <div class="navbar-header col-sm-2 col-md-2">
+                <div class="navbar-brand">
+                    <div class="brand"><a href="{% url 'view_playlist' %}" target="_blank"><b>View</b></a> Playlist
+                    </div>
+                </div>
+
+            </div>
+            <div class="navbar-header col-sm-2 col-md-2">
+                <div class="navbar-brand">
+                    <div class="brand"><a href="{% url 'about' %}" target="_blank"><b>About</b></a> Us</div>
+                </div>
+
+            </div>
+            <div class="navbar-header col-sm-2 col-md-2">
+                <div class="navbar-brand">
+                    <div class="brand"><a href="{% url 'contact' %}" target="_blank"><b>Contact</b></a> Us</div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    {% csrf_token %}
+    {% block content %}
+    {% endblock %}
+</div>
+
+    <!-- jQuery 3.6.0 -->
+    <script src="{% static 'js/jquery/jquery-3.6.0.js' %}"></script>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="{% static 'js/bootstrap/popper.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap/bootstrap.bundle.min.js' %}"></script>
+
+    <!-- Custom JS Scripts -->
+    <script src="{% static 'js/plugins/plugins.js' %}"></script>
+    <script src="{% static 'js/active.js' %}"></script>
+
+</body>
+</html>

@@ -1,0 +1,317 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <!-- Title -->
+    <title>Team - Resonate</title>
+
+    <!-- Favicon -->
+    <link rel="stylesheet" type="text/css" href="{% static 'img/core-img/icon.png' %}">
+
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/animate.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/audioplayer.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/classy-nav.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/font-awesome.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/magnific-popup.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/one-music-icon.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/owl.carousel.min.css' %}">
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap/bootstrap.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap/bootstrap.min.css' %}">
+
+
+</head>
+
+<body>
+    <!-- Preloader -->
+    <div class="preloader d-flex align-items-center justify-content-center">
+        <div class="lds-ellipsis">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+
+    <!-- ##### Header Area Start ##### -->
+    <header class="header-area">
+        <!-- Navbar Area -->
+        <div class="oneMusic-main-menu">
+            <div class="classy-nav-container breakpoint-off">
+                <div class="container">
+                    <!-- Menu -->
+                    <nav class="classy-navbar justify-content-between" id="oneMusicNav">
+
+                        <!-- LOGO IN UPPER LEFT CORNER-->
+                        <a href="{% url 'index' %}" class="nav-brand"><img src={% static "img/core-img/resonate.png" %} alt=""></a>
+
+
+                        <!-- Navbar Toggler -->
+                        <div class="classy-navbar-toggler">
+                            <span class="navbarToggler"><span></span><span></span><span></span></span>
+                        </div>
+
+                        <!-- Menu -->
+                        <div class="classy-menu">
+
+                            <!-- Close Button -->
+                            <div class="classycloseIcon">
+                                <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
+                            </div>
+
+                            <div class="classynav">
+                                <ul>
+                                    <li><a href="https://stream.resonate.coop/discover">Listen</a></li>
+
+                                    <li><a href="{% url 'pricing' %}">Pricing</a></li>
+                                    <li><a href="{% url 'support' %}">Support</a></li>
+                                    <li><a href="https://resonate.is/join/">Join</a></li>
+                                    <li>
+                                        <a href="#">Login</a>
+                                        <ul class="dropdown">
+                                            <li><a href="#">Player</a></li>
+                                            <li><a href="file:///C:/Users/Adejsha.000/Downloads/one-music-gh-pagess/one-music-gh-pages/login.html">Profile</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                                <div class="login-register-cart-button d-flex align-items-center">
+                                    <!-- Login/Register -->
+                                    <div class="login-register-btn mr-50">
+                                        <a href="login.html" id="loginBtn"></a>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    <!-- ##### Breadcumb Area Start ##### -->
+    <section class="breadcumb-area bg-img bg-overlay" style="background-image: url({% static 'img/bg-img/breadcumb3.jpg' %});">
+        <div class="bradcumbContent">
+            <h2>Meet the Resonate Team</h2>
+        </div>
+    </section>
+
+    <section class="featured-artist-area section-padding-100">
+        <div class="container">
+            <div class="row align-center">
+                <div class="col-2 col-md-2 col-lg-2">
+                </div>
+                <div class="col-12 col-md-7 col-lg-8">
+                    <div class="featured-artist-content">
+                        <!-- Section Heading -->
+                        <div class="section-heading black text-left mb-30">
+                            <h2>Co-operative Team</h2>
+                        </div>
+                        <p><p>Our Co-operative Team helps us run our co-operative, handling member services and education, co-operative to co-operative partnerships and organisational governance.</p>
+                    </div>
+                    <div class="featured-artist-content">
+                        <!-- Section Heading -->
+                        <div class="section-heading black text-left mb-30">
+                            <h2>Co-operative Team</h2>
+                        </div>
+                        <p>Our Co-operative Team helps us run our co-operative, handling member services and education, co-operative to co-operative partnerships and organisational governance.</p>
+                    </div>
+                    <div class="featured-artist-content">
+                        <!-- Section Heading -->
+                        <div class="section-heading black text-left mb-30">
+                            <h2>Communications Team</h2>
+                        </div>
+                        <p>
+                            Our Communications Team helps us communicate with the world, ensuring our message is being heard and our stakeholder relationships are healthy.
+                        </p>
+                    </div>
+                    <div class="featured-artist-content">
+                        <!-- Section Heading -->
+                        <div class="section-heading black text-left mb-30">
+                            <h2>Platform Team</h2>
+                        </div>
+                        <p>Our Platform Team builds and supports the Resonate Player, Resonate APIs and our technical projects.</p>
+                    </div>
+                    <div class="featured-artist-content">
+                        <!-- Section Heading -->
+                        <div class="section-heading black text-left mb-30">
+                            <h2>Executive Team</h2>
+                        </div>
+                        <p>Our Executive Team is made up of our team leads. Together they set the operational direction of the co-operative, ensuring we’re moving forward together, and have all the resources we need.</p>
+                    </div>
+                    <div class="featured-artist-content">
+                        <!--IMAGE HERE
+                        <div class="featured-artist-thumb">
+                            <img src="https://resonate.is/profile/11742/" alt="">
+                        </div>-->
+                        <!-- Section Heading -->
+                        <div class="section-heading black text-left mb-30">
+                            <h2>Board</h2>
+                        </div>
+                        <p>Our Board watches over our teams, sets our strategic vision, helps us grow our relationships with stakeholders, and helps us source new talent.</p>
+
+                    </div>
+                    <div class="featured-artist-content">
+                        <!-- Section Heading -->
+                        <div class="section-heading black text-left mb-30">
+                            <h2>FAU Team</h2>
+                        </div>
+                        <p>College seniors that were tasked to focus on improving the Resonate experience.</p>
+                        <section class="latest-albums-area section-padding-100">
+
+                            <!--FAU TEAM SLIDES -->
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="albums-slideshow owl-carousel">
+                                        <!-- MEMBER 1 -->
+                                        <div class="single-album">
+                                            <!--IMAGE HERE -->
+                                            <img src={% static "img/bg-img/ariel.png" %} alt="">
+                                            <div class="album-info">
+                                                <a href="#">
+                                                    <h5>Ariel Fainstain</h5>
+                                                </a>
+                                                <p>Team Lead</p>
+                                            </div>
+                                        </div>
+
+                                        <!-- MEMBER 2 -->
+                                        <div class="single-album">
+                                            <img src={% static "img/bg-img/ade.png" %} alt="">
+                                            <div class="album-info">
+                                                <a href="#">
+                                                    <h5>Adejsha Francis</h5>
+                                                </a>
+                                                <p>Front-End Engineer</p>
+                                            </div>
+                                        </div>
+
+                                        <!-- MEMBER 3 -->
+                                        <div class="single-album">
+                                            <img src={% static "img/bg-img/sam.png" %} alt="">
+                                            <div class="album-info">
+                                                <a href="#">
+                                                    <h5>Samuel Parker</h5>
+                                                </a>
+                                                <p>Software Engineer</p>
+                                            </div>
+                                        </div>
+
+                                        <!-- MEMBER 4 -->
+                                        <div class="single-album">
+                                            <img src={% static "img/bg-img/max.png" %} alt="">
+                                            <div class="album-info">
+                                                <a href="#">
+                                                    <h5>Maxim Stroganov</h5>
+                                                </a>
+                                                <p>Quality Assurance Engineer</p>
+                                            </div>
+                                        </div>
+
+                                        <!-- MEMBER 5 -->
+                                        <div class="single-album">
+                                            <img src={% static "img/bg-img/gab.png" %} alt="">
+                                            <div class="album-info">
+                                                <a href="#">
+                                                    <h5>Gabrielle White</h5>
+                                                </a>
+                                                <p>API Engineer</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </section>
+
+
+    <!--LOGIN SECTION************************************** -->
+    <section class="contact-area section-padding-100 bg-img bg-overlay bg-fixed has-bg-img"
+             style="background-image: url({% static 'img/bg-img/bg-2.jpg' %});">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-heading white wow fadeInUp" data-wow-delay="100ms">
+                        <h2>Be Part of the Future of Music</h2>
+                        <p>Real Change Begins with You</p>
+                        <br>
+                        <!--BUTTON-->
+                        <div class="oneMusic-buttons-area mb-100 align-items-center">
+                            <a href="https://resonate.is/join/" class="btn oneMusic-btn m-2">
+                                Join Now<i class="fa fa-angle-double-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!--FOOTER**********************************************-->
+    <footer class="footer-area">
+        <div class="container">
+            <div class="row d-flex flex-wrap align-items-center">
+                <div class="col-12 col-md-6">
+
+                    <!--IMAGE HERE
+                    <a href="index.html" class="nav-brand"><img src="img/core-img/resonate.png" alt=""></a><br>
+                    <br>-->
+                    <!--COPYRIGHT FOR COLORLIB DEVELOPER-->
+                    <p class="copywrite-text">
+                        <a href="#">
+                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                            Copyright &copy;
+                            <script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        </a>
+                    </p>
+                </div>
+
+                <div class="col-12 col-md-6">
+                    <div class="footer-nav">
+                        <ul>
+                            <li><a href="{% url 'index' %}">Home</a></li>
+                            <li><a href="{% url 'about' %}">About</a></li>
+                            <li><a href="{% url 'blog' %}">Blog</a></li>
+                            <li><a href="{% url 'build_playlist' %}">Create</a></li>
+                            <li><a href="{% url 'view_playlist' %}">View</a></li>
+                            <li><a href="{% url 'team' %}">Team</a></li>
+                            <li><a href="{% url 'contact' %}">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- jQuery 3.6.0 -->
+    <script src="{% static 'js/jquery/jquery-3.6.0.js' %}"></script>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="{% static  'js/bootstrap/popper.min.js' %}"></script>
+    <script src="{% static  'js/bootstrap/bootstrap.bundle.min.js' %}"></script>
+
+    <!-- Custom JS Scripts -->
+    <script src="{% static  'js/plugins/plugins.js' %}"></script>
+    <script src="{% static  'js/active.js' %}"></script>
+</body>
+
+</html>

@@ -1,0 +1,315 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <!-- Title -->
+    <title>Join - Resonate</title>
+
+    <!-- Favicon -->
+    <link rel="stylesheet" type="text/css" href="{% static 'img/core-img/icon.png' %}">
+
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/animate.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/audioplayer.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/classy-nav.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/font-awesome.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/magnific-popup.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/one-music-icon.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/owl.carousel.min.css' %}">
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap/bootstrap.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap/bootstrap.min.css' %}">
+    
+    <!--FOR INDENT-->
+    <style>
+        
+        .tab1 {
+            tab-size: 0.5;
+            border-style:solid;
+            border-color:#F2F3F4;
+        }
+
+    </style>
+</head>
+
+<body>
+    <!-- Preloader -->
+    <div class="preloader d-flex align-items-center justify-content-center">
+        <div class="lds-ellipsis">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+
+    <!-- ##### Header Area Start ##### -->
+    <header class="header-area">
+        <!-- Navbar Area -->
+        <div class="oneMusic-main-menu">
+            <div class="classy-nav-container breakpoint-off">
+                <div class="container">
+                    <!-- Menu -->
+                    <nav class="classy-navbar justify-content-between" id="oneMusicNav">
+
+                        <!-- LOGO IN UPPER LEFT CORNER-->
+                        <a href="index.html" class="nav-brand"><img src="img/core-img/resonate.png" alt=""></a>
+
+                        <!-- Navbar Toggler -->
+                        <div class="classy-navbar-toggler">
+                            <span class="navbarToggler"><span></span><span></span><span></span></span>
+                        </div>
+
+                        <!-- Menu -->
+                        <div class="classy-menu">
+
+                            <!-- Close Button -->
+                            <div class="classycloseIcon">
+                                <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
+                            </div>
+
+<!-- NAG HERE****************************************** -->
+                               <div class="classynav">
+                                <ul>
+                                    <li><a href="#">Listen</a></li>
+                                    
+                                    <li><a href="albums-store.html">Pricing</a></li>
+                                    <li><a href="contact.html">Support</a></li>
+                                     <li><a href="contact.html">Join</a></li>
+                                     <li><a href="#">Login</a>
+                                        <ul class="dropdown">
+                                            <li><a href="index.html">Player</a></li>
+                                            <li><a href="albums-store.html">Profile</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                                    <div class="login-register-cart-button d-flex align-items-center">
+                                    <!-- Login/Register -->
+                                    <div class="login-register-btn mr-50">
+                                        <a href="login.html" id="loginBtn"></a>
+                                    </div>
+                                </div>
+                                 
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- ##### Header Area End ##### -->
+
+<!-- BORDER HERE*************************************--->
+    <section class="breadcumb-area bg-img bg-overlay" style="background-image: url(img/bg-img/blog2.jpg);">
+        <div class="bradcumbContent">
+            <h2>Sign up for Resonate</h2>
+        </div>
+    </section>
+    <br><br><br>
+
+<!--GENERAL INFO****************************************-->
+    <section class="latest-albums-area section-padding-100">
+        <div class="container">
+            <div class="row">
+                <div class="col-15">
+                    <div class="featured-artist-content">
+                    <div class="oneMusic-tabs-content">
+                        <ul class="nav nav-tabs" id="myTab" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link" id="tab--1" data-toggle="tab" href="#tab1" role="tab" aria-controls="tab1" aria-selected="false">Listener</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="tab--2" data-toggle="tab" href="#tab2" role="tab" aria-controls="tab2" aria-selected="false">Artist</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" id="tab--3" data-toggle="tab" href="#tab3" role="tab" aria-controls="tab3" aria-selected="true">Label</a>
+                            </li>
+                        </ul>
+                        <div class="tab-content mb-100" id="myTabContent">
+                            <div class="tab-pane fade" id="tab1" role="tabpanel" aria-labelledby="tab--1">
+                                <div class="oneMusic-tab-content">
+                                    <!-- Lister Tab Text -->
+                                    <div class="oneMusic-tab-text">
+                                        <h4>Listener Account</h4>
+                                        <p>A Listener Account comes with everything you need to get started listening on Resonate -- and credits on the house so you can get a feel for things.</p><br>
+                                        <p>After creating your account, consider joining the co-op with a Listener Membership for 10€ a year. This supports co-op development to create new features and improve our platform.</p>
+                                    <!--LINKED BUTTON-->
+                                    <div class="oneMusic-buttons-area mb-100">
+                                    <a href="https://resonate.is/join/#gf_93" class="btn oneMusic-btn m-2">Next<i class="fa fa-angle-double-right"></i></a>
+                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="tab2" role="tabpanel" aria-labelledby="tab--2">
+                                <div class="oneMusic-tab-content">
+                                    <!-- Artist Tab Text -->
+                                    <div class="oneMusic-tab-text">
+                                        <h4>Artist Account</h4>
+                                        <p>Own your streaming platform. Join an active co-op with your music to get paid fairly and transparently. Govern the development and direction of Resonate. With an Artist Account, you can upload your music for <a href="https://resonate.is/stream2own/" target="_blank">stream2own</a> on the <a href="https://beta.resonate.is/" target="_blank">Resonate Player</a>. An Artist Account is for managing your own music, or on behalf of a band or artist you represent.</p>
+                                        <br>
+                                        <p>Artists earn membership to <a href="https://resonate.is/the-coop/" target="_blank">the co-op</a> by uploading music.</p>
+                                        <!--LINKED BUTTON-->
+                                        <div class="oneMusic-buttons-area mb-100">
+                                        <a href="https://resonate.is/join/#gf_93" class="btn oneMusic-btn m-2">Next<i class="fa fa-angle-double-right"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade show active" id="tab3" role="tabpanel" aria-labelledby="tab--3">
+                                <div class="oneMusic-tab-content">
+                                    <!-- Label Tab Text -->
+                                    <div class="oneMusic-tab-text">
+                                        <h4>Label Account</h4>
+                                        <p>We are currently building a new catalog processing infrastructure for Resonate. Until this project is complete, new signups have been paused for Label Accounts. Email <a href="mailto:members@resonate.is">members@resonate.is</a> to be notified when signup is live again. Thank you for your support.</p>
+                                        <br>
+                                        <p>With a Label Account you will be able to create and manage accounts for your artists. Membership: As a Label, earn membership in <a href="https://resonate.is/the-coop/" target="_blank">the co-op</a> by uploading music to Resonate on behalf of your artists. Membership is automatically earned for artists who have had their music uploaded by their label.</p>
+                                        <br><br><br><br>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- LINKED TO DONATION PG -->
+                        <div class="oneMusic-buttons-area mb-100 align-items-center">
+                            <a href="#" class="btn oneMusic-btn m-2">Support/ Donate to co-op<i class="fa fa-angle-double-right"></i></a>
+                        </div>
+
+                <!-- FAQ SECTION -->
+                <div class="col-12 col-lg-6">
+                    <div class="accordions mb-100" id="accordion" role="tablist" aria-multiselectable="true">
+                        <!-- single accordian area -->
+                        <div class="panel single-accordion">
+                            <h6><a role="button" class="" aria-expanded="true" aria-controls="collapseOne" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">Sign Up FAQ
+                                    <span class="accor-open"><i class="fa fa-plus" aria-hidden="true"></i></span>
+                                    <span class="accor-close"><i class="fa fa-minus" aria-hidden="true"></i></span>
+                                    </a></h6>
+                            <div id="collapseOne" class="accordion-content collapse">
+                                <p><a href="javascript: void(0);" onClick="toggle('q1')">When do I pay for music at Resonate?</a></p>
+                                    <div id="q1" style="display:none;">
+                                        <p>All accounts come with .128 listening credits on the house -- explore up to 64 songs! When these credits are spent, you can purchase more credits via the Resonate Player. Credits are spent from your account automatically as you <a href="https://resonate.is/stream2own/" target="_blank">stream2own</a> on the Resonate Player.</p>
+                                    </div>
+                                <p><a href="javascript: void(0);" onClick="toggle('q2')">Do I automatically become a member of the co-op when I create a Listener Account?</a></p>
+                                    <div id="q2" style="display:none;">
+                                        <p>No, a Listener Account is not a co-op membership in itself. For artists and labels, uploading music earns membership to the co-op. For listeners, co-op membership is earned with an annual €5 contribution to the co-op.</p>
+                                    </div>
+                                <p><a href="javascript: void(0);" onClick="toggle('q3')">I already have a Listener Account. How do I become a member?</a></p>
+                                    <div id="q3" style="display:none;">
+                                        <p>You can become a Listener Member <a href="https://resonate.is/join/membership/" target="_blank">here</a>.</p>
+                                    </div>
+                                <p><a href="javascript: void(0);" onClick="toggle('q4')">Can I manage multiple artists, bands or personas from a single Artist Account?</a></p>
+                                   <div id="q4" style="display:none;">
+                                        <p>No, you can not manage multiple artist profiles from a single Artist Account at this time. This is planned as a future feature.</p>
+                                    </div>
+                                <p><a href="javascript: void(0);" onClick="toggle('q5')">As a small label of a few artists, do I have to wait for Label Account signup to be re-enabled? Can I sign up our artists now by creating and managing multiple Artist Accounts?</a></p>
+                                    <div id="q5" style="display:none;">
+                                        <p>You may set up individual Artist Accounts for each artist and manage those accounts directly. When we re-enable Label signup, we will at that time be able to associate your artists with your new Label Account.</p>
+                                    </div>
+                                <p><a href="javascript: void(0);" onClick="toggle('q6')">Can I change my account type later?</a></p>
+                                    <div id="q6" style="display:none;">
+                                        <p>Yes. To change an existing Listener Account to an Artist Account, visit <a href="https://resonate.is/join/convert-your-listener-to-artist-account/">this page</a>. For changes between other account types, contact <a href="mailto:members@resonate.is">members@resonate.is</a>. Note, changing an account type will not automatically change a previously registered membership.</p>
+                                    </div>
+                                <p><a href="javascript: void(0);" onClick="toggle('q7')">What do members do at Resonate?</a></p>
+                                    <div id="q7" style="display:none;">
+                                        <p>Our members are building a music economy based on fairness, transparency, and community. They govern our decisions, development and share in our material success. Nurturing and developing our platform; members take on many different roles from making music to technology, to business strategy, communication and policy, to the co-op and COMMONS.</p>
+                                    </div>
+                                <p><a href="javascript: void(0);" onClick="toggle('q8')">I don't want another streaming service at the moment but want to help Resonate grow. How can I help?</a></p>
+                                    <div id="q8" style="display:none;">
+                                        <p>We welcome all <a href="https://resonate.is/donate" target="_blank">support and donations</a>!</p>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                    </div>
+                    </div>
+                </div>
+            </div>         
+        </div>
+    </section>
+
+
+<!--LOGIN SECTION************************************** -->
+    <section class="contact-area section-padding-100 bg-img bg-overlay bg-fixed has-bg-img" style="background-image: url(img/bg-img/bg-2.jpg);">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-heading white wow fadeInUp" data-wow-delay="100ms">
+                        <h2>Be Part of the Future of Music</h2>
+                        <p>Real Change Begins with You</p>
+                        <br>
+                        <!--BUTTON-->
+                        <div class="oneMusic-buttons-area mb-100 align-items-center">
+                        <a href="login.html" class="btn oneMusic-btn m-2">Join Now<i class="fa fa-angle-double-right"></i></a>
+                        <!--PAGE LINKS-->
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+<!--FOOTER*******************************************-->
+  <footer class="footer-area">
+        <div class="container">
+            <div class="row d-flex flex-wrap align-items-center">
+                <div class="col-12 col-md-6">
+                    
+                    <!--COPYRIGHT FOR COLORLIB DEVELOPER-->
+                    <p class="copywrite-text"><a href="#">
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></a>
+                        
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+                </div>
+
+                <div class="col-12 col-md-6">
+                    <div class="footer-nav">
+                        <ul>
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">About</a></li>
+                            <li><a href="#">Blog</a></li>
+                            <li><a href="#">Help</a></li>
+                            <li><a href="#">Press</a></li>
+                            <li><a href="#">Team</a></li>
+                            <li><a href="#">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- ##### Footer Area Start ##### -->
+
+    <!-- For clickable text -->
+    <script type="text/javascript">
+        function toggle(obj) {
+            var obj=document.getElementById(obj);
+            if (obj.style.display == "block") obj.style.display = "none";
+            else obj.style.display = "block";
+        }
+    </script>
+
+    <!-- jQuery 3.6.0 -->
+    <script src="{% static 'js/jquery/jquery-3.6.0.js' %}"></script>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="{% static  'js/bootstrap/popper.min.js' %}"></script>
+    <script src="{% static  'js/bootstrap/bootstrap.bundle.min.js' %}"></script>
+
+    <!-- Custom JS Scripts -->
+    <script src="{% static  'js/plugins/plugins.js' %}"></script>
+    <script src="{% static  'js/active.js' %}"></script>
+</body>
+
+</html>

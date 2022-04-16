@@ -110,11 +110,11 @@ ENV/
 env.bak/
 venv.bak/
 
-# Spyder project settings
+# Spyder reso-neo-reso-app settings
 .spyderproject
 .spyproject
 
-# Rope project settings
+# Rope reso-neo-reso-app settings
 .ropeproject
 
 # mkdocs documentation

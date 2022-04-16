@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<div id="graph">
+</div>
+<div class="row">
+    <div class="col-md">
+        <div class="card card-body">
+            <h5>Playlist</h5>
+        </div>
+        <div>
+            <table class="table">
+                <tr>
+                    <th>Playlist Title</th>
+                    <th>Track Title</th>
+
+                </tr>
+
+
+
+                    <tr>
+                        <td>
+                            {% for i in playlist %}
+                            {{i.playlist_title}}<br />
+                            {% endfor %}
+                        </td>
+                        <td>
+                            {% for i in track %}
+                            {{i.track_title}}<br />
+                            {% endfor %}
+                        </td>
+                    </tr>
+
+
+            </table>
+        </div>
+    </div>
+
+</div>
+<style type="text/css">
+    .node {
+        stroke: #222;
+        stroke-width: 1.5px;
+    }
+
+        .node.group {
+            fill: #888;
+        }
+
+        .node.track {
+            fill: #BBB;
+        }
+
+    .link {
+        stroke: #999;
+        stroke-opacity: .6;
+        stroke-width: 1px;
+    }
+</style>
+{% endblock %}
