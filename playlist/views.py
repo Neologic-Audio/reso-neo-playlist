@@ -1,9 +1,11 @@
 from django.shortcuts import render, redirect
 from .models import *
-from .forms import PlayListCountryForm, PlayListForm, PlayListTrackForm, PlayListTagForm, PlayListUserForm
+from .forms import *
 from django.contrib import messages
 from django.http import JsonResponse, HttpResponse
-from neomodel import Traversal, match
+from neomodel import Traversal, match, config
+
+config.DATABASE_URL = 'neo4j+s://neo4j:cgkKfYbz70cLGcTK6B7LnD4l7MjIVtD-hLTuZhTbRHI@712c260b.databases.neo4j.io:7687'
 
 def index(request):
     
@@ -18,24 +20,15 @@ def build_playlist(request):
     playlistuser_form = PlayListUserForm(request.POST or None)
     playlistcountry_form = PlayListCountryForm(request.POST or None)
 
-    if playlist_form.is_valid():
+
+    if playlist_form.is_valid() and playlisttrack_form.is_valid() and playlisttag_form.is_valid() and playlistuser_form.is_valid() and playlistcountry_form.is_valid():
         playlist_form.save()
-    
-    if playlisttrack_form.is_valid():
         playlisttrack_form.save()
-
-    if playlisttag_form.is_valid():
         playlisttag_form.save()
-
-    if playlistuser_form.is_valid():
         playlistuser_form.save()
-
-    if playlistcountry_form.is_valid():
         playlistcountry_form.save()
-
-    
-    
-    
+        merge_nodes (playlist_form, playlisttrack_form, playlisttag_form, playlistuser_form, playlistcountry_form)
+   
     context={
         'playlist_form':playlist_form,
         'playlisttrack_form':playlisttrack_form,
@@ -44,8 +37,6 @@ def build_playlist(request):
         'playlistcountry_form':playlistcountry_form,
             }
 
-
-    messages.success(request, ('Track has been Added'))
     return render(request, "build_playlist.html", context)
 
 def view(request):
@@ -160,11 +151,34 @@ def search(request):
         q = request.GET["q"]
     except KeyError:
         return JsonResponse([])
-
+    count = 0
     #here temporarily, we don't want to do this every time
     for tags_to_update in Tag.nodes.filter(name__icontains=q):
-        tags_to_update.set_top_track()
+        if count <2:
+            tags_to_update.set_top_track()
+            
+        
+    tags = Tag.nodes.filter(name__icontains=q).has(top_track=True)
+    return JsonResponse([{
+        'id': tag.uuid, 
+        'title': tag.name, 
+        'tagline': tag.top_track.single().title, 
+        'released': tag.top_track.single().uuid, 
+        'label': 'movie'
+    } for tag in tags], safe=False)
 
+def suggested_search(request):
+    try:
+        q = request.GET["q"]
+    except KeyError:
+        return JsonResponse([])
+    count = 0
+    #here temporarily, we don't want to do this every time
+    for tags_to_update in Tag.nodes.filter(name__icontains=q):
+        if count <2:
+            tags_to_update.suggested_track()
+            
+        
     tags = Tag.nodes.filter(name__icontains=q).has(top_track=True)
     return JsonResponse([{
         'id': tag.uuid, 
