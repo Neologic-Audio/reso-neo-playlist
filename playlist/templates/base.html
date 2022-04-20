@@ -2,77 +2,116 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
     <!-- Favicon -->
-    <link rel="stylesheet" type="text/css" href="{% static 'img/core-img/icon.png' %}">
-    <link rel="stylesheet"
-          href="https://neo4j-documentation.github.io/developer-resources/language-guides/assets/css/main.css">
+    <link rel="shortcut icon" type="image/png" href="{% static 'img/core-img/icon.png' %}">
 
-    <title>Build Playlist</title>
+    <!--Title-->
+    <title>{% block title %}Homepage - Resonate{% endblock %}</title>
+
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/animate.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/audioplayer.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/classy-nav.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/font-awesome.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/magnific-popup.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/one-music-icon.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/owl.carousel.min.css' %}">
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap/bootstrap.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap/bootstrap.min.css' %}">
+
+
 </head>
 <body>
 
-<div role="navigation" class="navbar navbar-default navbar-static-top">
-    <div class="container">
-        <div class="row">
-            <div class="navbar-header col-sm-2 col-md-2">
-                <div class="navbar-brand">
-                    <div class="brand">Most <a href="https://stream.resonate.coop/releases?type=playlist"
-                                               target="_blank"><b>Playlisted</b></a> Tracks per Tag
-                    </div>
-                </div>
-
-            </div>
-            <div class="navbar-header col-sm-2 col-md-2">
-                <div class="navbar-brand">
-                    <div class="brand"><a href="{% url 'build_playlist' %}" target="_blank"><b>Build</b></a> Playlist
-                    </div>
-                </div>
-
-            </div>
-            <div class="navbar-header col-sm-2 col-md-2">
-                <div class="navbar-brand">
-                    <div class="brand"><a href="{% url 'view_playlist' %}" target="_blank"><b>View</b></a> Playlist
-                    </div>
-                </div>
-
-            </div>
-            <div class="navbar-header col-sm-2 col-md-2">
-                <div class="navbar-brand">
-                    <div class="brand"><a href="{% url 'about' %}" target="_blank"><b>About</b></a> Us</div>
-                </div>
-
-            </div>
-            <div class="navbar-header col-sm-2 col-md-2">
-                <div class="navbar-brand">
-                    <div class="brand"><a href="{% url 'contact' %}" target="_blank"><b>Contact</b></a> Us</div>
-                </div>
-
-            </div>
-        </div>
-    </div>
-</div>
-
 <div class="container">
     {% csrf_token %}
+
     {% block content %}
+
     {% endblock %}
 </div>
 
+ <!--LOGIN SECTION************************************** -->
+    <section class="contact-area section-padding-100 bg-img bg-overlay bg-fixed has-bg-img"
+             style="background-image: url({% static 'img/bg-img/bg-2.jpg' %});">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-heading white wow fadeInUp" data-wow-delay="100ms">
+                        <h2>Be Part of the Future of Music</h2>
+                        <p>Real Change Begins with You</p>
+                        <br>
+                        <!--BUTTON-->
+                        <div class="oneMusic-buttons-area mb-100 align-items-center">
+                            <a href="https://resonate.is/join/" class="btn oneMusic-btn m-2">
+                                Join Now<i class="fa fa-angle-double-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Area Start********************************** -->
+    <footer class="footer-area">
+        <div class="container">
+            <div class="row d-flex flex-wrap align-items-center">
+                <div class="col-12 col-md-6">
+
+                    <!--IMAGE HERE
+                    <a href="index.html" class="nav-brand"><img src="img/core-img/resonate.png" alt=""></a><br>
+                    <br>-->
+                    <!--COPYRIGHT FOR COLORLIB DEVELOPER-->
+                    <p class="copywrite-text">
+                        <a href="#">
+                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                            Copyright &copy;
+                            <script>document.write(new Date().getFullYear());</script>
+                            All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by
+                            <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        </a></p>
+                </div>
+
+                <div class="col-12 col-md-6">
+                    <div class="footer-nav">
+                        <ul>
+                            <li><a href="{% url 'index' %}">Home</a></li>
+                            <li><a href="{% url 'about' %}">About</a></li>
+                            <li><a href="{% url 'blog' %}">Blog</a></li>
+                            <li><a href="{% url 'build_playlist' %}">Create</a></li>
+                            <li><a href="{% url 'view_playlist' %}">View</a></li>
+                            <li><a href="{% url 'team' %}">Team</a></li>
+                            <li><a href="{% url 'contact' %}">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- ##### Footer Area Start ##### -->
     <!-- jQuery 3.6.0 -->
     <script src="{% static 'js/jquery/jquery-3.6.0.js' %}"></script>
 
     <!-- Bootstrap core JavaScript -->
-    <script src="{% static 'js/bootstrap/popper.min.js' %}"></script>
-    <script src="{% static 'js/bootstrap/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static  'js/bootstrap/popper.min.js' %}"></script>
+    <script src="{% static  'js/bootstrap/bootstrap.bundle.min.js' %}"></script>
 
     <!-- Custom JS Scripts -->
-    <script src="{% static 'js/plugins/plugins.js' %}"></script>
-    <script src="{% static 'js/active.js' %}"></script>
+    <script src="{% static  'js/plugins/plugins.js' %}"></script>
+    <script src="{% static  'js/active.js' %}"></script>
+    <!-- jQuery 3.6.0 -->
+    <script src="{% static 'js/jquery/jquery-3.6.0.js' %}"></script>
 
 </body>
 </html>
