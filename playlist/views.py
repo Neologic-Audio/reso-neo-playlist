@@ -14,6 +14,12 @@ def index(request):
     })
 
 def build_playlist(request):
+
+    # - user with id maybe or name? 
+    # some way to ID my playlist 
+    # some way to ID my track
+
+
     playlist_form = PlayListForm(request.POST or None)
     playlisttrack_form = PlayListTrackForm(request.POST or None)
     playlisttag_form = PlayListTagForm(request.POST or None)
@@ -27,6 +33,8 @@ def build_playlist(request):
         playlisttag_form.save()
         playlistuser_form.save()
         playlistcountry_form.save()
+        print(playlistuser_form)
+
         merge_nodes (playlist_form, playlisttrack_form, playlisttag_form, playlistuser_form, playlistcountry_form)
    
     context={

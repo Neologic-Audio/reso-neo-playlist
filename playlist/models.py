@@ -173,6 +173,8 @@ class Country(DjangoNode):
 
 
 def merge_nodes (playlist, track, tag, user, country):
+    print(playlist)
+    
     playlist = PlayList().save()
 
     track = PlayListTracks().save()
