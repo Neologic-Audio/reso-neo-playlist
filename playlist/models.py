@@ -127,7 +127,11 @@ class Tag(DjangoNode):
         self.cypher(query)
 
     def suggested_track(self):
+
+        # delete related_to relationship
         self.related_to.disconnect_all()
+
+        #create related_to relationships
         query = f'''
             MATCH (tag:Tag)
             WHERE tag.name='{self.name}'
@@ -137,6 +141,17 @@ class Tag(DjangoNode):
             WITH tag as tag, track as track
             LIMIT 1
             MERGE (tag)-[:RELATED]->(track)
+            '''
+        self.cypher(query)
+
+        # return 1 related track
+        query = f'''
+                   MATCH (tag:Tag)
+            WHERE tag.name='{self.name}'
+            WITH tag
+            MATCH (tag)-[:RELATED]->(track)
+            RETURN track
+            LIMIT 1
             '''
         self.cypher(query)
 
