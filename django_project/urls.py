@@ -23,9 +23,9 @@ from playlist import views
 
 urlpatterns = [
     # Uncomment the next line to enable the admin:
-    path('', views.index, name='index'),
     path('search', views.search),
+    path('suggested_search', views.suggested_search),
     path('graph', views.graph),
     path('admin/', admin.site.urls),
     path('', include('playlist.urls')),
-]
+    ]

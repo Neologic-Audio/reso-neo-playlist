@@ -80,109 +80,108 @@
                     </table>
                 </div>
             </div>
-        
-        <div class="col-md-6">
-            <div class="panel panel-default">
-                <div class="panel-heading" id="title"><b><a id="listen" target="_blank" href="https://stream.resonate.coop/track/20786">Listen to the full track on Resonate</a></b></div>
-                <iframe style="margin:0;border:none;width:100%;height:600px;border: 1px solid #000;" id="player"
-                        src="https://stream.resonate.coop/embed/track/20786"></iframe>
-                This unofficial side project uses <b><a href="https://stream.resonate.coop/releases?type=playlist" target="_blank">playlist data</a></b> from Resonate. Join as a <b><a href="https://resonate.is/join/" target="_blank">listener</a></b>, or check out the <b><a href="https://github.com/whatSocks/reso-tag-charts" target="_blank">code</a></b>.
+
+            <div class="col-md-6">
+                <div class="panel panel-default">
+                    <div class="panel-heading" id="title"><b><a id="listen" target="_blank" href="https://stream.resonate.coop/track/20786">Listen to the full track on Resonate</a></b></div>
+                    <iframe style="margin:0;border:none;width:100%;height:600px;border: 1px solid #000;" id="player"
+                            src="https://stream.resonate.coop/embed/track/20786"></iframe>
+                    This unofficial side project uses <b><a href="https://stream.resonate.coop/releases?type=playlist" target="_blank">playlist data</a></b> from Resonate. Join as a <b><a href="https://resonate.is/join/" target="_blank">listener</a></b>, or check out the <b><a href="https://github.com/whatSocks/reso-tag-charts" target="_blank">code</a></b>.
+                </div>
             </div>
         </div>
-        </div>
-     </div>
-        <style type="text/css">
-            .node {
-                stroke: #222;
-                stroke-width: 1.5px;
+    </div>
+    <style type="text/css">
+        .node {
+            stroke: #222;
+            stroke-width: 1.5px;
+        }
+
+            .node.group {
+                fill: #888;
             }
 
-                .node.group {
-                    fill: #888;
-                }
-
-                .node.track {
-                    fill: #BBB;
-                }
-
-            .link {
-                stroke: #999;
-                stroke-opacity: .6;
-                stroke-width: 1px;
+            .node.track {
+                fill: #BBB;
             }
-        </style>
 
-        <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-        <script src="https://d3js.org/d3.v3.min.js" type="text/javascript"></script>
-        <script type="text/javascript">
-            $(function () {
-                function showTrack(released) {
-                    document.getElementById("player").src = "https://stream.resonate.coop/embed/track/" + released;
-                    document.getElementById("listen").href = "https://stream.resonate.coop/track/" + released;
-                }
-                function search() {
-                    const query = $("#search").find("input[name=search]").val();
-                    $.get("/search?q=" + encodeURIComponent(query),
-                        function (data) {
-                            const t = $("table#results tbody").empty();
-                            if (!data || data.length == 0) return;
-                            data.forEach(function (track) {
-                                $("<tr><td class='track'>" + track.title + "</td><td>" + track.tagline + "</td></tr>"
-                                ).appendTo(t)
-                                    .click(function () { showTrack(track.released); })
-                            });
-                            showTrack(data[0].released);
-                        }, "json");
-                    return false;
-                }
+        .link {
+            stroke: #999;
+            stroke-opacity: .6;
+            stroke-width: 1px;
+        }
+    </style>
 
-                $("#search").submit(search);
-                search();
-            })
-        </script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="https://d3js.org/d3.v3.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(function () {
+            function showTrack(released) {
+                document.getElementById("player").src = "https://stream.resonate.coop/embed/track/" + released;
+                document.getElementById("listen").href = "https://stream.resonate.coop/track/" + released;
+            }
+            function search() {
+                const query = $("#search").find("input[name=search]").val();
+                $.get("/search?q=" + encodeURIComponent(query),
+                    function (data) {
+                        const t = $("table#results tbody").empty();
+                        if (!data || data.length == 0) return;
+                        data.forEach(function (track) {
+                            $("<tr><td class='track'>" + track.title + "</td><td>" + track.tagline + "</td></tr>"
+                            ).appendTo(t)
+                                .click(function () { showTrack(track.released); })
+                        });
+                        showTrack(data[0].released);
+                    }, "json");
+                return false;
+            }
 
-        <script type="text/javascript">
-            const width = 800, height = 800;
+            $("#search").submit(search);
+            search();
+        })
+    </script>
 
-            const force = d3.layout.force()
-                .charge(-200).linkDistance(30).size([width, height]);
+    <script type="text/javascript">
+        const width = 800, height = 800;
 
-            const svg = d3.select("#graph").append("svg")
-                .attr("width", "100%").attr("height", "100%")
-                .attr("pointer-events", "all");
+        const force = d3.layout.force()
+            .charge(-200).linkDistance(30).size([width, height]);
 
-            d3.json("/graph", function (error, graph) {
-                if (error) return;
+        const svg = d3.select("#graph").append("svg")
+            .attr("width", "100%").attr("height", "100%")
+            .attr("pointer-events", "all");
 
-                force.nodes(graph.nodes).links(graph.links).start();
+        d3.json("/graph", function (error, graph) {
+            if (error) return;
 
-                const link = svg.selectAll(".link")
-                    .data(graph.links).enter()
-                    .append("line").attr("class", "link");
+            force.nodes(graph.nodes).links(graph.links).start();
 
-                const node = svg.selectAll(".node")
-                    .data(graph.nodes).enter()
-                    .append("circle")
-                    .attr("class", function (d) { return "node " + d.label })
-                    .attr("r", 10)
-                    .call(force.drag);
+            const link = svg.selectAll(".link")
+                .data(graph.links).enter()
+                .append("line").attr("class", "link");
 
-                // html title attribute
-                node.append("title")
-                    .text(function (d) { return d.title; })
+            const node = svg.selectAll(".node")
+                .data(graph.nodes).enter()
+                .append("circle")
+                .attr("class", function (d) { return "node " + d.label })
+                .attr("r", 10)
+                .call(force.drag);
 
-                // force feed algo ticks
-                force.on("tick", function () {
-                    link.attr("x1", function (d) { return d.source.x; })
-                        .attr("y1", function (d) { return d.source.y; })
-                        .attr("x2", function (d) { return d.target.x; })
-                        .attr("y2", function (d) { return d.target.y; });
+            // html title attribute
+            node.append("title")
+                .text(function (d) { return d.title; })
 
-                    node.attr("cx", function (d) { return d.x; })
-                        .attr("cy", function (d) { return d.y; });
-                });
+            // force feed algo ticks
+            force.on("tick", function () {
+                link.attr("x1", function (d) { return d.source.x; })
+                    .attr("y1", function (d) { return d.source.y; })
+                    .attr("x2", function (d) { return d.target.x; })
+                    .attr("y2", function (d) { return d.target.y; });
+
+                node.attr("cx", function (d) { return d.x; })
+                    .attr("cy", function (d) { return d.y; });
             });
-        </script>
+        });
+    </script>
 </body>
 </html>
-

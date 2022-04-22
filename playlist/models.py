@@ -1,7 +1,9 @@
 from django.db import models
 from django_neomodel import DjangoNode
-from neomodel import db as db, ArrayProperty, StringProperty, IntegerProperty, Relationship, RelationshipFrom, \
+from neomodel import db as db, config, ArrayProperty, StringProperty, IntegerProperty, Relationship, RelationshipFrom, \
     RelationshipTo, StructuredRel, UniqueIdProperty, StructuredNode, DateTimeProperty
+
+config.DATABASE_URL = 'neo4j+s://neo4j:cgkKfYbz70cLGcTK6B7LnD4l7MjIVtD-hLTuZhTbRHI@712c260b.databases.neo4j.io:7687'
 
 
 class PlayList(DjangoNode):
@@ -13,13 +15,6 @@ class PlayList(DjangoNode):
     has_track = RelationshipTo('PlayListTracks', 'HAS_TRACK')
     owns = RelationshipFrom('PlayListUser', 'OWNS')
 
-    def merge_nodes(self):
-        query = '''
-            MERGE (tag:PlayListTag)<-[:HAS_TAG]-(tg:PlayList)-[:HAS_TRACK]->(track:PlayListTracks)
-            MERGE (tg)<-[:OWNS]-(u:PlayListUser) '''
-
-        self.cypher(query)
-
     def import_playlists(self):
         print("I'm in import_playlists")
         query = f'''RETURN 1
@@ -28,7 +23,7 @@ class PlayList(DjangoNode):
         self.cypher(query)
 
     class Meta:
-        app_label = 'tracks'
+        app_label = 'playlist'
 
 
 class PlayListTracks(DjangoNode):
@@ -38,7 +33,7 @@ class PlayListTracks(DjangoNode):
     has_track = RelationshipFrom('PlayListTracks', 'HAS_TRACK')
 
     class Meta:
-        app_label = 'tracks'
+        app_label = 'playlist'
 
 
 class PlayListTag(DjangoNode):
@@ -65,7 +60,7 @@ class PlayListTag(DjangoNode):
         self.cypher(query)
 
     class Meta:
-        app_label = 'tracks'
+        app_label = 'playlist'
 
 
 class PlayListUser(DjangoNode):
@@ -75,7 +70,7 @@ class PlayListUser(DjangoNode):
     owns = RelationshipTo('PlayList', 'OWNS')
 
     class Meta:
-        app_label = 'tracks'
+        app_label = 'playlist'
 
 
 class PlayListCountry(DjangoNode):
@@ -85,7 +80,7 @@ class PlayListCountry(DjangoNode):
     in_country = RelationshipFrom('PlayListUser', 'IN_COUNTRY')
 
     class Meta:
-        app_label = 'tracks'
+        app_label = 'playlist'
 
 
 class TrackGroup(DjangoNode):
@@ -97,7 +92,7 @@ class TrackGroup(DjangoNode):
     has_track = RelationshipTo('Track', 'HAS_TRACK')
     owns = RelationshipFrom('RUser', 'OWNS')
 
-    def import_playlists():
+    def import_playlists(self):
         print("I'm in import_playlists")
         query = f'''RETURN 1
 
@@ -129,6 +124,29 @@ class Tag(DjangoNode):
             WITH tag as tag, track as track, count(DISTINCT u) as rank
             LIMIT 1
             MERGE (tag)-[:TOP_TRACK]->(track)
+            '''
+        self.cypher(query)
+
+    def suggested_track(self):
+        self.related_to.disconnect_all()
+        query = f'''
+            MATCH (tag:Tag)
+            WHERE tag.name='{self.name}'
+            WITH tag
+            MATCH (tag:Tag)<-[:HAS_TAG]-(tg:TrackGroup)-[:HAS_TRACK]->(track:Track)
+            MATCH (tg)<-[:OWNS]-(u:RUser) 
+            WITH tag as tag, track as track
+            LIMIT 5
+            MERGE (tag)-[:RELATED]->(track)
+            '''
+        self.cypher(query)
+        query = f'''
+            MATCH (tag:Tag)
+            WHERE tag.name='{self.name}'
+            WITH tag
+            MATCH (tag)-[:RELATED]->(track)
+            RETURN track
+            LIMIT 5
             '''
         self.cypher(query)
 
@@ -166,5 +184,27 @@ class Country(DjangoNode):
         app_label = 'tracks'
 
 
-# a = PlayList()
-# a.merge_nodes()
+def merge_nodes(playlist, track, tag, user, country):
+    playlist = PlayList().save()
+
+    track = PlayListTracks().save()
+
+    tag = PlayListTag().save()
+
+    user = PlayListUser().save()
+
+    country = PlayListCountry().save()
+
+    playlist = PlayList().save()
+
+    playlist.has_track.connect(track)
+
+    playlist.has_tag.connect(tag)
+
+    user.owns.connect(playlist)
+
+    country.in_country.connect(user)
+
+
+
+

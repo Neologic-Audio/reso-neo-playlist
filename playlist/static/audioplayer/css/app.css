@@ -1,3 +1,4 @@
+{% load static %}
 /*
   1. Base
 */
@@ -116,7 +117,7 @@ div#list-screen {
         cursor: pointer;
         width: 15px;
         height: 17px;
-        background-image: url("../img/small-previous.svg");
+        background-image: url('img/small-previous.svg');
         background-repeat: no-repeat;
         float: left;
         margin-right: 15px;

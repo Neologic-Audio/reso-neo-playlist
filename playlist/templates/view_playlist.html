@@ -3,42 +3,118 @@
 {% block content %}
 
 
-<div id="graph">
-</div>
-<div class="row">
-    <div class="col-md">
-        <div class="card card-body">
-            <h5>Playlist</h5>
+
+
+
+<div class="container">
+    <div class="row">
+
+
+        <div class="col-md-4">
+            <a><center></center>Search For Tracks By Tag</a>
+            <ul class="nav navbar-nav">
+                <li>
+                    <form role="search" class="navbar-form" id="search" >
+                        <div class="form-group">
+                            <input type="text" value="pop" placeholder="Search by Tag" class="form-control" name="search">
+                        </div>
+                        <input type='submit' value='Search' />
+                    </form>
+                </li>
+            </ul>
+            <br />
+
+
+
         </div>
-        <div>
-            <table class="table">
-                <tr>
-                    <th>Playlist Title</th>
-                    <th>Track Title</th>
+        <div class="col-md-4 ">
+            <table id="results" class="table table-striped table-hover">
 
-                </tr>
-
-
-
+                <thead>
                     <tr>
-                        <td>
-                            {% for i in playlist %}
-                            {{i.playlist_title}}<br />
-                            {% endfor %}
-                        </td>
-                        <td>
-                            {% for i in track %}
-                            {{i.track_title}}<br />
-                            {% endfor %}
-                        </td>
+                        <th>Tag</th>
+                        <th>Most Playlisted Track</th>
                     </tr>
 
+                </thead>
+                <tbody>
+                </tbody>
+
+            </table>
+        </div>
+        <div class="col-md-4 ">
+            <table id="results2" class="table table-striped table-hover">
+
+                <thead>
+                    <tr>
+
+                        <th><center>Suggested Tracks</center></th>
+                    </tr>
+
+                </thead>
+                <tbody>
+                </tbody>
 
             </table>
         </div>
     </div>
-
 </div>
+
+
+
+<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="https://d3js.org/d3.v3.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+    $(function () {
+        function showTrack(released) {
+            document.getElementById("player").src = "https://stream.resonate.coop/embed/track/" + released;
+            document.getElementById("listen").href = "https://stream.resonate.coop/track/" + released;
+
+        }
+        function search() {
+            const query = $("#search").find("input[name=search]").val();
+            $.get("/search?q=" + encodeURIComponent(query),
+                function (data) {
+                    const t = $("table#results tbody").empty();
+                    if (!data || data.length == 0) return;
+                    data.forEach(function (track) {
+                        $("<tr><td class='track'>" + track.title + "</td><td>" + track.tagline + "</td></tr>"
+                        ).appendTo(t)
+                            .click(function () { showTrack(track.released); })
+
+                    });
+                    showTrack(data[0].released);
+                }, "json");
+            return false;
+        }
+
+        $("#search").submit(search);
+        search();
+
+        function search1() {
+            const query = $("#search").find("input[name=search]").val();
+            $.get("/suggested_search?q=" + encodeURIComponent(query),
+                function (data) {
+                    const t = $("table#results2 tbody").empty();
+                    if (!data || data.length == 0) return;
+                    data.forEach(function (track) {
+                        $("<tr><td class='track'>" + track.title + "</td><td>" + track.tagline + "</td></tr>"
+                        ).appendTo(t)
+                            .click(function () { showTrack(track.released); })
+
+                    });
+                    showTrack(data[0].released);
+                }, "json");
+            return false;
+        }
+
+        $("#search").submit(search1);
+        search1();
+
+    })
+</script>
+
+
 <style type="text/css">
     .node {
         stroke: #222;
@@ -59,4 +135,5 @@
         stroke-width: 1px;
     }
 </style>
+
 {% endblock %}
