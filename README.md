@@ -87,6 +87,9 @@ Here's a blank template to get started: To avoid retyping too much info.
 	  ```sh
 	  python --version
 	  ```
+* Django 3.2.5
+* Neo4j Database
+
 #### Create your Neo4j Database
 
 You can manage your own database locally using [Neo4j Desktop](https://neo4j.com/download-center/#desktop), or go to [Neo4j Aura](https://neo4j.com/cloud/aura/) for a fully managed cloud database.
