@@ -151,11 +151,9 @@ def search(request):
         q = request.GET["q"]
     except KeyError:
         return JsonResponse([])
-    count = 0
     #here temporarily, we don't want to do this every time
     for tags_to_update in Tag.nodes.filter(name__icontains=q):
-        if count <2:
-            tags_to_update.set_top_track()
+        tags_to_update.set_top_track()
             
         
     tags = Tag.nodes.filter(name__icontains=q).has(top_track=True)
@@ -172,14 +170,13 @@ def suggested_search(request):
         q = request.GET["q"]
     except KeyError:
         return JsonResponse([])
-    count = 0
+    
     #here temporarily, we don't want to do this every time
     for tags_to_update in Tag.nodes.filter(name__icontains=q):
-        if count <2:
-            tags_to_update.suggested_track()
+        tags_to_update.suggested_track()
             
         
-    tags = Tag.nodes.filter(name__icontains=q).has(top_track=True)
+    tags = Tag.nodes.filter(name__icontains=q).has(related_from=True)
     return JsonResponse([{
         'id': tag.uuid, 
         'title': tag.name, 

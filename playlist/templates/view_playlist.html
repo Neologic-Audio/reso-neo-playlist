@@ -11,12 +11,12 @@
 
 
         <div class="col-md-4">
-            <a>Search For A Track To Add To Playlist</a>
+            <a><center></center>Search For Tracks By Tag</a>
             <ul class="nav navbar-nav">
                 <li>
                     <form role="search" class="navbar-form" id="search" >
                         <div class="form-group">
-                            <input type="text" value="drone" placeholder="Search by Tag" class="form-control" name="search">
+                            <input type="text" value="pop" placeholder="Search by Tag" class="form-control" name="search">
                         </div>
                         <input type='submit' value='Search' />
                     </form>
@@ -108,11 +108,13 @@
             return false;
         }
 
-        $("#search2").submit(search);
+        $("#search").submit(search1);
         search1();
 
     })
 </script>
+
+
 <style type="text/css">
     .node {
         stroke: #222;

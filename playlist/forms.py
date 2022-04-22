@@ -1,4 +1,5 @@
 from django.forms import ModelForm
+from django_neomodel import DjangoNode
 from .models import PlayList, PlayListTracks, PlayListTag, PlayListUser, PlayListCountry
 from neomodel import *
 

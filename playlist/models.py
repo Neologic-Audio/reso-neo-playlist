@@ -122,7 +122,6 @@ class Tag(DjangoNode):
             WITH tag as tag, track as track, count(DISTINCT u) as rank
             LIMIT 1
             MERGE (tag)-[:TOP_TRACK]->(track)
-            
             '''
         self.cypher(query)
 
@@ -135,8 +134,17 @@ class Tag(DjangoNode):
             MATCH (tag:Tag)<-[:HAS_TAG]-(tg:TrackGroup)-[:HAS_TRACK]->(track:Track)
             MATCH (tg)<-[:OWNS]-(u:RUser) 
             WITH tag as tag, track as track
-            LIMIT 1
+            LIMIT 5
             MERGE (tag)-[:RELATED]->(track)
+            '''
+        self.cypher(query)
+        query = f'''
+            MATCH (tag:Tag)
+            WHERE tag.name='{self.name}'
+            WITH tag
+            MATCH (tag)-[:RELATED]->(track)
+            RETURN track
+            LIMIT 5
             '''
         self.cypher(query)
 
