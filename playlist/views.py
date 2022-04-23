@@ -161,7 +161,7 @@ def search(request):
         'title': tag.name,
         'tagline': tag.top_track.single().title,
         'released': tag.top_track.single().uuid,
-        'label': 'movie'
+        'label': 'track'
     } for tag in tags], safe=False)
 
 
@@ -181,7 +181,7 @@ def suggested_search(request):
         'title': tag.name,
         'tagline': tag.top_track.single().title,
         'released': tag.top_track.single().uuid,
-        'label': 'movie'
+        'label': 'track'
     } for tag in tags], safe=False)
 
 
