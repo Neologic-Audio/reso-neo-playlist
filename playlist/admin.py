@@ -4,15 +4,18 @@ from neomodel import db as db
 
 from .models import TrackGroup, Tag, Track, RUser, Country
 
+
 class RUserAdmin(dj_admin.ModelAdmin):
-    list_display = ('uuid','uuid')
+    list_display = ('uuid', 'uuid')
+
+
 neo_admin.register(RUser, RUserAdmin)
 
-class TrackGroupAdmin(dj_admin.ModelAdmin):
-    list_display = ('title','type','uuid')
-    ordering = ['title']
-    actions = ['import_playlists','import_trackgroups']
 
+class TrackGroupAdmin(dj_admin.ModelAdmin):
+    list_display = ('title', 'type', 'uuid')
+    ordering = ['title']
+    actions = ['import_playlists', 'import_trackgroups']
 
     def import_tracks(self):
         tracks_query = '''
@@ -78,12 +81,14 @@ class TrackGroupAdmin(dj_admin.ModelAdmin):
 
     import_trackgroups.short_description = 'Import Pg 1 (ignores queryset)'
 
+
 neo_admin.register(TrackGroup, TrackGroupAdmin)
 
+
 class TagAdmin(dj_admin.ModelAdmin):
-    list_display = ('name','tg_count','uuid')
+    list_display = ('name', 'tg_count', 'uuid')
     ordering = ['name']
-    actions = ['import_tags','set_tg_count']
+    actions = ['import_tags', 'set_tg_count']
 
     # this is a hack, do it in code not cypher to better handle errors
     def import_tags(self, response, queryset):
@@ -141,13 +146,18 @@ class TagAdmin(dj_admin.ModelAdmin):
 
 neo_admin.register(Tag, TagAdmin)
 
+
 class TrackAdmin(dj_admin.ModelAdmin):
-    list_display = ('title','uuid')
+    list_display = ('title', 'uuid')
     ordering = ['title']
+
+
 neo_admin.register(Track, TrackAdmin)
 
+
 class CountryAdmin(dj_admin.ModelAdmin):
-    list_display = ('name','uuid')
+    list_display = ('name', 'uuid')
     ordering = ['name']
+
 
 neo_admin.register(Country, CountryAdmin)

@@ -3,158 +3,237 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="description" content="">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <!-- Title -->
-    <title>About - Resonate</title>
 
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Your description">
+    <meta name="author" content="Your name">
+
+    <!-- OG Meta Tags to improve the way the post looks when you share the page on Facebook, Twitter, LinkedIn -->
+    <meta property="og:site_name" content=""/> <!-- website name -->
+    <meta property="og:site" content=""/> <!-- website link -->
+    <meta property="og:title" content=""/> <!-- title shown in the actual shared post -->
+    <meta property="og:description" content=""/> <!-- description shown in the actual shared post -->
+    <meta property="og:image" content=""/> <!-- image link, make sure it's jpg -->
+    <meta property="og:url" content=""/> <!-- where do you want your post to link to -->
+    <meta name="twitter:card" content="summary_large_image"> <!-- to have large image post format in Twitter -->
+
+    <!-- Webpage Title -->
+    <title> Playlist </title>
     <!-- Favicon -->
-    <link href="{% static 'img/core-img/icon.png' %}" rel="stylesheet">
+    <link rel="icon" href="{% static 'img/core-img/icon.png' %}">
 
-    <!-- Custom Stylesheet -->
-    <link href="{% static 'css/style.css' %}" rel="stylesheet">
-    <link href="{% static 'css/animate.css' %}" rel="stylesheet">
-    <link href="{% static 'css/audioplayer.css' %}" rel="stylesheet">
-    <link href="{% static 'css/classy-nav.css' %}" rel="stylesheet">
-    <link href="{% static 'css/font-awesome.min.css' %}" rel="stylesheet">
-    <link href="{% static 'css/magnific-popup.css' %}" rel="stylesheet">
-    <link href="{% static 'css/one-music-icon.css' %}" rel="stylesheet">
-    <link href="{% static 'css/owl.carousel.min.css' %}" rel="stylesheet">
+    <!-- Styles -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&family=Poppins:wght@600&display=swap"
+          rel="stylesheet">
 
     <!-- Bootstrap core CSS -->
-    <link href="{% static 'css/bootstrap/bootstrap.css' %}" rel="stylesheet">
-    <link href="{% static 'css/bootstrap/bootstrap.min.css' %}" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap/bootstrap.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap/bootstrap.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/fontawesome-all.css' %}">
+
 </head>
-<body>
-    <!-- Preloader -->
-    <div class="preloader d-flex align-items-center justify-content-center">
-        <div class="lds-ellipsis">
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-    </div>
 
-    <!-- ##### Header Area Start ##### -->
-    <section class="breadcumb-area bg-img bg-overlay" style="background-image: url({% static 'img/bg-img/breadcumb3.jpg' %});">
-        <div class="bradcumbContent">
-            <h2>Create and Explore</h2>
-        </div>
-    </section>
-    <header class="header-area">
-        <!-- Navbar Area -->
-        <div class="oneMusic-main-menu">
-            <div class="classy-nav-container breakpoint-off">
+<body data-spy="scroll" data-target=".fixed-top">
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg fixed-top navbar-dark">
+    <div class="container">
+
+        <!-- Image Logo -->
+        <a class="navbar-brand logo-image" href="index.html"><img src="{% static 'img/logo.svg' %}"
+                                                                  alt="alternative"></a>
+
+        <button class="navbar-toggler p-0 border-0" type="button" data-toggle="offcanvas">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'index' %}">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'player' %}">Listen</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'about' %}">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'support' %}">Support</a>
+                </li>
+            </ul>
+            <span class="nav-item social-icons">
+                    <span class="fa-stack">
+                        <a href="https://github.com/Neologic-Audio">
+                            <i class="fas fa-circle fa-stack-2x"></i>
+                            <i class="fab fa-github fa-stack-1x"></i>
+                        </a>
+                    </span>
+                </span>
+        </div> <!-- end of navbar-collapse -->
+    </div> <!-- end of container -->
+</nav> <!-- end of navbar -->
+<!-- end of navigation -->
+
+
+<!-- Header -->
+<header class="ex-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-10 offset-xl-1">
+                <h1>Project Details</h1>
+            </div> <!-- end of col -->
+        </div> <!-- end of row -->
+    </div> <!-- end of container -->
+</header> <!-- end of ex-header -->
+<!-- end of header -->
+
+
+<!-- Basic -->
+<div class="ex-basic-1 pt-4">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-10 offset-xl-1">
+
                 <div class="container">
-                    <!-- Menu -->
-                    <nav class="classy-navbar justify-content-between" id="oneMusicNav">
-
-                        <!-- LOGO IN UPPER LEFT CORNER-->
-                        <!-- Navbar Toggler -->
-                        <div class="classy-navbar-toggler">
-                            <span class="navbarToggler"><span></span><span></span><span></span></span>
-                        </div>
-
-                        <!-- Menu -->
-                        <div class="classy-menu">
-
-                            <!-- Close Button -->
-                            <div class="classycloseIcon">
-                                <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
-                            </div>
-
-                            <!-- NAG HERE****************************************** -->
-                            <div class="classynav">
-                                <ul>
-                                    <li><a href="{% url 'index' %}">Home</a></li>
-
-                                    <li><a href="{% url 'about' %}">About</a></li>
-
-                                    <li><a href="{% url 'contact' %}">Contact</a></li>
-
-                                    <li><a href="login.html" id="loginBtn">Login / Register</a></li>
-                                </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </nav>
+                    {% csrf_token %}
+                    {% block content %}
+                    {% endblock %}
                 </div>
-            </div>
-        </div>
-    </header>
+
+            </div> <!-- end of col -->
+        </div> <!-- end of row -->
+    </div> <!-- end of container -->
+</div> <!-- end of ex-basic-1 -->
+<!-- end of basic -->
+
+
+<!-- Basic -->
+<div class="ex-basic-1 pt-3 pb-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-10 offset-xl-1">
+                <p class="mb-5">Features include an eye catching morphtext in the header, details lightbox for more
+                    details information, statistics numbers for important values, card slider for testimonials, image
+                    slider for customer logos and working forms that will enable your landing page to provide leads in
+                    order to achieve your marketing goals.</p>
+
+                <h2 class="mb-4">New elements added to the package</h2>
+                <img class="img-fluid mb-5" src="images/project-details-small.jpg" alt="alternative">
+                <p>Some useful extra pages are bundled with the template lik article details, terms conditions and
+                    privacy policy which can be customized as per your requirements. Riga has an impactful dark style
+                    design combined with warm colors and angular background shapes with the unique goal of making your
+                    mobile app stand out.</p>
+                <p class="mb-5">Leon is an easy to customize landing page HTML template built with Bootstrap for
+                    promoting mobile apps to the online audience and making visitors download them from app stores. This
+                    template is built with HTML, CSS and Bootstrap to ensure the highest flexibility for all users.</p>
+                <div class="text-box mb-5">
+                    <h3>Visitors love a beautiful and efficient website</h3>
+                    <p>All designers, developers and tech-savvy people will be able to customize this template with
+                        basic web coding skills. Among the features you will find details lightbox for more details
+                        information, tabbed content for feature details, video lightbox, card slider for testimonials,
+                        statistics numbers, image slider for customer logos, dropdown navigation and useful extra pages
+                        for article details, terms.</p>
+                </div> <!-- end of text-box -->
+                <p class="mb-4">Together with touches of call to action green, the overall landing page design will
+                    showcase your app beautifully and will help with convincing visitors to download it from the app
+                    stores. Orange and gray hues with one color backgrounds to maximize the impact of your content image
+                    slider for customer logos and working forms.</p>
+                <ul class="list-unstyled li-space-lg mb-5">
+                    <li class="media">
+                        <i class="fas fa-square"></i>
+                        <div class="media-body"><strong>Card slider</strong> for testimonials, statistics numbers for
+                            important values image slider for logos
+                        </div>
+                    </li>
+                    <li class="media">
+                        <i class="fas fa-square"></i>
+                        <div class="media-body"><strong>Dropdown navigation</strong> and useful extra pages for article
+                            details, terms conditions and privacy policy
+                        </div>
+                    </li>
+                    <li class="media">
+                        <i class="fas fa-square"></i>
+                        <div class="media-body"><strong>Clean light design</strong> mixing purple, orange and gray hues
+                            with one color backgrounds to maximize
+                        </div>
+                    </li>
+                    <li class="media">
+                        <i class="fas fa-square"></i>
+                        <div class="media-body"><strong>Together with</strong> touches of call to action green, the
+                            overall landing page design will showcase your app
+                        </div>
+                    </li>
+                    <li class="media">
+                        <i class="fas fa-square"></i>
+                        <div class="media-body"><strong>This template</strong> is built with HTML, CSS and Bootstrap to
+                            ensure the highest flexibility for all users
+                        </div>
+                    </li>
+                </ul>
+
+                <a class="btn-solid-reg mb-5" href="index.html">Back</a>
+            </div> <!-- end of col -->
+        </div> <!-- end of row -->
+    </div> <!-- end of container -->
+</div> <!-- end of ex-basic-1 -->
+<!-- end of basic -->
+
+
+<!-- Footer -->
+<div class="footer bg-gray">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                    <a class="p-small" href="{% url 'index' %}">Home</a>
+                    <a class="p-small" href="{% url 'about' %}">About</a>
+                    <a class="p-small" href="{% url 'blog' %}">Blog</a>
+                    <a class="p-small" href="{% url 'build_playlist' %}">Create</a>
+                    <a class="p-small" href="{% url 'view_playlist' %}">View</a>
+            </div> <!-- end of col -->
+        </div> <!-- end of row -->
+    </div> <!-- end of container -->
+</div> <!-- end of footer -->
+<!-- end of footer -->
+
+
+<!-- Copyright -->
+<div class="copyright bg-gray">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <p class="p-small">Copyright © 2022 <a class="no-line" href="https://github.com/Neologic-Audio/">NeoLogic
+                    Audio</a></p>
+            </div> <!-- end of col -->
+        </div> <!-- enf of row -->
+    </div> <!-- end of container -->
 
     <div class="container">
-        {% csrf_token %}
-        {% block content %}
-        {% endblock %}
+        <div class="row">
+            <div class="col-lg-12">
+                <p class="p-small">Distributed By <a class="no-line" href="https://themewagon.com/">Themewagon</a></p>
+            </div> <!-- end of col -->
+        </div> <!-- end of row -->
+    </div> <!-- end of container -->
 
-    </div>
-    <!-- jQuery 3.6.0 -->
-    <section class="contact-area section-padding-100 bg-img bg-overlay bg-fixed has-bg-img"
-             style="background-image: url({% static 'img/bg-img/bg-2.jpg' %});">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="section-heading white wow fadeInUp" data-wow-delay="100ms">
-                        <h2>Be Part of the Future of Music</h2>
-                        <p>Real Change Begins with You</p>
-                        <br>
-                        <!--BUTTON-->
-                        <div class="oneMusic-buttons-area mb-100 align-items-center">
-                            <a href="https://resonate.is/join/" class="btn oneMusic-btn m-2">
-                                Join Now<i class="fa fa-angle-double-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <footer class="footer-area">
-        <div class="container">
-            <div class="row d-flex flex-wrap align-items-center">
-                <div class="col-12 col-md-6">
-                    <p class="copywrite-text">
-                        <a href="#">
-                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                            Copyright &copy;
-                            <script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                    </p>
-                </div>
+</div> <!-- end of copyright -->
+<!-- end of copyright -->
+<!-- ##### Footer Area Start ##### -->
+<!-- jQuery 3.6.0 -->
+<script src="{% static 'js/jquery/jquery-3.6.0.js' %}"></script>
 
-                <div class="col-12 col-md-6">
-                    <div class="footer-nav">
-                        <ul>
-                            <li><a href="{% url 'index' %}">Home</a></li>
-                            <li><a href="{% url 'about' %}">About</a></li>
-                            <li><a href="{% url 'blog' %}">Blog</a></li>
-                            <li><a href="{% url 'build_playlist' %}">Create</a></li>
-                            <li><a href="{% url 'view_playlist' %}">View</a></li>
-                            <li><a href="{% url 'team' %}">Team</a></li>
-                            <li><a href="{% url 'contact' %}">Contact</a></li>
+<!-- jQuery Easing for smooth scrolling between anchors -->
+<script src="{% static  'js/jquery/jquery.easing.min.js' %}"></script>
+<!-- Bootstrap core JavaScript -->
+<script src="{% static  'js/bootstrap/popper.min.js' %}"></script>
+<script src="{% static  'js/bootstrap/bootstrap.bundle.min.js' %}"></script>
 
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <!-- ##### Footer Area Start ##### -->
-    <!-- jQuery 3.6.0 -->
-    <script src="{% static 'js/jquery/jquery-3.6.0.js' %}"></script>
-
-    <!-- Bootstrap core JavaScript -->
-    <script src="{% static  'js/bootstrap/popper.min.js' %}"></script>
-    <script src="{% static  'js/bootstrap/bootstrap.bundle.min.js' %}"></script>
-
-    <!-- Custom JS Scripts -->
-    <script src="{% static  'js/plugins/plugins.js' %}"></script>
-    <script src="{% static  'js/active.js' %}"></script>
+<!-- Custom JS Scripts -->
+<script src="{% static  'js/scripts.js' %}"></script>
 </body>
 
 </html>

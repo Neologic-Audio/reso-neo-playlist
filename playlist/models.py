@@ -101,7 +101,7 @@ class TrackGroup(DjangoNode):
         self.cypher(query)
 
     class Meta:
-        app_label = 'tracks'
+        app_label = 'playlist'
 
 
 class Tag(DjangoNode):
@@ -152,7 +152,7 @@ class Tag(DjangoNode):
         self.cypher(query)
 
     class Meta:
-        app_label = 'tracks'
+        app_label = 'playlist'
 
 
 class Track(DjangoNode):
@@ -162,7 +162,7 @@ class Track(DjangoNode):
     has_track = RelationshipFrom('Track', 'HAS_TRACK')
 
     class Meta:
-        app_label = 'tracks'
+        app_label = 'playlist'
 
 
 class RUser(DjangoNode):
@@ -172,7 +172,7 @@ class RUser(DjangoNode):
     owns = RelationshipTo('TrackGroup', 'OWNS')
 
     class Meta:
-        app_label = 'tracks'
+        app_label = 'playlist'
 
 
 class Country(DjangoNode):
@@ -182,7 +182,7 @@ class Country(DjangoNode):
     in_country = RelationshipFrom('RUser', 'IN_COUNTRY')
 
     class Meta:
-        app_label = 'tracks'
+        app_label = 'playlist'
 
 
 def merge_nodes(playlistform, trackform, tagform, userform, countryform):
