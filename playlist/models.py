@@ -1,3 +1,4 @@
+from typing import ValuesView
 from django.db import models
 from django_neomodel import DjangoNode
 from neomodel import db as db, config, ArrayProperty, StringProperty, IntegerProperty, Relationship, RelationshipFrom, \
@@ -8,7 +9,7 @@ config.DATABASE_URL = 'neo4j+s://neo4j:cgkKfYbz70cLGcTK6B7LnD4l7MjIVtD-hLTuZhTbR
 
 class PlayList(DjangoNode):
     uuid = UniqueIdProperty(primary_key=True)
-    playlist_title = StringProperty()
+    title = StringProperty()
     type = StringProperty()
 
     has_tag = RelationshipTo('PlayListTag', 'HAS_TAG')
@@ -28,7 +29,7 @@ class PlayList(DjangoNode):
 
 class PlayListTracks(DjangoNode):
     uuid = UniqueIdProperty(primary_key=True)
-    track_title = StringProperty()
+    track = StringProperty()
 
     has_track = RelationshipFrom('PlayListTracks', 'HAS_TRACK')
 
@@ -38,7 +39,7 @@ class PlayListTracks(DjangoNode):
 
 class PlayListTag(DjangoNode):
     uuid = UniqueIdProperty(primary_key=True)
-    tag_name = StringProperty()
+    tag = StringProperty()
     tg_count = IntegerProperty()
 
     has_tag = RelationshipFrom('PlayList', 'HAS_TAG')
@@ -65,7 +66,7 @@ class PlayListTag(DjangoNode):
 
 class PlayListUser(DjangoNode):
     uuid = UniqueIdProperty(primary_key=True)
-    user_name = StringProperty()
+    user = StringProperty()
 
     owns = RelationshipTo('PlayList', 'OWNS')
 
@@ -75,7 +76,7 @@ class PlayListUser(DjangoNode):
 
 class PlayListCountry(DjangoNode):
     uuid = UniqueIdProperty(primary_key=True)
-    country_name = StringProperty()
+    country = StringProperty()
 
     in_country = RelationshipFrom('PlayListUser', 'IN_COUNTRY')
 
@@ -136,7 +137,7 @@ class Tag(DjangoNode):
             MATCH (tag:Tag)<-[:HAS_TAG]-(tg:TrackGroup)-[:HAS_TRACK]->(track:Track)
             MATCH (tg)<-[:OWNS]-(u:RUser) 
             WITH tag as tag, track as track
-            LIMIT 5
+            LIMIT 1
             MERGE (tag)-[:RELATED]->(track)
             '''
         self.cypher(query)
@@ -146,7 +147,7 @@ class Tag(DjangoNode):
             WITH tag
             MATCH (tag)-[:RELATED]->(track)
             RETURN track
-            LIMIT 5
+            LIMIT 1
             '''
         self.cypher(query)
 
@@ -184,18 +185,16 @@ class Country(DjangoNode):
         app_label = 'tracks'
 
 
-def merge_nodes(playlist, track, tag, user, country):
-    playlist = PlayList().save()
+def merge_nodes(playlistform, trackform, tagform, userform, countryform):
+    playlist = PlayList(title=playlistform).save()
 
-    track = PlayListTracks().save()
+    track = PlayListTracks(track=trackform).save()
 
-    tag = PlayListTag().save()
+    tag = PlayListTag(tag=tagform).save()
 
-    user = PlayListUser().save()
+    user = PlayListUser(user=userform).save()
 
-    country = PlayListCountry().save()
-
-    playlist = PlayList().save()
+    country = PlayListCountry(country=countryform).save()
 
     playlist.has_track.connect(track)
 
@@ -204,7 +203,6 @@ def merge_nodes(playlist, track, tag, user, country):
     user.owns.connect(playlist)
 
     country.in_country.connect(user)
-
 
 
 
