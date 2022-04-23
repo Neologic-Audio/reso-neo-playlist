@@ -164,6 +164,7 @@ def search(request):
         'released': tag.top_track.single().uuid, 
         'label': 'movie'
     } for tag in tags], safe=False)
+    # instead of doing for tag in tags, consider just looking at tag[0]
 
 def suggested_search(request):
     try:
@@ -173,10 +174,10 @@ def suggested_search(request):
     
     #here temporarily, we don't want to do this every time
     for tags_to_update in Tag.nodes.filter(name__icontains=q):
-        tags_to_update.suggested_track()
-            
+         tags_to_update.suggested_track()       
         
     tags = Tag.nodes.filter(name__icontains=q).has(related_from=True)
+
     return JsonResponse([{
         'id': tag.uuid, 
         'title': tag.name, 
