@@ -53,7 +53,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-Here's a blank template to get started: To avoid retyping too much info. 
+Here's a blank template to get started: To avoid retyping too much info. <!-- should we fill this out -->
 
 ### Built With
 
@@ -90,22 +90,22 @@ Here's a blank template to get started: To avoid retyping too much info.
 * Django 3.2.5
 * Neo4j Database
 
-#### Create your Neo4j Database
+#### Create your Neo4j Database <!--the first step to do-->
 
 You can manage your own database locally using [Neo4j Desktop](https://neo4j.com/download-center/#desktop), or go to [Neo4j Aura](https://neo4j.com/cloud/aura/) for a fully managed cloud database.
 
 #### Initial Data Import
-Before you start, install the [APOC Library plugin.](https://neo4j.com/developer/neo4j-apoc/#installing-apoc)
+Before you start, install the [APOC Library plugin.](https://neo4j.com/developer/neo4j-apoc/#installing-apoc) <!--installs automatically when accessing plugins Neo4j Desktop-->
 
-#### Create Constraints
+#### Create Constraints <!--in Neo4j Browser-->
 
 ```
 CREATE CONSTRAINT ON (a:Ruser) ASSERT a.uuid IS UNIQUE;
 CREATE CONSTRAINT ON (a:TrackGroup) ASSERT a.uuid IS UNIQUE;
 CREATE CONSTRAINT ON (a:Track) ASSERT a.uuid IS UNIQUE;
 ```
-
-#### Add the first page of Playlists (a type of TrackGroup)
+<!--all commands below in Neo4j Browser-->
+#### Add the first page of Playlists (a type of TrackGroup) 
 
 ```
 WITH 'https://api.resonate.coop/v2/' AS uri
@@ -232,7 +232,7 @@ RETURN count(artist)",
 ```
 	
 ### Installation
-#### How to Setup Locally
+#### How to Setup Locally <!--can also download the code directly-->
 
 1. Clone the repository
   ```sh
@@ -253,8 +253,8 @@ Option 1: Using command-line
 1. Open up the terminal to the base level of the project folder
 
 2. Type the following commands
-* python(python3) -m venv venv
-* source venv/bin/activate (Unix OS)
+* python(python3) -m venv venv <!--different for mac-->
+* source venv/bin/activate (Unix OS and macOS)
 ** venv/bin/activate (Windows)
 * pip install -r requirements.txt
 
@@ -278,7 +278,7 @@ In PyCharm (example of setup):
 
 4. On the virtual environment page, click to create a new environment
 * Keep the project location as the base project filepath
-* Make sure to use the Python source your Operating System is using
+* Make sure to use the Python source your Operating System is using <!-- python 3.9 for mac -->
 ** If you have multiple installations of Python, use "where python" (for Windows) or "which python3" (for mac) in your terminal to find the correct file location
 * Keep inheritance and availability unchecked, since it's better to go on a project by project basis
 
@@ -295,7 +295,7 @@ In PyCharm (example of setup):
   
 #### Environment Variables  
   
-Environment variables can be used for configuration. They must be set before running the project to avoid receiving a server error. This can be configured either through your IDE or PATHs.  
+Environment variables can be used for configuration. They must be set before running the project to avoid receiving a server error. This can be configured either through your IDE or PATHs. #should configure by itself when py manage.py migrate
   
 Neo4j Desktop:  
 ```shell  
@@ -307,12 +307,13 @@ For Neo4j Aura:
 export NEO4J_BOLT_URL=neo4j+s://neo4j:password@host-or-ip:port
 ```  
   
-#### Running the Django Server  
+#### Running the Django Server  <!--geos for Windows (brew install geos for macOS)-->
 Run migrations and create your superuser (for the admin, this is using an SQLite database)  
   
 ```python  
-py manage.py migrate  
-py manage.py createsuperuser  
+py manage.py migrate (python3 manage.py migrate for mac) 
+py manage.py createsuperuser (python3 manage.py createsuperuser for mac) #only for the first time
+py manage.py runserver (python3 manage.py runserver for mac)
 ```  
 <p align="right">(<a href="#top">back to top</a>)</p>  
   
