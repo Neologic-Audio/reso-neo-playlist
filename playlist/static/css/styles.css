@@ -1,5 +1,6 @@
-{% load static %}
+@import url(owl.carousel.min.css);
 
+{% load static %}
 /* Description: Master CSS file */
 
 /*****************************************
@@ -35,6 +36,7 @@ Colors:
 /**************************/
 /*     General Styles     */
 /**************************/
+
 body,
 html {
     width: 100%;
