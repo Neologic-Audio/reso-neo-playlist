@@ -1,6 +1,4 @@
 /* Description: Custom JS file */
-
-
 (function($) {
     "use strict";
 

@@ -3,394 +3,500 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="description" content="">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
-    <!-- Title -->
-    <title>About - Resonate</title>
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Django Playlist Builder">
+
+    <!-- Webpage Title -->
+    <title>About</title>
 
     <!-- Favicon -->
-    <link rel="stylesheet" type="text/css" href="{% static 'img/core-img/icon.png' %}">
+    <link rel="icon" href="{% static 'img/core-img/icon.png' %}">
 
-    <!-- Custom Stylesheet -->
-    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/animate.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/audioplayer.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/classy-nav.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/font-awesome.min.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/magnific-popup.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/one-music-icon.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/owl.carousel.min.css' %}">
+    <!-- Custom Styles -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&family=Poppins:wght@600&display=swap"
+        rel="stylesheet">
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap/bootstrap.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap/bootstrap.min.css' %}">
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/fontawesome-all.css' %}">
+
+
 </head>
-<body>
-    <!-- Preloader -->
-    <div class="preloader d-flex align-items-center justify-content-center">
-        <div class="lds-ellipsis">
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
+</head>
+
+<body data-spy="scroll" data-target=".fixed-top">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark">
+        <div class="container">
+
+            <!-- Image Logo -->
+            <a class="navbar-brand logo-image" href="index.html"><img src="{% static 'img/logo.svg' %}"
+                    alt="alternative"></a>
+
+            <!-- Text Logo - Use this if you don't have a graphic logo -->
+            <!-- <a class="navbar-brand logo-text page-scroll" href="index.html">Mark</a> -->
+
+            <button class="navbar-toggler p-0 border-0" type="button" data-toggle="offcanvas">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'index' %}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'player' %}">Listen</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'about' %}">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'support' %}">Support</a>
+                    </li>
+                </ul>
+                <span class="nav-item social-icons">
+                    <span class="fa-stack">
+                        <a href="https://github.com/Neologic-Audio">
+                            <i class="fas fa-circle fa-stack-2x"></i>
+                            <i class="fab fa-github fa-stack-1x"></i>
+                        </a>
+                    </span>
+                </span>
+            </div> <!-- end of navbar-collapse -->
+        </div> <!-- end of container -->
+    </nav> <!-- end of navbar -->
+    <!-- end of navigation -->
+
+
+    <!-- Header -->
+    <header class="ex-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-10 offset-xl-1">
+                    <h1>About</h1>
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </header> <!-- end of ex-header -->
+    <!-- end of header -->
+
+    <!-- Services -->
+    <div id="services" class="basic-2">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2 class="h2-heading">Rewiring the music industry</h2>
+                    <p class="p-heading">Resonate is building a new music economy based on fairness, transparency and cooperation.</p>
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+            <div class="row">
+                <!-- Listeners -->
+                <div class="col-lg-4">
+                    <div class="text-box">
+                            <!-- Icon Here -->
+                            <div class="width-100p width-20p-m width-30p-l float-left-ns textalign-center">
+                                <img src="https://resonate.is/wp-content/themes/manifesto/images/listeners-homeicon.png" class="homeicon">
+                            </div>
+                        <br>
+                        <h4>For Listeners</h4>
+                        <p>Resonate involves owning something of real value in a digital economy. It's also about resisting the urge to treat music as nothing more than audio wallpaper. About rediscovering and engaging music as art made by real humans.</p>
+                        <p>Pay for what you play &#8212; it's cheaper.</p>
+                        <!-- Button -->
+                        <a class="btn-solid-lg page-scroll" href="https://resonate.is/stream2own/">Learn more about pricing</a>
+                    </div> <!-- end of text-box -->
+                </div> <!-- end of col -->
+                <!-- Artists -->
+                <div class="col-lg-4">
+                    <div class="text-box">
+                        <div class="width-100p width-20p-m width-30p-l float-left-ns textalign-center">
+                            <img src="https://resonate.is/wp-content/themes/manifesto/images/artists-homeicon.png" class="homeicon">
+                        </div>
+                        <br>
+                        <h4>For Artists</h4>
+                        <p>This means owning their work, and owning their networks. Resonate is about fairness and control; we allow creators to set the terms on which to distribute their art.</p>
+                        <!-- Button -->
+                        <a class="btn-solid-lg page-scroll" href="https://resonate.is/more-profitable-for-musicians/">Learn how you'll earn</a>
+                        <br>
+                        <br>
+                        <p>Global Community of co-creation - Artists, DJ's and Curators</p>
+                    </div> <!-- end of text-box -->
+                </div> <!-- end of col -->
+                <!-- Industry -->
+                <div class="col-lg-4">
+                    <div class="text-box">
+                        <div class="width-100p width-20p-m width-30p-l float-left-ns textalign-center">
+                            <img src="https://resonate.is/wp-content/themes/manifesto/images/industry-homeicon.png" class="homeicon">
+                        </div>
+                        <br>
+                        <h4>For Industry</h4>
+                        <p>we are rewiring terms of business, transforming an industry that's currently based on exclusivity and inequity into one based on openness, transparency, and collaboration.
+                        <br>Visit our forum</p>
+                        <br>
+                        <a class="btn-solid-lg page-scroll" href="http://community.resonate.is/">Join the conversation</a>
+                    </div> <!-- end of text-box -->
+                </div> <!-- end of col -->
+                <!-- Everyone -->
+                <div class="col-lg-4">
+                    <div class="text-box">
+                        <div class="width-100p width-20p-m width-30p-l float-left-ns textalign-center">
+                            <img src="https://resonate.is/wp-content/themes/manifesto/images/everyone-homeicon.png" class="homeicon">
+                        </div>
+                        <br>
+                        <h4>For Everyone</h4>
+                        <p>this is about co-owning a platform. We think that this one-member, one-vote system gives everyone a voice, and supports the community in a crucial way.
+                        <br>Why we're a co-op</p>
+                        <br>
+                        <!-- Button -->
+                        <a class="btn-solid-lg page-scroll" href="https://resonate.is/the-coop/">Learn how we're different</a>
+                    </div> <!-- end of text-box -->
+                </div> <!-- end of col -->
+                <!-- Right Reasons -->
+                <div class="col-lg-4">
+                    <div class="text-box">
+                        <div class="width-100p width-20p-m width-30p-l float-left-ns textalign-center">
+                            <img src="https://resonate.is/wp-content/themes/manifesto/images/manifesto-homeicon.png" class="homeicon">
+                        </div>
+                        <br>
+                        <h4>For all the right reasons.</h4>
+                        <p>This is the mission. This is our purpose.</p>
+                        <a class="btn-solid-lg page-scroll" href="https://resonate.is/manifesto/">The Resonate Manifesto</a>
+                    </div> <!-- end of text-box -->
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of basic-2 -->
+    <!-- end of services -->
+
+      <!-- Why Section -->
+    <div id="projects" class="basic-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2 style="text-align: center">Why</h2>
+                    <p style="text-align: center">As our networked world progressed, the way people listen to music changed drastically, resulting in an unsustainable model that can't support the industry ecosystem long-term. </p>
+                    <br>
+                    <p>STREAMING services wield too much power over discovery, and "big pool" methods of splitting royalties are unfair. Music has been turned into content, and fans into passive listeners.</p>
+                    <p>INEQUITIES have been exacerbated. Power has been consolidated not in the hands of creators, but in those of dominant tech companies and major labels.</p>
+                    <p>INEFFICIENCIES plague the music industry and often lead to slow, inaccurate royalty payouts.</p>
+                    <p> PRIVACY is sorely lacking; fans often need to surrender personal information to stay informed.</p>
+                    <p> CONTROL is needed by all. Artists should have a say in how their music is distributed, listeners should have control over how their data is used.</p>
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of basic-3 -->
+    <!-- end of projects -->
+
+    <!-- How Section -->
+    <div id="projects" class="basic-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <br>
+                    <br>
+                    <h2 class="h2-heading">How</h2>
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of basic-3 -->
+    <!-- end of projects -->
+
+    <!-- How Section -->
+    <div class="basic-4">
+        <div class="container">
+            <div class="row">
+                <!-- Co-Op -->
+                <div class="col-lg-4">
+                    <div class="text-container">
+                        <div class="image-container">
+                            <a href="project.html">
+                                <img class="img-fluid" src="images/work-1.jpg" alt="alternative">
+                            </a>
+                        </div> <!-- end of image-container -->
+                        <p><b>THE CO-OPERATIVE</b> model fundamentally differentiates Resonate from other services. A one-member, one-share, one-vote system brings democracy to the platform, and gives all members a voice.</p>
+                    </div> <!-- end of text-container -->
+                </div> <!-- end of col -->
+                <!-- Stream2Own -->
+                <div class="col-lg-4">
+                    <div class="text-container">
+                        <div class="image-container">
+                            <a href="project.html">
+                                <img class="img-fluid" src="images/work-2.jpg" alt="alternative">
+                            </a>
+                        </div> <!-- end of image-container -->
+                        <p><b>STREAM2OWN</b> is brand new model for listening. Splitting the cost of a digital download into 9 plays, it enables artists to get paid per play, and fans to own music again.</p>
+                    </div> <!-- end of text-container -->
+                </div> <!-- end of col -->
+                <!-- Privacy.. -->
+                <div class="col-lg-4">
+                    <div class="text-container">
+                        <div class="image-container">
+                            <a href="project.html">
+                                <img class="img-fluid" src="images/work-3.jpg" alt="alternative">
+                            </a>
+                        </div> <!-- end of image-container -->
+                        <p><b>PRIVACY-RESPECTING IDENTITY</b> puts control back in the hands of users. Choose who your data is shared with and how; verify your identity without exposing sensitive information, or surveillance.</p>
+                    </div> <!-- end of text-container -->
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+            <div class="row">
+                <!-- Storytelling -->
+                <div class="col-lg-4">
+                    <div class="text-container">
+                        <div class="image-container">
+                            <a href="project.html">
+                                <img class="img-fluid" src="images/work-4.jpg" alt="alternative">
+                            </a>
+                        </div> <!-- end of image-container -->
+                        <p><b>STORYTELLING</b> is valued in our community: Both spoken and written word are rewarded in our ecosystem where micro-payments ensure that publishers have a source of revenue beyond ad-supported models.</p>
+                    </div> <!-- end of text-container -->
+                </div> <!-- end of col -->
+                <!-- C&S -->
+                <div class="col-lg-4">
+                    <div class="text-container">
+                        <div class="image-container">
+                            <a href="project.html">
+                                <img class="img-fluid" src="images/work-5.jpg" alt="alternative">
+                            </a>
+                        </div> <!-- end of image-container -->
+                        <p><b>COLLABORATION and SOLIDARITY</b> with ethical partners in the wider independent music ecosystem. Standards-based open API’s and transparency will win. Musicians don’t compete; they collaborate.</p>
+                    </div> <!-- end of text-container -->
+                </div> <!-- end of col -->
+                <!-- OpenSource -->
+                <div class="col-lg-4">
+                    <div class="text-container">
+                        <div class="image-container">
+                            <a href="project.html">
+                                <img class="img-fluid" src="images/work-6.jpg" alt="alternative">
+                            </a>
+                        </div> <!-- end of image-container -->
+                        <p><b>OPEN-SOURCE</b> fits naturally with our ethos of openness, collaboration and transparency. We'll work with anyone that shares our values and mission.</p>
+                    </div> <!-- end of text-container -->
+                </div> <!-- end of col -->
+                <!-- Ethics -->
+                <div class="col-lg-12">
+                    <div class="text-container">
+                        <div class="image-container">
+                            <a href="project.html">
+                                <img class="img-fluid" src="images/work-6.jpg" alt="alternative">
+                            </a>
+                        </div> <!-- end of image-container -->
+                        <p><b>ETHICS</b> come first. We're considering the impact of everything that we do, from ensuring our operation is environmentally-friendly to making an effort to build an inclusive platform, globally, for communities disadvantaged by big streaming.</p>
+                    </div> <!-- end of text-container -->
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of basic-4 -->
+    <!-- end of works -->
+
+
+    <!-- FAU Team -->
+    <!--Note: NOT DONE YET -->
+    <div class="cards-1">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2 class="h2-heading">Exceptional User-Interface</h2>
+                    <h6 style="text-align: center">Developed by the Computer Science seniors at FAU</h6>
+                    <p style="text-align: center">copy/paste from assignment</p>
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <!-- Ariel -->
+                    <div class="card">
+                        <div class="card-body">
+                            <p class="testimonial-text">“Mark is a skilled developer which will do everything possible to deliver the project on time and I really appreciate that”</p>
+                            <div class="details">
+                                <img src="images/testimonial-1.jpg" alt="alternative">
+                                <div class="text">
+                                    <div class="testimonial-author">Samantha Bloom</div>
+                                    <div class="occupation">Team Leader - Syncnow</div>
+                                </div> <!-- end of text -->
+                            </div> <!-- end of testimonial-details -->
+                        </div>
+                    </div>
+                    <!-- end of card -->
+
+                    <!-- Adejsha -->
+                    <div class="card">
+                        <div class="card-body">
+                            <p class="testimonial-text">“Loved to work with Mark he's such an awesome developer with great attention to details. He also has a great eye for design”</p>
+                            <div class="details">
+                                <img src="images/testimonial-2.jpg" alt="alternative">
+                                <div class="text">
+                                    <div class="testimonial-author">John Rowling</div>
+                                    <div class="occupation">Marketing Manager - Nexlite</div>
+                                </div> <!-- end of text -->
+                            </div> <!-- end of testimonial-details -->
+                        </div>
+                    </div>
+                    <!-- end of card -->
+
+                    <!-- Gabrielle -->
+                    <div class="card">
+                        <div class="card-body">
+                            <p class="testimonial-text">“So glad we started working with Mark. We've used many times his design and development skills for our inhouse online projects”</p>
+                            <div class="details">
+                                <img src="images/testimonial-3.jpg" alt="alternative">
+                                <div class="text">
+                                    <div class="testimonial-author">Lana Smith</div>
+                                    <div class="occupation">General Manager - Shifter</div>
+                                </div> <!-- end of text -->
+                            </div> <!-- end of testimonial-details -->
+                        </div>
+                    </div>
+                    <!-- end of card -->
+
+                    <!-- Sam -->
+                    <div class="card">
+                        <div class="card-body">
+                            <p class="testimonial-text">“So glad we started working with Mark. We've used many times his design and development skills for our inhouse online projects”</p>
+                            <div class="details">
+                                <img src="images/testimonial-3.jpg" alt="alternative">
+                                <div class="text">
+                                    <div class="testimonial-author">Lana Smith</div>
+                                    <div class="occupation">General Manager - Shifter</div>
+                                </div> <!-- end of text -->
+                            </div> <!-- end of testimonial-details -->
+                        </div>
+                    </div>
+                    <!-- end of card -->
+
+                    <!-- Max -->
+                    <div class="card">
+                        <div class="card-body">
+                            <p class="testimonial-text">“So glad we started working with Mark. We've used many times his design and development skills for our inhouse online projects”</p>
+                            <div class="details">
+                                <img src="images/testimonial-3.jpg" alt="alternative">
+                                <div class="text">
+                                    <div class="testimonial-author">Lana Smith</div>
+                                    <div class="occupation">General Manager - Shifter</div>
+                                </div> <!-- end of text -->
+                            </div> <!-- end of testimonial-details -->
+                        </div>
+                    </div>
+                    <!-- end of card -->
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of cards-1 -->
+    <!-- end of testimonials -->
+
+    <!-- Roadmap
+    <h1 class="titlelettersp f1 f-4 marginvertical-large marginleft--xsmall paddingtop-xlarge marginbottom-large">Roadmap</h1>
+    <div class="width-100p opacity-50p hover-glow">
+        <div class="width-100p width-50p-m width-50p-l float-left border-right bordercolor-black">
+            <p class="f4 margin-none border-left border-top bordercolor-black padding-medium overflow-auto">Resonate 1.0 <span class="float-right">03.15 - 02.18</span></p>
+            <p class="f4 margin-none border-left border-top border-bottom bordercolor-black padding-medium">The volunteer stage</p>
+            <p class="f5 padding-large">
+                <span class="dotsmall display-inlineblock marginbottom--xxsmall marginright-small"></span> 40+ conferences and events<br><br>
+                <span class="dotsmall display-inlineblock marginbottom--xxsmall marginright-small"></span> over 2K artists joined<br><br>
+                <span class="dotsmall display-inlineblock marginbottom--xxsmall marginright-small"></span> first #stream2own player built
+            </p>
+        </div>
+        <div class="display-none display-block-m display-block-l width-50p-m width-50p-l float-left">
+            <br>
         </div>
     </div>
-
-    <!-- ##### Header Area Start ##### -->
-    <header class="header-area">
-        <!-- Navbar Area -->
-        <div class="oneMusic-main-menu">
-            <div class="classy-nav-container breakpoint-off">
-                <div class="container">
-                    <!-- Menu -->
-                    <nav class="classy-navbar justify-content-between" id="oneMusicNav">
-
-                        <!-- LOGO IN UPPER LEFT CORNER-->
-                        <!-- Navbar Toggler -->
-                        <div class="classy-navbar-toggler">
-                            <span class="navbarToggler"><span></span><span></span><span></span></span>
-                        </div>
-
-                        <!-- Menu -->
-                        <div class="classy-menu">
-
-                            <!-- Close Button -->
-                            <div class="classycloseIcon">
-                                <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
-                            </div>
-
-<!-- NAG HERE****************************************** -->
-                            <div class="classynav">
-                                <ul>
-                                    <li><a href="index.html">Home</a></li>
-                                    
-                                    <li><a href="#">About</a></li>
-                                   
-                                    <li><a href="contact.html">Contact</a></li>
-                                </ul>
-
-                                <div class="login-register-cart-button d-flex align-items-center">
-                                    <!-- Login/Register -->
-                                    <div class="login-register-btn mr-50">
-                                        <a href="login.html" id="loginBtn">Login / Register</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </nav>
-                </div>
-            </div>
+    <div class="width-100p opacity-50p hover-glow clear-both">
+        <div class="display-none display-block-m display-block-l  width-50p-m width-50p-l float-left">
+            <br>
         </div>
-    </header>
-    <!-- ##### Header Area End ##### -->
-
-<!-- BORDER IMAGE HERE**************************************** -->
-    <section class="breadcumb-area bg-img bg-overlay" style="background-image: url(img/bg-img/breadcumb3.jpg);">
-        <div class="bradcumbContent">
-          <h2>Rewiring the music Industry</h2>
+        <div class="width-100p width-50p-m width-50p-l marginleft--xxxsmall float-left border-left bordercolor-black">
+            <p class="f4 margin-none border-right border-top bordercolor-black padding-medium overflow-auto">Resonate 2.0 <span class="float-right">03.18 - 10.18</span></p>
+            <p class="f4 margin-none border-right border-top border-bottom bordercolor-black padding-medium">Transition and growth</p>
+            <p class="f5 padding-large">
+                <span class="dotsmall display-inlineblock marginbottom--xxsmall marginright-small"></span> over 4K artists and 700 labels<br><br>
+                <span class="dotsmall display-inlineblock marginbottom--xxsmall marginright-small"></span> investment from Reflective Ventures<br><br>
+                <span class="dotsmall display-inlineblock marginbottom--xxsmall marginright-small"></span> 50% backend streaming developed<br><br>
+                <span class="dotsmall display-inlineblock marginbottom--xxsmall marginright-small"></span> full rebranding and redesign
+            </p>
         </div>
-    </section>
-
-<!--About webpage HERE****************************-->
-    <section class="latest-albums-area section-padding-100">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="section-heading style-2">
-                         <p>Resonate is building a new music economy based on fairness, transparency and cooperation.</p>
-                    </div>
-                </div>
-            </div>           
+    </div>
+    <div class="width-100p paddingtop-xlarge marginbottom-large">
+        <div class="width-100p width-50p-m width-50p-l float-left marginbottom-large">
+            <p class="f4 margin-none border bordercolor-black padding-medium overflow-auto">Resonate 3.0<span class="float-right">11.18 - 5.20</span></p>
+            <p class="f4 margin-none border-left border-right border-bottom bordercolor-black padding-medium">simplifying the tech - focus on streaming, strengthening co-op governance</p>
+            <p class="f5 padding-large">
+                <span class="opacity-50p"><span class="dotsmall display-inlineblock marginbottom--xxsmall marginright-small"></span>player relaunch</span><br><br>
+                <span class="opacity-50p dotsmall display-inlineblock marginbottom--xxsmall marginright-small"></span> catalog consolidation: 1900 artists with 13000 tracks live<br><br>
+                <span class="dotsmall display-inlineblock marginbottom--xxsmall marginright-small"></span> new profiles system, new website<br><br>
+                <span class="dotsmall display-inlineblock marginbottom--xxsmall marginright-small"></span> Self-service upload tool with artist earnings and playstats<br><br>
+                <span class="dotsmall display-inlineblock marginbottom--xxsmall marginright-small"></span> community growth campaigns reinvented<br><br>
+                <span class="dotsmall display-inlineblock marginbottom--xxsmall marginright-small"></span> privacy-respecting identity<br><br>
+                <span class="dotsmall display-inlineblock marginbottom--xxsmall marginright-small"></span> community streaming and collaboration reinvented
+            </p>
         </div>
-    </section>
-<!--ICON BOXES W/ DESCRIPTION*************************-->
-                <div class="col-12">
-                    <div class="row">
-                        <!-- Single Service Area -->
-                        <div class="col-12 col-md-15">
-                            <div class="single-service-area d-flex flex-wrap mb-100">
-                                <div class="icon">
-                                    <span class="icon-play-button"></span>
-                                </div>
-                                <div class="text">
-                                    <h5>For Listeners</h5>
-                                    <p>Resonate involves owning something of real value in a digital economy. It's also about resisting the urge to treat music as nothing more than audio wallpaper. About rediscovering and engaging music as art made by real humans.
-                                    <br>
-                                    <p>Pay for what you play — it's cheaper.</p>
-                                    <!--LINK HERE-->
-                                    <div class="oneMusic-buttons-area mb-100">
-                                    <a href="https://resonate.is/pricing/" class="btn oneMusic-btn m-2">Learn more about pricing<i class="fa fa-angle-double-right"></i></a>
-                                    </div>
-                                    
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Single Service Area -->
-                        <div class="col-12 col-md-15">
-                            <div class="single-service-area d-flex flex-wrap mb-100">
-                                <div class="icon">
-                                    <span class="icon-microphone"></span>
-                                </div>
-                                <div class="text">
-                                    <h5>For Artists</h5>
-                                    <p>This means owning their work, and owning their networks. Resonate is about fairness and control; we allow creators to set the terms on which to distribute their art.
-                                    <br>
-                                    <p>Profit calculator for artists</p>
-                                    <!--LINK HERE-->
-                                    <div class="oneMusic-buttons-area mb-100">
-                                    <a href="https://resonate.is/more-profitable-for-musicians/" class="btn oneMusic-btn m-2">Learn how you'll earn with Resonate<i class="fa fa-angle-double-right"></i></a>
-                                    </div>
-                                    <p>Global Community of co-creation - Artists, DJ's and Curators</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Single Service Area -->
-                        <div class="col-12 col-md-15">
-                            <div class="single-service-area d-flex flex-wrap mb-100">
-                                <div class="icon">
-                                    <span class="icon-money"></span>
-                                </div>
-                                <div class="text">
-                                    <h5>For Industry</h5>
-                                    <p>We are rewiring terms of business, transforming an industry that's currently based on exclusivity and inequity into one based on openness, transparency, and collaboration.
-                                    <br>
-                                     <br>
-                                    <p>Explore our strategies</p>
-                                    <!--LINK HERE-->
-                                    <div class="oneMusic-buttons-area mb-100">
-                                    <a href="https://resonate.is/strategies/" class="btn oneMusic-btn m-2">Learn more<i class="fa fa-angle-double-right"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Single Service Area -->
-                        <div class="col-12 col-md-15">
-                            <div class="single-service-area d-flex flex-wrap mb-100">
-                                <div class="icon">
-                                    <span class="icon-users"></span>
-                                </div>
-                                <div class="text">
-                                    <h5>For Everyone</h5>
-                                    <p>This is about co-owning a platform. We think that this one-member, one-vote system gives everyone a voice, and supports the community in a crucial way.
-                                    <br>
-                                    <p>Why we're a co-op</p>
-                                    <div class="oneMusic-buttons-area mb-100">
-                                    <a href="https://resonate.is/the-coop/" class="btn oneMusic-btn m-2">We're doing things differently - learn more<i class="fa fa-angle-double-right"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                <!-- Single Service Area -->
-                        <div class="col-12 col-md-15">
-                            <div class="single-service-area d-flex flex-wrap mb-100">
-                                <div class="icon">
-                                    <span class="icon-idea"></span>
-                                </div>
-                                <div class="text">
-                                    <h5>For All the Right Reasons</h5>
-                                    <p>This is the mission. This is our purpose.
-                                        <!--ADD LINKS-->
-                                    <div class="oneMusic-buttons-area mb-100">
-                                    <a href="https://resonate.is/manifesto/" class="btn oneMusic-btn m-2">The Resonate Manifesto<i class="fa fa-angle-double-right"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-    
-    
- <!--WHY************************************************--> 
-    <!--BACKGROUND IMAGE PADDING--> 
-    <section class="featured-artist-area section-padding-100 bg-img bg-overlay bg-fixed" style="background-image: url(img/bg-img/bg-3.jpg);">
-        <div class="container">
-            <div class="row align-items-end">
-                <div class="col-12 col-md-7 col-lg-8">
-                    <div class="featured-artist-content">
-                        <!--TEXT-->
-                        <div class="section-heading white text-left mb-30">
-                            <h2>Why</h2>
-                        </div>
-                        <p>As our networked world progressed, the way people listen to music changed drastically, resulting in an unsustainable model that can't support the industry ecosystem long-term.</p>
-                        <br/>
-                    </div>
-                </div>
-            </div>
+        <div class="display-none display-block-m display-block-l width-50p-m width-50p-l float-left">
+            <br>
         </div>
-    </section>
+    </div>-->
 
-<!--White background-->
-    <section class="latest-albums-area section-padding-100">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="section-heading style-2">
-                         <p>STREAMING services wield too much power over discovery, and "big pool" methods of splitting royalties are unfair. Music has been turned into content, and fans into passive listeners.</p>
-                        
-                        <p>INEQUITIES have been exacerbated. Power has been consolidated not in the hands of creators, but in those of dominant tech companies and major labels.</p>
-                        
-                        <p>INEFFICIENCIES plague the music industry and often lead to slow, inaccurate royalty payouts.</p>
-                        
-                        <p>PRIVACY is sorely lacking; fans often need to surrender personal information to stay informed.</p>
-                        
-                        <p>CONTROL is needed by all. Artists should have a say in how their music is distributed, listeners should have control over how their data is used.</p>
-                    </div>
-                </div>
-            </div>           
-        </div>
-    </section>
-    
-  <section class="featured-artist-area section-padding-100 bg-img bg-overlay bg-fixed" style="background-image: url(img/bg-img/bg-3.jpg);">
-        <div class="container">
-            <div class="row align-items-end">
-                <div class="col-12 col-md-7 col-lg-8">
-                    <div class="featured-artist-content">
-                        <!--TEXT-->
-                        <div class="section-heading white text-left mb-30">
-                            <h2>HOW</h2>
-                        </div>
-                        <p>THE CO-OPERATIVE model fundamentally differentiates Resonate from other services. A one-member, one-share, one-vote system brings democracy to the platform, and gives all members a voice.</p>
-                        <p>STREAM2OWN is brand new model for listening. Splitting the cost of a digital download into 9 plays, it enables artists to get paid per play, and fans to own music again.</p>
-                        <p>PRIVACY-RESPECTING IDENTITY puts control back in the hands of users. Choose who your data is shared with and how; verify your identity without exposing sensitive information, or surveillance.</p>
-                        <p>STORYTELLING is valued in our community: Both spoken and written word are rewarded in our ecosystem where micro-payments ensure that publishers have a source of revenue beyond ad-supported models.</p>
-                        <p>COLLABORATION and SOLIDARITY with ethical partners in the wider independent music ecosystem. Standards-based open API’s and transparency will win. Musicians don’t compete; they collaborate.</p>
-                        <p>OPEN-SOURCE fits naturally with our ethos of openness, collaboration and transparency. We'll work with anyone that shares our values and mission.</p>
-                        <p>ETHICS come first. We're considering the impact of everything that we do, from ensuring our operation is environmentally-friendly to making an effort to build an inclusive platform, globally, for communities disadvantaged by big streaming.</p>
-                        <br/>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    
-<!--ROADMAP BANNER Banner*****************************-->
-    <section class="latest-albums-area section-padding-100">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="section-heading style-2">
-                        <h2>Roadmap</h2>
-                    </div>
-                     <div class="row justify-content-center">
-                <div class="col-10 col-lg-6">
-                    <div class="ablums-text text-center mb-70">
-                        <ul class="timeline">
-                    <li>
-                        <div class="timeline-image"><img class="rounded-circle img-fluid" src="img/bg-img/11.png" alt="..." /></div>
-                        <div class="timeline-panel">
-                            <div class="timeline-heading">
-                                <h4>Resonate 3.0 11.18/5.20</h4>
-                            </div>
-                            <div class="timeline-body">
-                                <ul class="text-muted">
-                                    <li>player relaunch</li>
-                                    <li>catalog consolidation: 1900 artists with 13000 tracks live</li>
-                                    <li></li>
-                                    <li></li>
-                                    <li></li>
-                                    <li></li>
-                                    <li></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="timeline-inverted">
-                        <div class="timeline-image"><img class="rounded-circle img-fluid" src="img/bg-img/22.png" alt="..." /></div>
-                        <div class="timeline-panel">
-                            <div class="timeline-heading">
-                                <h4>Step 2:</h4>
-                            </div>
-                            <div class="timeline-body"><p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p></div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="timeline-image"><img class="rounded-circle img-fluid" src="img/bg-img/33.PNG" alt="..." /></div>
-                        <div class="timeline-panel">
-                            <div class="timeline-heading">
-                                <h4>Step 3:</h4>
-                            </div>
-                            <div class="timeline-body"><p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p></div>
-                        </div>
-                    </li>
-                    <li class="timeline-inverted">
-                        <div class="timeline-image"><img class="rounded-circle img-fluid" src="img/bg-img/44.png" alt="..." /></div>
-                        <div class="timeline-panel">
-                            <div class="timeline-heading">
-                                <h4>Step 4:</h4>
-                            </div>
-                            <div class="timeline-body"><p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p></div>
-                        </div>
-                    </li>
-                    
-                </ul>
-                    </div>
-                </div>
-            </div>
+<!-- Footer -->
+</br>
+<div class="footer bg-gray">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <a class="nav-item" href="{% url 'index' %}">Home</a> -
+                <a class="nav-item" href="{% url 'about' %}">About</a> -
+                <a class="nav-item" href="{% url 'build_playlist' %}">Create</a> -
+                <a class="nav-item" href="{% url 'view_playlist' %}">View</a>
+            </div> <!-- end of col -->
+        </div> <!-- end of row -->
+    </div> <!-- end of container -->
+</div> <!-- end of footer -->
+<!-- end of footer -->
 
-                </div>
-            </div>           
-        </div>
-    </section>
+<!-- Copyright -->
+<div class="copyright bg-gray">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <p class="p-small">Copyright © 2022 <a class="no-line"
+                                                       href="https://github.com/Neologic-Audio/">NeoLogic Audio</a></p>
+            </div> <!-- end of col -->
+        </div> <!-- enf of row -->
+    </div> <!-- end of container -->
 
-<!--LOGIN SECTION************************************** -->
-    <section class="contact-area section-padding-100 bg-img bg-overlay bg-fixed has-bg-img" style="background-image: url(img/bg-img/bg-2.jpg);">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="section-heading white wow fadeInUp" data-wow-delay="100ms">
-                        <h2>Be Part of the Future of Music</h2>
-                        <p>Real Change Begins with You</p>
-                        <br>
-                        <!--BUTTON-->
-                        <div class="oneMusic-buttons-area mb-100 align-items-center">
-                        <a href="login.html" class="btn oneMusic-btn m-2">Join Now<i class="fa fa-angle-double-right"></i></a>
-                    </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <p class="p-small">Distributed By <a class="no-line" href="https://themewagon.com/">Themewagon</a>
+                </p>
+            </div> <!-- end of col -->
+        </div> <!-- end of row -->
+    </div> <!-- end of container -->
 
-    
-<!--FOOTER*******************************************-->
-    <footer class="footer-area">
-        <div class="container">
-            <div class="row d-flex flex-wrap align-items-center">
-                <div class="col-12 col-md-6">
-                    <p class="copywrite-text"><a href="#"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
-                </div>
+</div> <!-- end of copyright -->
+<!-- end of copyright -->
 
-                <div class="col-12 col-md-6">
-                    <div class="footer-nav">
-                        <ul>
-                            <li><a href="#">Home</a></li>
-                            <li><a href="#">About</a></li>
-                            <li><a href="#">Contact</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <!-- ##### Footer Area Start ##### -->
+    </div> <!-- end of copyright -->
+    <!-- end of copyright -->
 
-    <!-- jQuery 3.6.0 -->
-    <script src="{% static 'js/jquery/jquery-3.6.0.js' %}"></script>
 
-    <!-- Bootstrap core JavaScript -->
-    <script src="{% static  'js/bootstrap/popper.min.js' %}"></script>
-    <script src="{% static  'js/bootstrap/bootstrap.bundle.min.js' %}"></script>
+            <!-- ##### Footer Area Start ##### -->
+            <!-- jQuery 3.6.0 -->
+            <script src="{% static 'js/jquery/jquery-3.6.0.js' %}"></script>
 
-    <!-- Custom JS Scripts -->
-    <script src="{% static  'js/plugins/plugins.js' %}"></script>
-    <script src="{% static  'js/active.js' %}"></script>
+             <!-- jQuery Easing for smooth scrolling between anchors -->
+            <script src="{% static  'js/jquery/jquery.easing.min.js' %}"></script>
+            <!-- Bootstrap core JavaScript -->
+            <script src="{% static  'js/bootstrap/popper.min.js' %}"></script>
+            <script src="{% static  'js/bootstrap/bootstrap.bundle.min.js' %}"></script>
+
+            <!-- Custom JS Scripts -->
+            <script src="{% static  'js/scripts.js' %}"></script>
+
 </body>
-
 </html>

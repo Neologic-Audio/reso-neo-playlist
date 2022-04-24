@@ -4,3 +4,5 @@ neo4j==4.4.0
 neo4j-driver==4.3.6
 neobolt==1.7.17
 neomodel==4.0.7
+shapely==1.7.1
+fontawesomefree==6.1.1
