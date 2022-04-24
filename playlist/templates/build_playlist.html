@@ -4,29 +4,42 @@
 
 <div class="container">
     <div class="row">
-        
+
         <div class="col-md-12">
             <center>
 
-                <a>Create A Track To Add To Playlist</a>
+
                 <br />
                 <form method='POST' id='myform'>
                     {% csrf_token %}
+
+                    <a>Playlist</a>
                     {{playlist_form.as_p}}
+
+                    
+                    <a>Track</a>
                     {{playlisttrack_form.as_p}}
+                    
+                    <a>Tag</a>
                     {{playlisttag_form.as_p}}
+
+                    <a>User</a>
                     {{playlistuser_form.as_p}}
+
+                    <a>Country</a>
                     {{playlistcountry_form.as_p}}
                     <input type='submit' value='Save' />
                 </form>
             </center>
+
         </div>
 
     </div>
 </div>
 
 
-
+    
+    
 
 
         {% endblock %}

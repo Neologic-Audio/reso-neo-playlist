@@ -7,9 +7,12 @@ config.DATABASE_URL = 'neo4j+s://neo4j:cgkKfYbz70cLGcTK6B7LnD4l7MjIVtD-hLTuZhTbR
 
 class PlayList(DjangoNode):
     
-    uuid = UniqueIdProperty(primary_key=True)
+    slug = StringProperty()
+    status = StringProperty(checked=True)
     title = StringProperty()
-    type = StringProperty()
+    tags_imported = StringProperty(false=True)
+    type = StringProperty(playlist=True)
+    uuid = UniqueIdProperty(primary_key=True)
 
     has_tag = RelationshipTo('PlayListTag', 'HAS_TAG')
     has_track = RelationshipTo('PlayListTracks', 'HAS_TRACK')
@@ -28,9 +31,14 @@ class PlayList(DjangoNode):
        
 
 class PlayListTracks(DjangoNode):
-
+    album = StringProperty()
+    artist = StringProperty()
+    creator_id = IntegerProperty()
+    tags_imported = StringProperty(false=True)
+    title = StringProperty()
+    url = StringProperty()
     uuid = UniqueIdProperty(primary_key=True)
-    track = StringProperty()
+    
     
     has_track = RelationshipFrom('PlayListTracks', 'HAS_TRACK')
 
@@ -40,7 +48,7 @@ class PlayListTracks(DjangoNode):
 
 class PlayListTag(DjangoNode):
     uuid = UniqueIdProperty(primary_key=True)
-    tag = StringProperty()
+    name = StringProperty()
     tg_count = IntegerProperty()
 
     has_tag = RelationshipFrom('PlayList', 'HAS_TAG')
@@ -66,8 +74,10 @@ class PlayListTag(DjangoNode):
         app_label = 'playlist'
 
 class PlayListUser(DjangoNode):
+    country = StringProperty()
     uuid = UniqueIdProperty(primary_key=True)
-    user = StringProperty()
+    twitter = StringProperty()
+    twitter_checked = StringProperty(true=True)
 
     owns = RelationshipTo('PlayList', 'OWNS')
 
@@ -76,7 +86,7 @@ class PlayListUser(DjangoNode):
 
 class PlayListCountry(DjangoNode):
     uuid = UniqueIdProperty(primary_key=True)
-    country = StringProperty()
+    name = StringProperty()
 
     in_country = RelationshipFrom('PlayListUser', 'IN_COUNTRY')
 
@@ -181,16 +191,16 @@ class Country(DjangoNode):
         app_label = 'tracks'
 
 
-def merge_nodes (playlistform, trackform, tagform, userform, countryform):
-    playlist = PlayList(title = playlistform).save()
+def merge_nodes(p_slug, p_title, t_album, t_artist, t_title, t_url, t_name, u_country, u_twitter, c_name):
+    playlist = PlayList(slug = p_slug, title = p_title).save()
 
-    track = PlayListTracks(track = trackform).save()
+    track = PlayListTracks(album = t_album, artist = t_artist, url = t_url, title = t_title).save()
 
-    tag = PlayListTag(tag = tagform).save()
+    tag = PlayListTag(name = t_name).save()
 
-    user = PlayListUser(user = userform).save()
+    user = PlayListUser(country = u_country, twitter = u_twitter).save()
 
-    country = PlayListCountry(country = countryform).save()
+    country = PlayListCountry(name = c_name).save()
 
     playlist.has_track.connect(track)
 

@@ -1,39 +1,40 @@
-from django.forms import ModelForm
+from django.forms import ModelForm, formset_factory
 from .models import PlayList, PlayListTracks, PlayListTag, PlayListUser, PlayListCountry, merge_nodes
 
 class PlayListForm(ModelForm):
    
     class Meta:
         model = PlayList
-        fields = ['title']
+        fields = ['title', 'slug']
 
 class PlayListTrackForm(ModelForm):
  
     class Meta:
        
         model = PlayListTracks
-        fields = ['track']
+        fields = ['album', 'artist', 'title', 'url']
 
 class PlayListTagForm(ModelForm):
     
     class Meta:
         
         model = PlayListTag
-        fields = ['tag']
+        fields = ['name']
 
 class PlayListUserForm(ModelForm):
     
     class Meta:
         
         model = PlayListUser
-        fields = ['user']
+        fields = ['country', 'twitter']
 
 class PlayListCountryForm(ModelForm):
     
     class Meta:
         
         model = PlayListCountry
-        fields = ['country']
+        fields = ['name']
 
 
 
+PlayListTrackFormSet = formset_factory(PlayListTrackForm, extra=1)
