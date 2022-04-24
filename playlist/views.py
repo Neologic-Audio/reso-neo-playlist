@@ -15,6 +15,20 @@ def index(request):
 
 
 def build_playlist(request):
+    if request.method == 'POST':
+        formset = PlayListTrackFormSet(request.POST)
+        if formset.is_valid():
+            for form in formset:
+                album = form.cleaned_data.get('album')
+                artist = form.cleaned_data.get('artist')
+                title = form.cleaned_data.get('title')
+                url = form.cleaned_data.get('url')
+                if album or artist or title or url:
+                    PlayList(album=album).save()
+                    PlayList(artist=artist).save()
+                    PlayList(title=title).save()
+                    PlayList(url=url).save()
+
     playlist_form = PlayListForm(request.POST or None)
     playlisttrack_form = PlayListTrackForm(request.POST or None)
     playlisttag_form = PlayListTagForm(request.POST or None)
@@ -23,13 +37,19 @@ def build_playlist(request):
 
     if request.POST:
         if playlist_form.is_valid() and playlisttrack_form.is_valid() and playlisttag_form.is_valid() and playlistuser_form.is_valid() and playlistcountry_form.is_valid():
-            playlist = playlist_form.cleaned_data.get("title")
-            track = playlisttrack_form.cleaned_data.get("track")
-            tag = playlisttag_form.cleaned_data.get("tag")
-            user = playlistuser_form.cleaned_data.get("user")
-            country = playlistcountry_form.cleaned_data.get("country")
+            playlist_title = playlist_form.cleaned_data.get("title")
+            playlist_slug = playlist_form.cleaned_data.get("slug")
+            track_album = playlisttrack_form.cleaned_data.get("album")
+            track_artist = playlisttrack_form.cleaned_data.get("artist")
+            track_title = playlisttrack_form.cleaned_data.get("title")
+            track_url = playlisttrack_form.cleaned_data.get("url")
+            tag = playlisttag_form.cleaned_data.get("name")
+            user_country = playlistuser_form.cleaned_data.get("country")
+            user_twitter = playlistuser_form.cleaned_data.get("twitter")
+            country = playlistcountry_form.cleaned_data.get("name")
 
-            merge_nodes(playlist, track, tag, user, country)
+            merge_nodes(playlist_title, playlist_slug, track_album, track_artist, track_title, track_url, tag,
+                        user_country, user_twitter, country)
 
     context = {
         'playlist_form': playlist_form,
@@ -138,7 +158,7 @@ def search(request):
         'title': tag.name,
         'tagline': tag.top_track.single().title,
         'released': tag.top_track.single().uuid,
-        'label': 'track'
+        'label': 'movie'
     } for tag in tags[:3]], safe=False)
 
 
@@ -158,7 +178,7 @@ def suggested_search(request):
         'title': tag.name,
         'tagline': tag.top_track.single().title,
         'released': tag.top_track.single().uuid,
-        'label': 'track'
+        'label': 'movie'
     } for tag in tags[:]], safe=False)
 
 

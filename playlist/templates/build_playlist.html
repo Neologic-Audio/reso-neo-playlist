@@ -29,10 +29,21 @@
                             <br/>
                             <form method='POST' id='myform'>
                                 {% csrf_token %}
+
+                                <a>Playlist</a>
                                 {{ playlist_form.as_p }}
+
+
+                                <a>Track</a>
                                 {{ playlisttrack_form.as_p }}
+
+                                <a>Tag</a>
                                 {{ playlisttag_form.as_p }}
+
+                                <a>User</a>
                                 {{ playlistuser_form.as_p }}
+
+                                <a>Country</a>
                                 {{ playlistcountry_form.as_p }}
                                 <input class="form-control-submit-button" type='submit' value='Save'/>
                             </form>
@@ -131,8 +142,8 @@
                     </div>
                 </div>
             </div>
-            </div>
-        </div> <!-- end of container -->
+        </div>
+    </div> <!-- end of container -->
     </div> <!-- end of ex-basic-1 -->
     <!-- end of basic -->
 {% endblock %}

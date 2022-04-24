@@ -27,4 +27,4 @@ urlpatterns = [
     path('suggested_search', views.suggested_search),
     path('admin/', admin.site.urls),
     path('', include('playlist.urls')),
-    ]
+]
