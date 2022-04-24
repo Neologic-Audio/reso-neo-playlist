@@ -18,52 +18,61 @@
     <!-- Custom Styles -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link
-        href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&family=Poppins:wght@600&display=swap"
-        rel="stylesheet">
+            href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&family=Poppins:wght@600&display=swap"
+            rel="stylesheet">
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap/bootstrap.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap/bootstrap.min.css' %}">
 
     <!-- Custom Styles -->
     <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
-    <script src="{% static 'fontawesomefree/js/all.min.js' %}"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/fontawesome-all.css' %}">
+
 
 </head>
 
 <body data-spy="scroll" data-target=".fixed-top">
 
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg fixed-top navbar-dark">
-        <div class="container">
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg fixed-top navbar-dark">
+    <div class="container">
 
-            <!-- Image Logo -->
-            <a class="navbar-brand logo-image" href="{% url 'index' %}"><img src="{% static 'img/logo.svg' %}"
-                    alt="alternative"></a>
+        <!-- Image Logo -->
+        <a class="navbar-brand logo-image" href="{% url 'index' %}"><img src="{% static 'img/logo.svg' %}"
+                                                                         alt="alternative"></a>
 
-            <!-- Text Logo - Use this if you don't have a graphic logo -->
-            <!-- <a class="navbar-brand logo-text page-scroll" href="index.html">Mark</a> -->
+        <!-- Text Logo - Use this if you don't have a graphic logo -->
+        <!-- <a class="navbar-brand logo-text page-scroll" href="index.html">Mark</a> -->
 
-            <button class="navbar-toggler p-0 border-0" type="button" data-toggle="offcanvas">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+        <button class="navbar-toggler p-0 border-0" type="button" data-toggle="offcanvas">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-            <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'index' %}">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'player' %}">Listen</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'about' %}">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'support' %}">Support</a>
-                    </li>
-                </ul>
-                <span class="nav-item social-icons">
+        <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'index' %}">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'player' %}">Listen</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'about' %}">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'support' %}">Support</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false">Listen</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdown01">
+                        <a class="dropdown-item page-scroll" href="{% url 'build_playlist' %}">Build Playlist</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item page-scroll" href="{% url 'view_playlist' %}">View Playlist</a>
+                    </div>
+                </li>
+            </ul>
+            <span class="nav-item social-icons">
                     <span class="fa-stack">
                         <a href="https://github.com/Neologic-Audio">
                             <i class="fas fa-circle fa-stack-2x"></i>
@@ -71,10 +80,10 @@
                         </a>
                     </span>
                 </span>
-            </div> <!-- end of navbar-collapse -->
-        </div> <!-- end of container -->
-    </nav> <!-- end of navbar -->
-    <!-- end of navigation -->
+        </div> <!-- end of navbar-collapse -->
+    </div> <!-- end of container -->
+</nav> <!-- end of navbar -->
+<!-- end of navigation -->
 
 
     <!-- Header -->

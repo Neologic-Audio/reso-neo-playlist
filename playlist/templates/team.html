@@ -7,316 +7,220 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Your description">
-    <meta name="author" content="Your name">
-
-    <!-- OG Meta Tags to improve the way the post looks when you share the page on Facebook, Twitter, LinkedIn -->
-	<meta property="og:site_name" content="" /> <!-- website name -->
-	<meta property="og:site" content="" /> <!-- website link -->
-	<meta property="og:title" content=""/> <!-- title shown in the actual shared post -->
-	<meta property="og:description" content="" /> <!-- description shown in the actual shared post -->
-	<meta property="og:image" content="" /> <!-- image link, make sure it's jpg -->
-	<meta property="og:url" content="" /> <!-- where do you want your post to link to -->
-	<meta name="twitter:card" content="summary_large_image"> <!-- to have large image post format in Twitter -->
+    <meta name="description" content="Django Playlist Builder">
 
     <!-- Webpage Title -->
-    <title>Mark Webpage Title</title>
+    <title>About</title>
 
     <!-- Favicon -->
     <link rel="icon" href="{% static 'img/core-img/icon.png' %}">
 
-    <!-- Styles -->
+    <!-- Custom Styles -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&family=Poppins:wght@600&display=swap" rel="stylesheet">
+    <link
+            href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&family=Poppins:wght@600&display=swap"
+            rel="stylesheet">
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap/bootstrap.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap/bootstrap.min.css' %}">
+
+    <!-- Custom Styles -->
     <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'css/fontawesome-all.css' %}">
+
+
 </head>
 
-<body>
-    <!-- Preloader -->
-    <div class="preloader d-flex align-items-center justify-content-center">
-        <div class="lds-ellipsis">
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-    </div>
+<body data-spy="scroll" data-target=".fixed-top">
 
-    <!-- ##### Header Area Start ##### -->
-    <header class="header-area">
-        <!-- Navbar Area -->
-        <div class="oneMusic-main-menu">
-            <div class="classy-nav-container breakpoint-off">
-                <div class="container">
-                    <!-- Menu -->
-                    <nav class="classy-navbar justify-content-between" id="oneMusicNav">
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg fixed-top navbar-dark">
+    <div class="container">
 
-                        <!-- LOGO IN UPPER LEFT CORNER-->
-                        <a href="{% url 'index' %}" class="nav-brand"><img src={% static "img/core-img/resonate.png" %} alt=""></a>
+        <!-- Image Logo -->
+        <a class="navbar-brand logo-image" href="index.html"><img src="{% static 'img/logo.svg' %}"
+                                                                  alt="alternative"></a>
 
+        <!-- Text Logo - Use this if you don't have a graphic logo -->
+        <!-- <a class="navbar-brand logo-text page-scroll" href="index.html">Mark</a> -->
 
-                        <!-- Navbar Toggler -->
-                        <div class="classy-navbar-toggler">
-                            <span class="navbarToggler"><span></span><span></span><span></span></span>
-                        </div>
+        <button class="navbar-toggler p-0 border-0" type="button" data-toggle="offcanvas">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-                        <!-- Menu -->
-                        <div class="classy-menu">
-
-                            <!-- Close Button -->
-                            <div class="classycloseIcon">
-                                <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
-                            </div>
-
-                            <div class="classynav">
-                                <ul>
-                                    <li><a href="https://stream.resonate.coop/discover">Listen</a></li>
-
-                                    <li><a href="{% url 'pricing' %}">Pricing</a></li>
-                                    <li><a href="{% url 'support' %}">Support</a></li>
-                                    <li><a href="https://resonate.is/join/">Join</a></li>
-                                    <li>
-                                        <a href="#">Login</a>
-                                        <ul class="dropdown">
-                                            <li><a href="#">Player</a></li>
-                                            <li><a href="file:///C:/Users/Adejsha.000/Downloads/one-music-gh-pagess/one-music-gh-pages/login.html">Profile</a></li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                                <div class="login-register-cart-button d-flex align-items-center">
-                                    <!-- Login/Register -->
-                                    <div class="login-register-btn mr-50">
-                                        <a href="login.html" id="loginBtn"></a>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                    </nav>
-                </div>
-            </div>
-        </div>
-    </header>
-
-
-    <!-- ##### Breadcumb Area Start ##### -->
-    <section class="breadcumb-area bg-img bg-overlay" style="background-image: url({% static 'img/bg-img/breadcumb3.jpg' %});">
-        <div class="bradcumbContent">
-            <h2>Meet the Resonate Team</h2>
-        </div>
-    </section>
-
-    <section class="featured-artist-area section-padding-100">
-        <div class="container">
-            <div class="row align-center">
-                <div class="col-2 col-md-2 col-lg-2">
-                </div>
-                <div class="col-12 col-md-7 col-lg-8">
-                    <div class="featured-artist-content">
-                        <!-- Section Heading -->
-                        <div class="section-heading black text-left mb-30">
-                            <h2>Co-operative Team</h2>
-                        </div>
-                        <p><p>Our Co-operative Team helps us run our co-operative, handling member services and education, co-operative to co-operative partnerships and organisational governance.</p>
+        <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'index' %}">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'player' %}">Listen</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'about' %}">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'support' %}">Support</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false">Listen</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdown01">
+                        <a class="dropdown-item page-scroll" href="{% url 'build_playlist' %}">Build Playlist</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item page-scroll" href="{% url 'view_playlist' %}">View Playlist</a>
                     </div>
-                    <div class="featured-artist-content">
-                        <!-- Section Heading -->
-                        <div class="section-heading black text-left mb-30">
-                            <h2>Co-operative Team</h2>
-                        </div>
-                        <p>Our Co-operative Team helps us run our co-operative, handling member services and education, co-operative to co-operative partnerships and organisational governance.</p>
-                    </div>
-                    <div class="featured-artist-content">
-                        <!-- Section Heading -->
-                        <div class="section-heading black text-left mb-30">
-                            <h2>Communications Team</h2>
-                        </div>
-                        <p>
-                            Our Communications Team helps us communicate with the world, ensuring our message is being heard and our stakeholder relationships are healthy.
-                        </p>
-                    </div>
-                    <div class="featured-artist-content">
-                        <!-- Section Heading -->
-                        <div class="section-heading black text-left mb-30">
-                            <h2>Platform Team</h2>
-                        </div>
-                        <p>Our Platform Team builds and supports the Resonate Player, Resonate APIs and our technical projects.</p>
-                    </div>
-                    <div class="featured-artist-content">
-                        <!-- Section Heading -->
-                        <div class="section-heading black text-left mb-30">
-                            <h2>Executive Team</h2>
-                        </div>
-                        <p>Our Executive Team is made up of our team leads. Together they set the operational direction of the co-operative, ensuring we’re moving forward together, and have all the resources we need.</p>
-                    </div>
-                    <div class="featured-artist-content">
-                        <!--IMAGE HERE
-                        <div class="featured-artist-thumb">
-                            <img src="https://resonate.is/profile/11742/" alt="">
-                        </div>-->
-                        <!-- Section Heading -->
-                        <div class="section-heading black text-left mb-30">
-                            <h2>Board</h2>
-                        </div>
-                        <p>Our Board watches over our teams, sets our strategic vision, helps us grow our relationships with stakeholders, and helps us source new talent.</p>
-
-                    </div>
-                    <div class="featured-artist-content">
-                        <!-- Section Heading -->
-                        <div class="section-heading black text-left mb-30">
-                            <h2>FAU Team</h2>
-                        </div>
-                        <p>College seniors that were tasked to focus on improving the Resonate experience.</p>
-                        <section class="latest-albums-area section-padding-100">
-
-                            <!--FAU TEAM SLIDES -->
-                            <div class="row">
-                                <div class="col-12">
-                                    <div class="albums-slideshow owl-carousel">
-                                        <!-- MEMBER 1 -->
-                                        <div class="single-album">
-                                            <!--IMAGE HERE -->
-                                            <img src={% static "img/bg-img/ariel.png" %} alt="">
-                                            <div class="album-info">
-                                                <a href="#">
-                                                    <h5>Ariel Fainstain</h5>
-                                                </a>
-                                                <p>Team Lead</p>
-                                            </div>
-                                        </div>
-
-                                        <!-- MEMBER 2 -->
-                                        <div class="single-album">
-                                            <img src={% static "img/bg-img/ade.png" %} alt="">
-                                            <div class="album-info">
-                                                <a href="#">
-                                                    <h5>Adejsha Francis</h5>
-                                                </a>
-                                                <p>Front-End Engineer</p>
-                                            </div>
-                                        </div>
-
-                                        <!-- MEMBER 3 -->
-                                        <div class="single-album">
-                                            <img src={% static "img/bg-img/sam.png" %} alt="">
-                                            <div class="album-info">
-                                                <a href="#">
-                                                    <h5>Samuel Parker</h5>
-                                                </a>
-                                                <p>Software Engineer</p>
-                                            </div>
-                                        </div>
-
-                                        <!-- MEMBER 4 -->
-                                        <div class="single-album">
-                                            <img src={% static "img/bg-img/max.png" %} alt="">
-                                            <div class="album-info">
-                                                <a href="#">
-                                                    <h5>Maxim Stroganov</h5>
-                                                </a>
-                                                <p>Quality Assurance Engineer</p>
-                                            </div>
-                                        </div>
-
-                                        <!-- MEMBER 5 -->
-                                        <div class="single-album">
-                                            <img src={% static "img/bg-img/gab.png" %} alt="">
-                                            <div class="album-info">
-                                                <a href="#">
-                                                    <h5>Gabrielle White</h5>
-                                                </a>
-                                                <p>API Engineer</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </section>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-    </section>
-
-
-    <!--LOGIN SECTION************************************** -->
-    <section class="contact-area section-padding-100 bg-img bg-overlay bg-fixed has-bg-img"
-             style="background-image: url({% static 'img/bg-img/bg-2.jpg' %});">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="section-heading white wow fadeInUp" data-wow-delay="100ms">
-                        <h2>Be Part of the Future of Music</h2>
-                        <p>Real Change Begins with You</p>
-                        <br>
-                        <!--BUTTON-->
-                        <div class="oneMusic-buttons-area mb-100 align-items-center">
-                            <a href="https://resonate.is/join/" class="btn oneMusic-btn m-2">
-                                Join Now<i class="fa fa-angle-double-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    <!--FOOTER**********************************************-->
-    <footer class="footer-area">
-        <div class="container">
-            <div class="row d-flex flex-wrap align-items-center">
-                <div class="col-12 col-md-6">
-
-                    <!--IMAGE HERE
-                    <a href="index.html" class="nav-brand"><img src="img/core-img/resonate.png" alt=""></a><br>
-                    <br>-->
-                    <!--COPYRIGHT FOR COLORLIB DEVELOPER-->
-                    <p class="copywrite-text">
-                        <a href="#">
-                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                            Copyright &copy;
-                            <script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                </li>
+            </ul>
+            <span class="nav-item social-icons">
+                    <span class="fa-stack">
+                        <a href="https://github.com/Neologic-Audio">
+                            <i class="fas fa-circle fa-stack-2x"></i>
+                            <i class="fab fa-github fa-stack-1x"></i>
                         </a>
-                    </p>
-                </div>
+                    </span>
+                </span>
+        </div> <!-- end of navbar-collapse -->
+    </div> <!-- end of container -->
+</nav> <!-- end of navbar -->
+<!-- end of navigation -->
 
-                <div class="col-12 col-md-6">
-                    <div class="footer-nav">
-                        <ul>
-                            <li><a href="{% url 'index' %}">Home</a></li>
-                            <li><a href="{% url 'about' %}">About</a></li>
-                            <li><a href="{% url 'blog' %}">Blog</a></li>
-                            <li><a href="{% url 'build_playlist' %}">Create</a></li>
-                            <li><a href="{% url 'view_playlist' %}">View</a></li>
-                            <li><a href="{% url 'team' %}">Team</a></li>
-                            <li><a href="{% url 'contact' %}">Contact</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
+<!-- Header -->
+<header class="ex-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-10 offset-xl-1">
+                <h1>Team</h1>
+            </div> <!-- end of col -->
+        </div> <!-- end of row -->
+    </div> <!-- end of container -->
+</header> <!-- end of ex-header -->
+<!-- end of header -->
+
+<!-- Projects -->
+<div id="projects" class="basic-3">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h2 class="h2-heading">Meet the Team</h2>
+                <p class="p-heading">These are the minds behind enhancing the experience of Resonate users
+                    by allowing them to search for the most popular tracks for each tag/genre. This search algorithm
+                    helps users to discover new songs and improve the variety in a customized
+                    playlist. Users will be able to build a custom playlist using these recommendations tailored
+                    towards their taste in similar tracks.</p>
+                <p>This application will be on an easy-to-use and visually appealing site that will be available to
+                    users either locally through our GitHub repository</p>
+                <!-- Button -->
+            </div> <!-- end of col -->
+        </div> <!-- end of row -->
+    </div> <!-- end of container -->
+</div> <!-- end of basic-3 -->
+<!-- end of projects -->
 
 
-    <!-- jQuery 3.6.0 -->
-    <script src="{% static 'js/jquery/jquery-3.6.0.js' %}"></script>
+<!-- Team Members -->
+<div class="basic-4">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="text-container">
+                    <div class="image-container">
+                        <a href="project.html">
+                            <img class="img-fluid" src="images/work-1.jpg" alt="alternative">
+                        </a>
+                    </div> <!-- end of image-container -->
+                    <p><strong>Ariel Fainstain:</strong> Team Lead & Back End Manager</p>
+                </div> <!-- end of text-container -->
+            </div> <!-- end of col -->
+            <div class="col-lg-4">
+                <div class="text-container">
+                    <div class="image-container">
+                        <a href="project.html">
+                            <img class="img-fluid" src="images/work-2.jpg" alt="alternative">
+                        </a>
+                    </div> <!-- end of image-container -->
+                    <p><strong>Adejsha Francis:</strong> Front End Engineer</p>
+                </div> <!-- end of text-container -->
+            </div> <!-- end of col -->
+            <div class="col-lg-4">
+                <div class="text-container">
+                    <div class="image-container">
+                        <a href="project.html">
+                            <img class="img-fluid" src="images/work-3.jpg" alt="alternative">
+                        </a>
+                    </div> <!-- end of image-container -->
+                    <p><strong>Samuel Parker:</strong> Software Engineer</p>
+                </div> <!-- end of text-container -->
+            </div> <!-- end of col -->
+        </div> <!-- end of row -->
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="text-container">
+                    <div class="image-container">
+                        <a href="project.html">
+                            <img class="img-fluid" src="images/work-4.jpg" alt="alternative">
+                        </a>
+                    </div> <!-- end of image-container -->
+                    <p><strong>Maxim Stroganov:</strong> Quality Assurance Engineer</p>
+                </div> <!-- end of text-container -->
+            </div> <!-- end of col -->
+            <div class="col-lg-4">
+                <div class="text-container">
+                    <div class="image-container">
+                        <a href="project.html">
+                            <img class="img-fluid" src="images/work-5.jpg" alt="alternative">
+                        </a>
+                    </div> <!-- end of image-container -->
+                    <p><strong>Gabrielle White:</strong> API Engineer</p>
+                </div> <!-- end of text-container -->
+            </div> <!-- end of col -->
+        </div> <!-- end of row -->
+    </div> <!-- end of container -->
+</div> <!-- end of basic-4 -->
+<!-- end of works -->
 
-    <!-- Bootstrap core JavaScript -->
-    <script src="{% static  'js/bootstrap/popper.min.js' %}"></script>
-    <script src="{% static  'js/bootstrap/bootstrap.bundle.min.js' %}"></script>
 
-    <!-- Custom JS Scripts -->
-    <script src="{% static  'js/plugins/plugins.js' %}"></script>
-    <script src="{% static  'js/active.js' %}"></script>
+<!-- Footer -->
+</br>
+<div class="footer bg-gray">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <a class="nav-item" href="{% url 'index' %}">Home</a> -
+                <a class="nav-item" href="{% url 'about' %}">About</a> -
+                <a class="nav-item" href="{% url 'build_playlist' %}">Create</a> -
+                <a class="nav-item" href="{% url 'view_playlist' %}">View</a>
+            </div> <!-- end of col -->
+        </div> <!-- end of row -->
+    </div> <!-- end of container -->
+</div> <!-- end of footer -->
+<!-- end of footer -->
+
+<!-- Copyright -->
+<div class="copyright bg-gray">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <p class="p-small">Copyright © 2022 <a class="no-line"
+                                                       href="https://github.com/Neologic-Audio/">NeoLogic
+                    Audio</a></p>
+            </div> <!-- end of col -->
+        </div> <!-- enf of row -->
+    </div> <!-- end of container -->
+</div> <!-- end of copyright -->
+
+<!-- ##### Footer Area Start ##### -->
+<!-- jQuery 3.6.0 -->
+<script src="{% static 'js/jquery/jquery-3.6.0.js' %}"></script>
+
+<!-- Bootstrap core JavaScript -->
+<script src="{% static  'js/bootstrap/popper.min.js' %}"></script>
+<script src="{% static  'js/bootstrap/bootstrap.bundle.min.js' %}"></script>
+
+<!-- jQuery Easing for smooth scrolling between anchors -->
+<script src="{% static  'js/jquery/jquery.easing.min.js' %}"></script>
+<!-- Custom JS Scripts -->
+<script src="{% static  'js/scripts.js' %}"></script>
+
 </body>
-
 </html>
