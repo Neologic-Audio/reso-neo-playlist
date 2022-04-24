@@ -279,7 +279,7 @@ In PyCharm (example of setup):
 4. On the virtual environment page, click to create a new environment
 * Keep the project location as the base project filepath
 * Make sure to use the Python source your Operating System is using
-** If you have multiple installations of Python, use "where python" in your terminal to find the correct file location
+** If you have multiple installations of Python, use "where python" (for Windows) or "which python3" (for mac) in your terminal to find the correct file location
 * Keep inheritance and availability unchecked, since it's better to go on a project by project basis
 
 5. Click OK
