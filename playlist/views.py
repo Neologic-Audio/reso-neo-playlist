@@ -5,9 +5,6 @@ from django.contrib import messages
 from django.http import JsonResponse, HttpResponse
 from neomodel import Traversal, match, config
 
-config.DATABASE_URL = 'neo4j+s://neo4j:cgkKfYbz70cLGcTK6B7LnD4l7MjIVtD-hLTuZhTbRHI@712c260b.databases.neo4j.io:7687'
-
-
 def index(request):
     return render(request, 'index.html', {
 
@@ -75,54 +72,6 @@ def view(request):
 
 def about(request):
     return render(request, 'about.html', {
-
-    })
-
-
-def contact(request):
-    return render(request, 'contact.html', {
-
-    })
-
-
-def blog(request):
-    return render(request, 'blog.html', {
-
-    })
-
-
-def elements(request):
-    return render(request, 'elements.html', {
-
-    })
-
-
-def event(request):
-    return render(request, 'event.html', {
-
-    })
-
-
-def features(request):
-    return render(request, 'features.html', {
-
-    })
-
-
-def join(request):
-    return render(request, 'join.html', {
-
-    })
-
-
-def pricing(request):
-    return render(request, 'pricing.html', {
-
-    })
-
-
-def support(request):
-    return render(request, 'support.html', {
 
     })
 

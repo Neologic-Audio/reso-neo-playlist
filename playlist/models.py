@@ -4,9 +4,6 @@ from django_neomodel import DjangoNode
 from neomodel import db as db, config, ArrayProperty, StringProperty, IntegerProperty, Relationship, RelationshipFrom, \
     RelationshipTo, StructuredRel, UniqueIdProperty, StructuredNode, DateTimeProperty
 
-config.DATABASE_URL = 'neo4j+s://neo4j:cgkKfYbz70cLGcTK6B7LnD4l7MjIVtD-hLTuZhTbRHI@712c260b.databases.neo4j.io:7687'
-
-
 class PlayList(DjangoNode):
     slug = StringProperty()
     status = StringProperty(checked=True)

@@ -10,10 +10,10 @@
     <meta name="description" content="Django Playlist Builder">
 
     <!-- Webpage Title -->
-    <title> {{ title }} </title>
+    <title> Neologic Audio </title>
 
     <!-- Favicon -->
-    <link rel="icon" href="{% static 'img/core-img/icon.png' %}">
+    <link rel="icon" href="{% static 'img/favicon.png' %}">
 
     <!-- Custom Styles -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -38,7 +38,7 @@
     <div class="container">
 
         <!-- Image Logo -->
-        <a class="navbar-brand logo-image" href="{% url 'index' %}"><img src="{% static 'img/logo.svg' %}"
+        <a class="navbar-brand logo-image" href="{% url 'index' %}"><img src="{% static 'img/logo.png' %}"
                                                                          alt="alternative"></a>
 
         <!-- Text Logo - Use this if you don't have a graphic logo -->
@@ -53,16 +53,13 @@
                     <a class="nav-link" href="{% url 'index' %}">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'player' %}">Listen</a>
-                </li>
-                <li class="nav-item">
                     <a class="nav-link" href="{% url 'about' %}">About</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'support' %}">Support</a>
+                    <a class="nav-link" href="{% url 'team' %}">Team</a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown"
+                    <a class="nav-link dropdown-toggle" href="{% url 'player' %}" id="dropdown01" data-toggle="dropdown"
                        aria-haspopup="true" aria-expanded="false">Listen</a>
                     <div class="dropdown-menu" aria-labelledby="dropdown01">
                         <a class="dropdown-item page-scroll" href="{% url 'build_playlist' %}">Build Playlist</a>
@@ -91,7 +88,7 @@
         <div class="row">
             <div class="col-lg-6">
                 <div class="text-container">
-                    <h1 class="h1-large">I love to create beautiful and efficient websites</h1>
+                    <h1 class="h1-large">Create custom playlists through recommended tracks!</h1>
                     <a class="btn-solid-lg page-scroll" href="#about">Discover</a>
                     <a class="btn-outline-lg page-scroll" href="#contact"><i class="fas fa-user"></i>Contact Me</a>
                 </div> <!-- end of text-container -->
@@ -375,8 +372,9 @@
             <div class="col-lg-12">
                 <a class="nav-item" href="{% url 'index' %}">Home</a> -
                 <a class="nav-item" href="{% url 'about' %}">About</a> -
-                <a class="nav-item" href="{% url 'build_playlist' %}">Create</a> -
-                <a class="nav-item" href="{% url 'view_playlist' %}">View</a>
+                <a class="nav-item" href="{% url 'team' %}">Team</a> -
+                <a class="nav-item" href="{% url 'build_playlist' %}">Listen</a> -
+                <a class="nav-item" href="https://github.com/Neologic-Audio/reso-neo-playlist/issues">Help</a>
             </div> <!-- end of col -->
         </div> <!-- end of row -->
     </div> <!-- end of container -->

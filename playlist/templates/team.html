@@ -10,10 +10,10 @@
     <meta name="description" content="Django Playlist Builder">
 
     <!-- Webpage Title -->
-    <title>About</title>
+    <title> {{ title }} </title>
 
     <!-- Favicon -->
-    <link rel="icon" href="{% static 'img/core-img/icon.png' %}">
+    <link rel="icon" href="{% static 'img/favicon.png' %}">
 
     <!-- Custom Styles -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -31,15 +31,17 @@
 
 </head>
 
+
+
 <body data-spy="scroll" data-target=".fixed-top">
 
-<!-- Navigation -->
+    <!-- Navigation -->
 <nav class="navbar navbar-expand-lg fixed-top navbar-dark">
     <div class="container">
 
         <!-- Image Logo -->
-        <a class="navbar-brand logo-image" href="index.html"><img src="{% static 'img/logo.svg' %}"
-                                                                  alt="alternative"></a>
+        <a class="navbar-brand logo-image" href="{% url 'index' %}"><img src="{% static 'img/logo.png' %}"
+                                                                         alt="alternative"></a>
 
         <!-- Text Logo - Use this if you don't have a graphic logo -->
         <!-- <a class="navbar-brand logo-text page-scroll" href="index.html">Mark</a> -->
@@ -47,23 +49,19 @@
         <button class="navbar-toggler p-0 border-0" type="button" data-toggle="offcanvas">
             <span class="navbar-toggler-icon"></span>
         </button>
-
         <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'index' %}">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'player' %}">Listen</a>
-                </li>
-                <li class="nav-item">
                     <a class="nav-link" href="{% url 'about' %}">About</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'support' %}">Support</a>
+                    <a class="nav-link" href="{% url 'team' %}">Team</a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown"
+                    <a class="nav-link dropdown-toggle" href="{% url 'player' %}" id="dropdown01" data-toggle="dropdown"
                        aria-haspopup="true" aria-expanded="false">Listen</a>
                     <div class="dropdown-menu" aria-labelledby="dropdown01">
                         <a class="dropdown-item page-scroll" href="{% url 'build_playlist' %}">Build Playlist</a>
@@ -85,102 +83,113 @@
 </nav> <!-- end of navbar -->
 <!-- end of navigation -->
 
-<!-- Header -->
-<header class="ex-header">
-    <div class="container">
-        <div class="row">
-            <div class="col-xl-10 offset-xl-1">
-                <h1>Team</h1>
-            </div> <!-- end of col -->
-        </div> <!-- end of row -->
-    </div> <!-- end of container -->
-</header> <!-- end of ex-header -->
-<!-- end of header -->
+    <!-- Header -->
+    <header class="ex-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-10 offset-xl-1">
+                    <h1>Team</h1>
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </header> <!-- end of ex-header -->
+    <!-- end of header -->
 
-<!-- Projects -->
-<div id="projects" class="basic-3">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <h2 class="h2-heading">Meet the Team</h2>
-                <p class="p-heading">These are the minds behind enhancing the experience of Resonate users
-                    by allowing them to search for the most popular tracks for each tag/genre. This search algorithm
-                    helps users to discover new songs and improve the variety in a customized
-                    playlist. Users will be able to build a custom playlist using these recommendations tailored
-                    towards their taste in similar tracks.</p>
-                <p>This application will be on an easy-to-use and visually appealing site that will be available to
-                    users either locally through our GitHub repository</p>
-                <!-- Button -->
-            </div> <!-- end of col -->
-        </div> <!-- end of row -->
-    </div> <!-- end of container -->
-</div> <!-- end of basic-3 -->
-<!-- end of projects -->
+    <!-- Projects -->
+    <div id="projects" class="basic-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2 class="h2-heading">Meet the Team</h2>
+                    <p class="p-heading">These are the minds behind enhancing the experience of Resonate users
+                        by allowing them to search for the most popular tracks for each tag/genre. This search algorithm
+                        helps users to discover new songs and improve the variety in a customized
+                        playlist. Users will be able to build a custom playlist using these recommendations tailored
+                        towards their taste in similar tracks.</p>
+                    <p class="p-heading">This application will be on an easy-to-use and visually appealing site that
+                        will be
+                        available to
+                        users either locally through our GitHub repository</p>
 
+                    <!-- Testimonials -->
+                    <div class="cards-1 offset-1">
+                        <!-- Card -->
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="details">
+                                    <img src="{% static 'img/team/ariel.jpg' %}" alt="alternative">
+                                    <div class="text">
+                                        <div class="testimonial-author">Ariel Fainstain</div>
+                                        <div class="occupation">Project Lead/Back End Manager</div>
+                                    </div> <!-- end of text -->
+                                </div> <!-- end of testimonial-details -->
+                            </div>
+                        </div>
+                        <!-- end of card -->
 
-<!-- Team Members -->
-<div class="basic-4">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-4">
-                <div class="text-container">
-                    <div class="image-container">
-                        <a href="project.html">
-                            <img class="img-fluid" src="images/work-1.jpg" alt="alternative">
-                        </a>
-                    </div> <!-- end of image-container -->
-                    <p><strong>Ariel Fainstain:</strong> Team Lead & Back End Manager</p>
-                </div> <!-- end of text-container -->
-            </div> <!-- end of col -->
-            <div class="col-lg-4">
-                <div class="text-container">
-                    <div class="image-container">
-                        <a href="project.html">
-                            <img class="img-fluid" src="images/work-2.jpg" alt="alternative">
-                        </a>
-                    </div> <!-- end of image-container -->
-                    <p><strong>Adejsha Francis:</strong> Front End Engineer</p>
-                </div> <!-- end of text-container -->
-            </div> <!-- end of col -->
-            <div class="col-lg-4">
-                <div class="text-container">
-                    <div class="image-container">
-                        <a href="project.html">
-                            <img class="img-fluid" src="images/work-3.jpg" alt="alternative">
-                        </a>
-                    </div> <!-- end of image-container -->
-                    <p><strong>Samuel Parker:</strong> Software Engineer</p>
-                </div> <!-- end of text-container -->
-            </div> <!-- end of col -->
-        </div> <!-- end of row -->
-        <div class="row">
-            <div class="col-lg-4">
-                <div class="text-container">
-                    <div class="image-container">
-                        <a href="project.html">
-                            <img class="img-fluid" src="images/work-4.jpg" alt="alternative">
-                        </a>
-                    </div> <!-- end of image-container -->
-                    <p><strong>Maxim Stroganov:</strong> Quality Assurance Engineer</p>
-                </div> <!-- end of text-container -->
-            </div> <!-- end of col -->
-            <div class="col-lg-4">
-                <div class="text-container">
-                    <div class="image-container">
-                        <a href="project.html">
-                            <img class="img-fluid" src="images/work-5.jpg" alt="alternative">
-                        </a>
-                    </div> <!-- end of image-container -->
-                    <p><strong>Gabrielle White:</strong> API Engineer</p>
-                </div> <!-- end of text-container -->
-            </div> <!-- end of col -->
-        </div> <!-- end of row -->
-    </div> <!-- end of container -->
-</div> <!-- end of basic-4 -->
-<!-- end of works -->
+                        <!-- Card -->
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="details">
+                                    <img src="{% static 'img/team/ade.png' %}" alt="alternative">
+                                    <div class="text">
+                                        <div class="testimonial-author">John Rowling</div>
+                                        <div class="occupation">Front End Engineer</div>
+                                    </div> <!-- end of text -->
+                                </div> <!-- end of testimonial-details -->
+                            </div>
+                        </div>
+                        <!-- end of card -->
 
+                        <!-- Card -->
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="details">
+                                    <img src="{% static 'img/team/sam.png' %}" alt="alternative">
+                                    <div class="text">
+                                        <div class="testimonial-author">Samuel Parker</div>
+                                        <div class="occupation">Software Engineer</div>
+                                    </div> <!-- end of text -->
+                                </div> <!-- end of testimonial-details -->
+                            </div>
+                        </div>
+                        <!-- end of card -->
 
-<!-- Footer -->
+                        <!-- Card -->
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="details">
+                                    <img src="{% static 'img/team/max.jpg' %}" alt="alternative">
+                                    <div class="text">
+                                        <div class="testimonial-author">Max Stroganov</div>
+                                        <div class="occupation">Quality Assurance Engineer</div>
+                                    </div> <!-- end of text -->
+                                </div> <!-- end of testimonial-details -->
+                            </div>
+                        </div>
+                        <!-- end of card -->
+
+                        <!-- Card -->
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="details">
+                                    <img src="{% static 'img/team/gab.jpg' %}" alt="alternative">
+                                    <div class="text">
+                                        <div class="testimonial-author">Gabrielle White</div>
+                                        <div class="occupation">Full Stack Engineer</div>
+                                    </div> <!-- end of text -->
+                                </div> <!-- end of testimonial-details -->
+                            </div>
+                        </div>
+                        <!-- end of card -->
+                    </div> <!-- end of col -->
+                </div> <!-- end of row -->
+            </div> <!-- end of container -->
+        </div> <!-- end of cards-1 -->
+        <!-- end of testimonials -->
+    </div>
+
+    <!-- Footer -->
 </br>
 <div class="footer bg-gray">
     <div class="container">
@@ -188,8 +197,9 @@
             <div class="col-lg-12">
                 <a class="nav-item" href="{% url 'index' %}">Home</a> -
                 <a class="nav-item" href="{% url 'about' %}">About</a> -
-                <a class="nav-item" href="{% url 'build_playlist' %}">Create</a> -
-                <a class="nav-item" href="{% url 'view_playlist' %}">View</a>
+                <a class="nav-item" href="{% url 'team' %}">Team</a> -
+                <a class="nav-item" href="{% url 'build_playlist' %}">Listen</a> -
+                <a class="nav-item" href="https://github.com/Neologic-Audio/reso-neo-playlist/issues">Help</a>
             </div> <!-- end of col -->
         </div> <!-- end of row -->
     </div> <!-- end of container -->
@@ -209,18 +219,20 @@
     </div> <!-- end of container -->
 </div> <!-- end of copyright -->
 
-<!-- ##### Footer Area Start ##### -->
-<!-- jQuery 3.6.0 -->
-<script src="{% static 'js/jquery/jquery-3.6.0.js' %}"></script>
 
-<!-- Bootstrap core JavaScript -->
-<script src="{% static  'js/bootstrap/popper.min.js' %}"></script>
-<script src="{% static  'js/bootstrap/bootstrap.bundle.min.js' %}"></script>
+        <!-- ##### Footer Area Start ##### -->
+        <!-- jQuery 3.6.0 -->
+        <script src="{% static 'js/jquery/jquery-3.6.0.js' %}"></script>
 
-<!-- jQuery Easing for smooth scrolling between anchors -->
-<script src="{% static  'js/jquery/jquery.easing.min.js' %}"></script>
-<!-- Custom JS Scripts -->
-<script src="{% static  'js/scripts.js' %}"></script>
+        <!-- Bootstrap core JavaScript -->
+        <script src="{% static  'js/bootstrap/popper.min.js' %}"></script>
+        <script src="{% static  'js/bootstrap/bootstrap.bundle.min.js' %}"></script>
+
+        <!-- jQuery Easing for smooth scrolling between anchors -->
+        <script src="{% static  'js/jquery/jquery.easing.min.js' %}"></script>
+        <!-- Custom JS Scripts -->
+        <script src="{% static  'js/scripts.js' %}"></script>
 
 </body>
+
 </html>
