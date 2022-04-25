@@ -1,6 +1,8 @@
 <!--To Fix: header image-->
 {% extends 'base.html' %}
 {% block content %}
+        {% load static %}
+
 
     <!-- Header -->
     <header id="header" class="header">
@@ -11,7 +13,7 @@
                         <h1 class="h1-large">Play Fair</h1>
                         <h4 style="color:white">The community-owned music network</h4>
                         <!--  Button   -->
-                        <a class="btn-solid-lg page-scroll" href="{% url 'listen' %}">Listen Now</a>
+                        <a class="btn-solid-lg page-scroll" href="{% url 'player' %}">Listen Now</a>
                         <!--Another button:
                         <a class="btn-outline-lg page-scroll" href="#contact"><i class="fas fa-user"></i>Contact Me</a> -->
                     </div> <!-- end of text-container -->
@@ -34,5 +36,34 @@
     </div> <!-- end of basic-3 -->
     <!-- end of projects -->
 
+
+    <!-- Tools and Tech -->
+    <div class="basic-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="text-container">
+                        <div class="image-container">
+                            <a href="project.html">
+                                <img src="{% static 'img/wrench.png' %}"
+                                     alt="alternative" width="50" height="50">                            </a>
+                        </div> <!-- end of image-container -->
+                        <p>Python 3.9+, Django Python Web Framework, Django-Neomodel Plugin, PyCharm/Visual Studio, Neo4j Graph Database, Neo4j Aura, Neo4j Desktop, Neuler Data Science Playground, GitHub, Heroku.</p>
+                    </div> <!-- end of text-container -->
+                </div> <!-- end of col -->
+                <div class="col-lg-6">
+                    <div class="text-container">
+                        <div class="image-container">
+                            <a href="project.html">
+                                <img src="{% static 'img/settings (1).png' %}"
+                                     alt="alternative" width="50" height="50">                            </a>
+                        </div> <!-- end of image-container -->
+                        <p>REST API Implementation, Algorithm Development, Web Application Development, Cloud/Local Database Management, UI Design, Version Control</p>
+                    </div> <!-- end of text-container -->
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of basic-4 -->
+    <!-- end of works -->
 
 {% endblock %}
