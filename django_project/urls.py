@@ -25,7 +25,7 @@ urlpatterns = [
     # Uncomment the next line to enable the admin:
     path('search', views.search),
     path('suggested_search', views.suggested_search),
-    path('graph', views.graph),
+    path('search_playlists', views.search_playlists),
     path('admin/', admin.site.urls),
     path('', include('playlist.urls')),
-    ]
+]

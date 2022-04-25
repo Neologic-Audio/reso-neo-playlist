@@ -3,561 +3,206 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="description" content="">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
-    <!-- Title -->
-    <title>Homepage - Resonate</title>
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Django Playlist Builder">
+
+    <!-- Webpage Title -->
+    <title> Neologic Audio </title>
 
     <!-- Favicon -->
-    <link rel="stylesheet" type="text/css" href="{% static 'img/core-img/icon.png' %}">
+    <link rel="icon" href="{% static 'img/favicon.png' %}">
 
-    <!-- Custom Stylesheet -->
-    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/animate.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/audioplayer.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/classy-nav.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/font-awesome.min.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/magnific-popup.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/one-music-icon.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/owl.carousel.min.css' %}">
+    <!-- Custom Styles -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&family=Poppins:wght@600&display=swap"
+        rel="stylesheet">
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap/bootstrap.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap/bootstrap.min.css' %}">
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/fontawesome-all.css' %}">
 
 
 </head>
 
-<body>
-    <!-- Preloader -->
-    <div class="preloader d-flex align-items-center justify-content-center">
-        <div class="lds-ellipsis">
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-    </div>
+<body data-spy="scroll" data-target=".fixed-top">
 
-    <!-- ##### Header Area Start ##### -->
-    <header class="header-area">
-        <!-- Navbar Area -->
-        <div class="oneMusic-main-menu">
-            <div class="classy-nav-container breakpoint-off">
-                <div class="container">
-                    <!-- Menu -->
-                    <nav class="classy-navbar justify-content-between" id="oneMusicNav">
-
-                        <!-- LOGO IN UPPER LEFT CORNER-->
-                        <a href="index.html" class="nav-brand"><img src="{% static 'img/core-img/icon.png' %}" alt=""></a>
-
-
-                        <!-- Navbar Toggler -->
-                        <div class="classy-navbar-toggler">
-                            <span class="navbarToggler"><span></span><span></span><span></span></span>
-                        </div>
-
-                        <!-- Menu -->
-                        <div class="classy-menu">
-
-                            <!-- Close Button -->
-                            <div class="classycloseIcon">
-                                <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
-                            </div>
-
-                            <!-- NAG HERE****************************************** -->
-                            <div class="classynav">
-                                <ul>
-                                    <li><a href="{% url 'player' %}">Listen</a></li>
-
-                                    <li><a href="{% url 'pricing' %}">Pricing</a></li>
-                                    <li><a href="{% url 'support' %}">Support</a></li>
-                                    <li><a href="https://resonate.is/join/">Join</a></li>
-                                    <li>
-                                        <a href="#">Login</a>
-                                        <ul class="dropdown">
-                                            <li><a href="{% url 'player' %}">Player</a></li>
-                                            <li><a href="#">Profile</a></li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                                <div class="login-register-cart-button d-flex align-items-center">
-                                    <!-- Login/Register -->
-                                    <div class="login-register-btn mr-50">
-                                        <a href="login.html" id="loginBtn"></a>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                    </nav>
-                </div>
-            </div>
-        </div>
-    </header>
-
-
-    <!--FADE HEADER*********************************************-->
-    <section class="hero-area">
-        <div class="hero-slides owl-carousel">
-            <!-- Single Hero Slide -->
-            <div class="single-hero-slide d-flex align-items-center justify-content-center">
-                <!--SLIDE IMAGE # 1*****************************************-->
-                <div class="slide-img bg-img" style="background-image: url({% static 'img/bg-img/bg-1.jpg' %});"></div>
-                <!-- Slide Content -->
-                <div class="container">
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="hero-slides-content text-center">
-                                <!--SMALL HEADER-->
-                                <h6 data-animation="fadeInUp" data-delay="100ms">The community-owned music network</h6>
-                                <!--LARGE HEADER-->
-                                <h2 data-animation="fadeInUp" data-delay="300ms">Play Fair <span>Play Fair</span></h2>
-                                <!--TEXT ON BUTTON-->
-                                <a data-animation="fadeInUp" data-delay="500ms" href="https://resonate.is/join/" class="btn oneMusic-btn mt-50">
-                                    Join
-                                    Now<i class="fa fa-angle-double-right"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!--SLIDE IMAGE # 2*****************************************-->
-            <div class="single-hero-slide d-flex align-items-center justify-content-center">
-                <!-- Slide Img -->
-                <div class="slide-img bg-img" style="background-image: url({% static 'img/bg-img/bg-4.jpg' %});"></div>
-                <!-- Slide Content -->
-                <div class="container">
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="hero-slides-content text-center">
-                                <!--SMALL HEADER-->
-                                <h6 data-animation="fadeInUp" data-delay="100ms"></h6>
-                                <!--LARGE HEADER-->
-                                <h2 data-animation="fadeInUp" data-delay="300ms">
-                                    Pay as you play<br>No Monthly fees<br> Own
-                                    music again<span>Pay as you play<br>No Monthly fees<br> Own music again</span>
-                                </h2>
-                                <!--TEXT ON BUTTON-->
-                                <a data-animation="fadeInUp" data-delay="500ms" href="https://resonate.is/join/" class="btn oneMusic-btn mt-50">
-                                    Join
-                                    Now<i class="fa fa-angle-double-right"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!--WEBSITE INFO******************************************-->
-    <section class="latest-albums-area section-padding-100">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark">
         <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="section-heading style-2">
-                        <h5>
-                            Support the artists you love. What takes other services 200 plays, we do in 9 with
-                            stream2own.
-                        </h5>
-                        <br>
-                        <h5>Co-own your platform. Be a part of an active community; share in decisions and in profits.</h5>
-                        <br>
-                        <h5>
-                            Set the terms on which you share. Have a say in how your information is used; decide how to
-                            distribute your music.
-                        </h5>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!--FEAUTURED ARTIST ************************************-->
-    <section class="featured-artist-area section-padding-100">
-        <!--NOTE:'container' makes the header slide a square-->
-        <div class="hero-slides owl-carousel container">
+            <!-- Image Logo -->
+            <a class="navbar-brand logo-image" href="{% url 'index' %}"><img src="{% static 'img/logo.png' %}"
+                    alt="alternative"></a>
 
-            <!--FEATURED ALBUM & TITLE1**********************************-->
-            <div class="col-12 col-md-7 col-lg-5 ">
-                <div class="slide-img bg-img row align-items-end">
-                    <a href="https://beta.resonate.is/artists/10674" target="_blank">
-                        <img class="covers"
-                             src="https://upload.resonate.is/images/e24014d9-ca73-4467-b24d-2262dac038df-x600.jpg" />
-                    </a>
-                </div>
-                <!--FEATURED ARTIST INFO AND COLOR-->
-                <div class="section-heading grey text-left mb-30">
-                    <p>Featured album</p>
-                    <h2>
-                        <a href="https://beta.resonate.is/artists/10674" target="_blank" class="white">Colour Your Life</a>
-                    </h2>
-                    <p>
-                        By <a href="https://beta.resonate.is/artists/10674" target="_blank" class="white">Mr Twin Sister</a>
-                    </p>
-                </div>
-            </div>
+            <!-- Text Logo - Use this if you don't have a graphic logo -->
+            <!-- <a class="navbar-brand logo-text page-scroll" href="index.html">Mark</a> -->
 
-            <!--FEATURED ALBUM & TITLE2**********************************-->
-            <div class="col-12 col-md-7 col-lg-5">
-                <div class="slide-img bg-img">
-                    <a href="https://beta.resonate.is/artists/643" target="_blank">
-                        <img class="covers"
-                             src="https://upload.resonate.is/images/ad24348c-7946-4b18-8dc1-4355d30866b9-x600.jpg" />
-                    </a>
-                </div>
-                <!--FEATURED ARTIST INFO AND COLOR-->
-                <div class="section-heading grey text-left mb-30">
-                    <p>Featured album</p>
-                    <h2><a href="https://beta.resonate.is/artists/643" target="_blank" class="white">Endgame</a></h2>
-                    <p>
-                        By <a href="https://beta.resonate.is/artists/643" target="_blank" class="white">
-                            Interplanetary
-                            Prophets
-                        </a> on <a href="https://beta.resonate.is/labels/501" target="_blank" class="white">
-                            Planet
-                            Mu Records
+            <button class="navbar-toggler p-0 border-0" type="button" data-toggle="offcanvas">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'index' %}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'about' %}">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'team' %}">Team</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="{% url 'player' %}" id="dropdown01"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Listen</a>
+                        <div class="dropdown-menu" aria-labelledby="dropdown01">
+                            <a class="dropdown-item page-scroll" href="{% url 'build_playlist' %}">Build Playlist</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item page-scroll" href="{% url 'view_playlist' %}">View Playlist</a>
+                        </div>
+                    </li>
+                </ul>
+                <span class="nav-item social-icons">
+                    <span class="fa-stack">
+                        <a href="https://github.com/Neologic-Audio">
+                            <i class="fas fa-circle fa-stack-2x"></i>
+                            <i class="fab fa-github fa-stack-1x"></i>
                         </a>
-                    </p>
-                </div>
-            </div>
+                    </span>
+                </span>
+            </div> <!-- end of navbar-collapse -->
+        </div> <!-- end of container -->
+    </nav> <!-- end of navbar -->
+    <!-- end of navigation -->
 
-            <!--FEATURED ALBUM & TITLE3**********************************-->
-            <div class="col-12 col-md-7 col-lg-5">
-                <div class="slide-img bg-img">
-                    <a href="https://beta.resonate.is/artists/2382" target="_blank">
-                        <img class="covers"
-                             src="https://resonate.is/wp-content/uploads/ultimatemember/2382/profile_photo.jpg" />
-                    </a>
-                </div>
-                <!--FEATURED ARTIST INFO AND COLOR-->
-                <div class="section-heading grey text-left mb-30">
-                    <p>Featured album</p>
-                    <h2><a href="https://beta.resonate.is/artists/2382" target="_blank" class="white">Anomie</a></h2>
-                </div>
-            </div>
 
-            <!--FEATURED ALBUM & TITLE4**********************************-->
-            <div class="col-12 col-md-7 col-lg-5">
-                <div class="slide-img bg-img">
-                    <a href="https://beta.resonate.is/artists/3789" target="_blank">
-                        <img class="covers"
-                             src="https://resonate.is/wp-content/uploads/ultimatemember/3789/profile_photo.jpg" />
-                    </a>
-                </div>
-                <!--FEATURED ARTIST INFO AND COLOR-->
-                <div class="section-heading grey text-left mb-30">
-                    <p>Featured album</p>
-                    <h2><a href="https://beta.resonate.is/artists/3789" target="_blank" class="white">Elsa Hewitt</a></h2>
-                </div>
-            </div>
-
-            <!--FEATURED ALBUM & TITLE5**********************************-->
-            <div class="col-12 col-md-7 col-lg-5">
-                <div class="slide-img bg-img">
-                    <a href="https://beta.resonate.is/artists/3135" target="_blank">
-                        <img class="covers"
-                             src="https://upload.resonate.is/images/868aed70-29a5-49b6-b01a-c206a2098821-x600.jpg" />
-                    </a>
-                </div>
-                <!--FEATURED ARTIST INFO AND COLOR-->
-                <div class="section-heading grey text-left mb-30">
-                    <p>Featured album</p>
-                    <h2><a href="https://beta.resonate.is/artists/3135" target="_blank" class="white">Haptics</a></h2>
-                    <p>By <a href="https://beta.resonate.is/artists/3135" target="_blank" class="white">Dasychira</a></p>
-                </div>
-            </div>
-
-            <!--FEATURED ALBUM & TITLE6*********************************-->
-            <div class="col-12 col-md-7 col-lg-5">
-                <div class="slide-img bg-img">
-                    <a href="https://beta.resonate.is/artists/7267" target="_blank">
-                        <img class="covers"
-                             src="https://resonate.is/wp-content/uploads/ultimatemember/7267/profile_photo.jpg" />
-                    </a>
-                </div>
-                <!--FEATURED ARTIST INFO AND COLOR-->
-                <div class="section-heading grey text-left mb-30">
-                    <p>Featured album</p>
-                    <h2><a href="https://beta.resonate.is/artists/7267" target="_blank" class="white">OCnotes</a></h2>
-                </div>
-            </div>
-            <!--FEATURED ALBUM & TITLE7*********************************-->
-            <div class="col-12 col-md-7 col-lg-5">
-                <div class="slide-img bg-img">
-                    <a href="https://beta.resonate.is/artists/7198" target="_blank">
-                        <img class="covers"
-                             src="https://upload.resonate.is/images/4857a932-ccaf-474b-a6bc-1d5c504b38f8-x600.jpg" />
-                    </a>
-
-                </div>
-                <!--FEATURED ARTIST INFO AND COLOR-->
-                <div class="section-heading grey text-left mb-30">
-                    <p>Featured album</p>
-                    <h2>
-                        <a href="https://beta.resonate.is/artists/7198" target="_blank" class="white">
-                            It's Not Even a
-                            Colour
-                        </a>
-                    </h2>
-                    <p>By <a href="https://beta.resonate.is/artists/7198" target="_blank" class="white">Madame So</a></p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!--AS SEEN SECTION************************************-->
-    <div class="col-12">
-        <div class="elements-title mb-70">
-            <h2>As Seen</h2>
-        </div>
-    </div>
-
-    <div class="col-12">
-        <div class="row mb-70">
-            <!-- Single Web Icon -->
-            <div class="col-12 col-sm-6 col-md-3 col-lg-2">
-                <div class="single-web-icon mb-30">
-                    <a href="https://resonate.is/wired-uk/">
-                        <img src="https://resonate.is/wp-content/themes/manifesto/images/press-wired.png">
-                    </a>
-                </div>
-            </div>
-            <!-- Single Web Icon -->
-            <div class="col-12 col-sm-6 col-md-3 col-lg-2">
-                <div class="single-web-icon mb-30">
-                    <a href="https://resonate.is/resident-advisor-2/">
-                        <img src="https://resonate.is/wp-content/themes/manifesto/images/press-ra.png">
-                    </a>
-                </div>
-            </div>
-            <!-- Single Web Icon -->
-            <div class="col-12 col-sm-6 col-md-3 col-lg-2">
-                <div class="single-web-icon mb-30">
-                    <a href="https://resonate.is/the-guardian-int/">
-                        <img src="https://resonate.is/wp-content/themes/manifesto/images/press-guardian.png">
-                    </a>
-                </div>
-            </div>
-            <!-- Single Web Icon -->
-            <div class="col-12 col-sm-6 col-md-3 col-lg-2">
-                <div class="single-web-icon mb-30">
-                    <a href="https://resonate.is/financial-times/">
-                        <img src="https://resonate.is/wp-content/themes/manifesto/images/press-ft.png">
-                    </a>
-                </div>
-            </div>
-            <!-- Single Web Icon -->
-            <div class="col-12 col-sm-6 col-md-3 col-lg-2">
-                <div class="single-web-icon mb-30">
-                    <a href="https://resonate.is/noisey/">
-                        <img src="https://resonate.is/wp-content/themes/manifesto/images/press-noisey.png">
-                    </a>
-                </div>
-            </div>
-            <!-- Single Web Icon -->
-            <div class="col-12 col-sm-6 col-md-3 col-lg-2">
-                <div class="single-web-icon mb-30">
-                    <a href="https://resonate.is/fact-mag/">
-                        <img src="https://resonate.is/wp-content/themes/manifesto/images/press-fact.png">
-                    </a>
-                </div>
-            </div>
-            <!-- Single Web Icon -->
-            <div class="col-12 col-sm-6 col-md-3 col-lg-2">
-                <div class="single-web-icon mb-30">
-                    <a href="https://resonate.is/the-verge/">
-                        <img src="https://resonate.is/wp-content/themes/manifesto/images/press-verge.png">
-                    </a>
-                </div>
-            </div>
-
-            <!-- Single Web Icon -->
-            <div class="col-12 col-sm-6 col-md-3 col-lg-2">
-                <div class="single-web-icon mb-30">
-                    <a href="https://resonate.is/forbes/">
-                        <img src="https://resonate.is/wp-content/themes/manifesto/images/press-forbes.png">
-                    </a>
-                </div>
-            </div>
-            <!-- Single Web Icon -->
-            <div class="col-12 col-sm-6 col-md-3 col-lg-2">
-                <div class="single-web-icon mb-30">
-                    <a href="https://resonate.is/in-mixmag/">
-                        <img src="https://resonate.is/wp-content/themes/manifesto/images/press-mixmag.png">
-                    </a>
-                </div>
-            </div>
-            <!-- Single Web Icon -->
-            <div class="col-12 col-sm-6 col-md-3 col-lg-2">
-                <div class="single-web-icon mb-30">
-                    <a href="https://resonate.is/billboard/">
-                        <img src="https://resonate.is/wp-content/themes/manifesto/images/press-billboard.png">
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="marginleft--xlarge-l marginright--xlarge-l">
-    </div>
-
-    <!--MEET THE TEAM (MOVE TO TEAMS PAGE)******************-->
-    <!--Need to put on contact page-->
-    <!--<section class="latest-albums-area section-padding-100">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="section-heading style-2">
-                            <h2>Meet the FAU Team</h2>
-                      </div>
-                    </div>
-                </div>
-            </div>
-        </section>-->
-    <!--TEAM IMAGES & ROLE DESCRIPTIONS (MOVE TO TEAMS PAGE)-->
-    <!--<div class="oneMusic-buy-now-area mb-100">
+    <!-- Header -->
+    <header id="header" class="header">
         <div class="container">
             <div class="row">
+                <div class="col-lg-6">
+                    <div class="text-container">
+                        <h1 class="h1-large">Play Fair</h1>
+                        <h4 style="color:white">The community-owned music network</h4>
+                        <!--  Button   -->
+                        <a class="btn-solid-lg page-scroll" href="{% url 'player' %}">Listen Now</a>
+                        <!--Another button:
+                    <a class="btn-outline-lg page-scroll" href="#contact"><i class="fas fa-user"></i>Contact Me</a> -->
+                    </div> <!-- end of text-container -->
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </header> <!-- end of header -->
+    <!-- end of header -->
 
-                <div class="col-12 col-sm-6 col-md-3">
-                    <div class="single-album-area">
-                        <div class="album-thumb">
-                            <img src="img/bg-img/ariel.png" alt="">
-                        </div>
-                        <div class="album-info">
-                            <a href="#">
-                                <h5>Ariel Fainstain</h5>
-                            </a>
-                            <p>Team Lead</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-12 col-sm-6 col-md-3">
-                    <div class="single-album-area">
-                        <div class="album-thumb">
-                            <img src="img/bg-img/ade.png" alt="">
-                        </div>
-                        <div class="album-info">
-                            <a href="#">
-                                <h5>Adejsha Francis</h5>
-                            </a>
-                            <p>Front-End Engineer</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-12 col-sm-6 col-md-3">
-                    <div class="single-album-area">
-                        <div class="album-thumb">
-                            <img src="img/bg-img/sam.png" alt="">
-                        </div>
-                        <div class="album-info">
-                            <a href="#">
-                                <h5>Samuel Parker</h5>
-                            </a>
-                            <p>Software Engineer</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-12 col-sm-6 col-md-3">
-                    <div class="single-album-area">
-                        <div class="album-thumb">
-                            <img src="img/bg-img/max.png" alt="">
-                        </div>
-                        <div class="album-info">
-                            <a href="#">
-                                <h5>Maxim Stroganov</h5>
-                            </a>
-                            <p>Quality Assurance Engineer</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-12 col-sm-6 col-md-3">
-                    <div class="single-album-area">
-                        <div class="album-thumb">
-                            <img src="img/bg-img/gab.png" alt="">
-                        </div>
-                        <div class="album-info">
-                            <a href="#">
-                                <h5>Gabrielle White</h5>
-                            </a>
-                            <p>API Engineer</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>-->
-    <!--LOGIN SECTION************************************** -->
-    <section class="contact-area section-padding-100 bg-img bg-overlay bg-fixed has-bg-img"
-             style="background-image: url({% static 'img/bg-img/bg-2.jpg' %});">
+    <!-- Projects -->
+    <div id="projects" class="basic-3">
         <div class="container">
             <div class="row">
-                <div class="col-12">
-                    <div class="section-heading white wow fadeInUp" data-wow-delay="100ms">
-                        <h2>Be Part of the Future of Music</h2>
-                        <p>Real Change Begins with You</p>
-                        <br>
-                        <!--BUTTON-->
-                        <div class="oneMusic-buttons-area mb-100 align-items-center">
-                            <a href="https://resonate.is/join/" class="btn oneMusic-btn m-2">
-                                Join Now<i class="fa fa-angle-double-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+                <div class="col-lg-12">
+                    <h2 class="h2-heading">Experience a new way to enjoying music!</h2>
+                    <p class="p-heading">The Neomodel Music Player is a new and exciting way to experience the music you
+                        love.</p>
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of basic-3 -->
+    <!-- end of projects -->
 
-    <!-- Footer Area Start********************************** -->
-    <footer class="footer-area">
+
+    <div id="projects" class="basic-3">
         <div class="container">
-            <div class="row d-flex flex-wrap align-items-center">
-                <div class="col-12 col-md-6">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2 class="h2-heading">Tools and Technologies</h2>
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of basic-3 -->
+    <!-- Tools and Tech -->
+    <div class="basic-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="text-container">
+                        <div class="image-container">
+                            <img src="{% static 'img/wrench.png' %}" alt="alternative" width="50" height="50">
+                        </div>
+                        <h5>TOOLS</h5> <!-- end of image-container -->
+                        <p>Python 3.9+, Django Python Web Framework, Django-Neomodel Plugin, PyCharm/Visual Studio,
+                            Neo4j
+                            Graph Database, Neo4j Aura, Neo4j Desktop, Neuler Data Science Playground, GitHub, Heroku.
+                        </p>
+                    </div> <!-- end of text-container -->
+                </div> <!-- end of col -->
+                <div class="col-lg-6">
+                    <div class="text-container">
+                        <div class="image-container">
+                            <img src="{% static 'img/settings (1).png' %}" alt="alternative" width="50" height="50"
+                                align="center">
+                        </div>
+                        <h5>DEVELOPMENT SKILLS</h5><!-- end of image-container -->
+                        <p>REST API Implementation, Algorithm Development, Web Application Development, Cloud/Local
+                            Database
+                            Management, UI Design, Version Control</p>
+                    </div> <!-- end of text-container -->
+                </div> <!-- end of col -->
 
-                    <!--IMAGE HERE
-                    <a href="index.html" class="nav-brand"><img src="img/core-img/resonate.png" alt=""></a><br>
-                    <br>-->
-                    <!--COPYRIGHT FOR COLORLIB DEVELOPER-->
-                    <p class="copywrite-text">
-                        <a href="#">
-                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                            Copyright &copy;
-                            <script>document.write(new Date().getFullYear());</script>
-                            All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by
-                            <a href="https://colorlib.com" target="_blank">Colorlib</a>
-                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                    </p>
-                </div>
 
-                <div class="col-12 col-md-6">
-                    <div class="footer-nav">
-                        <ul>
-                            <li><a href="{% url 'index' %}">Home</a></li>
-                            <li><a href="{% url 'about' %}">About</a></li>
-                            <li><a href="{% url 'blog' %}">Blog</a></li>
-                            <li><a href="{% url 'build_playlist' %}">Create</a></li>
-                            <li><a href="{% url 'view_playlist' %}">View</a></li>
-                            <li><a href="{% url 'team' %}">Team</a></li>
-                            <li><a href="{% url 'contact' %}">Contact</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
+                {# <div class="col-lg-6">#}
+                    {# <div class="icons-container">#}
+                        {# <img src="{% static 'img/details-icon-illustrator.png' %}" alt="alternative">#}
+                        {# <img src="{% static 'img/details-icon-html.png' %}" alt="alternative">#}
+                        {# <img src="{% static 'img/details-icon-css.png' %}" alt="alternative">#}
+                        {# <img src="{% static 'img/details-icon-bootstrap.png' %}" alt="alternative">#}
+                        {# <img src="{% static 'img/details-icon-javascript.png' %}" alt="alternative">#}
+                        {# </div> <!-- end of icons-container -->#}
+                    {# </div> <!-- end of col -->#}
+
+
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of basic-4 -->
+    <!-- end of works -->
+
+    <!-- Footer -->
+    </br>
+    <div class="footer bg-gray">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <a class="nav-item" href="{% url 'index' %}">Home</a> -
+                    <a class="nav-item" href="{% url 'about' %}">About</a> -
+                    <a class="nav-item" href="{% url 'team' %}">Team</a> -
+                    <a class="nav-item" href="{% url 'player' %}">Search</a> -
+                    <a class="nav-item" href="{% url 'build_playlist' %}">Create</a> -
+                    <a class="nav-item" href="{% url 'view_playlist' %}">Listen</a> -
+                    <a class="nav-item" href="https://github.com/Neologic-Audio/reso-neo-playlist/issues">Help</a>
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of footer -->
+    <!-- end of footer -->
+
+    <!-- Copyright -->
+    <div class="copyright bg-gray">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <p class="p-small">Copyright © 2022 <a class="no-line"
+                            href="https://github.com/Neologic-Audio/">NeoLogic
+                            Audio</a></p>
+                </div> <!-- end of col -->
+            </div> <!-- enf of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of copyright -->
+
     <!-- ##### Footer Area Start ##### -->
     <!-- jQuery 3.6.0 -->
     <script src="{% static 'js/jquery/jquery-3.6.0.js' %}"></script>
@@ -566,9 +211,11 @@
     <script src="{% static  'js/bootstrap/popper.min.js' %}"></script>
     <script src="{% static  'js/bootstrap/bootstrap.bundle.min.js' %}"></script>
 
+    <!-- jQuery Easing for smooth scrolling between anchors -->
+    <script src="{% static  'js/jquery/jquery.easing.min.js' %}"></script>
     <!-- Custom JS Scripts -->
-    <script src="{% static  'js/plugins/plugins.js' %}"></script>
-    <script src="{% static  'js/active.js' %}"></script>
+    <script src="{% static  'js/scripts.js' %}"></script>
+
 </body>
 
 </html>

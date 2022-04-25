@@ -1,13 +1,15 @@
+
+
 <div id="top"></div>
 
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/github_username/repo_name">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+  <a href="https://github.com/Neologic-Audio/reso-neo-playlist">
+    <img src="https://github.com/Neologic-Audio/reso-neo-playlist/blob/qa/playlist/static/img/logo.png" alt="Logo" width="800px">
   </a>
 
-<h3 align="center">Reso Neo Playlist (WIP)</h3>
+<h3 align="center">Neologic Audio</h3>
 
   <p align="center">
     A recommendation tool to find the most popular tracks for each tag.
@@ -53,7 +55,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-Here's a blank template to get started: To avoid retyping too much info. <!-- should we fill this out -->
+This project provides a Resonate.is listener an upgraded experience by allowing users to search for the most popular tracks for a given tag and being able to also find convenient recommendations from different tags through an upgraded user interface. Through this improved search algorithm, people can explore new recommended tracks and add what they like to a personalized playlist through our responsive web application. The playlist is stored via Neo4j to provide an easy-to-use query experience that works seamlessly for the user and allows the engineer to graphically maintain and update connections in a concise manner.
 
 ### Built With
 
@@ -83,7 +85,7 @@ Here's a blank template to get started: To avoid retyping too much info. <!-- sh
 
 * Create a free listener account with [Resonate.is](https://resonate.is/join/)
 
- * Install [Python 3.9+](https://www.python.org/downloads/)
+ * Install [Python 3.9](https://www.python.org/downloads/)
 	  ```sh
 	  python --version
 	  ```
@@ -310,11 +312,30 @@ export NEO4J_BOLT_URL=neo4j+s://neo4j:password@host-or-ip:port
 #### Running the Django Server  <!--geos for Windows (brew install geos for macOS)-->
 Run migrations and create your superuser (for the admin, this is using an SQLite database)  
   
+
+<details>
+<summary>
+Option 1: Windows
+</summary>
+
 ```python  
-py manage.py migrate (python3 manage.py migrate for mac) 
-py manage.py createsuperuser (python3 manage.py createsuperuser for mac) #only for the first time
-py manage.py runserver (python3 manage.py runserver for mac)
+py manage.py migrate 
+py manage.py createsuperuser
+py manage.py runserver
 ```  
+</details>
+<details>
+<summary>
+Option 2: Mac
+</summary>
+
+```python  
+python3 manage.py migrate
+python3 manage.py createsuperuser #only for the first time
+python3 manage.py runserver
+```  
+</details>
+
 <p align="right">(<a href="#top">back to top</a>)</p>  
   
 <!-- USAGE EXAMPLES -->  
