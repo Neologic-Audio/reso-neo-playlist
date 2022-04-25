@@ -4,6 +4,7 @@ from django_neomodel import DjangoNode
 from neomodel import db as db, config, ArrayProperty, StringProperty, IntegerProperty, Relationship, RelationshipFrom, \
     RelationshipTo, StructuredRel, UniqueIdProperty, StructuredNode, DateTimeProperty
 
+
 class PlayList(DjangoNode):
     slug = StringProperty()
     status = StringProperty(checked=True)
@@ -92,18 +93,22 @@ class PlayListCountry(DjangoNode):
 
 
 class TrackGroup(DjangoNode):
-    uuid = UniqueIdProperty(primary_key=True)
+    id = UniqueIdProperty(primary_key=True)
     title = StringProperty()
     type = StringProperty()
 
     has_tag = RelationshipTo('Tag', 'HAS_TAG')
     has_track = RelationshipTo('Track', 'HAS_TRACK')
-    owns = RelationshipFrom('RUser', 'OWNS')
+
+    # owns = RelationshipFrom('RUser', 'OWNS')
 
     def import_playlists(self):
         print("I'm in import_playlists")
-        query = f'''RETURN 1
-
+        query = f'''
+            MATCH (tg:TrackGroup)
+            WHERE tg.type='playlist' AND tg.title='{self.name}'
+            MATCH (tg)-[:HAS_TRACK]-(track)
+            RETURN tg,track
             '''
         self.cypher(query)
 
@@ -210,6 +215,3 @@ def merge_nodes(p_slug, p_title, t_album, t_artist, t_title, t_url, t_name, u_co
     user.owns.connect(playlist)
 
     country.in_country.connect(user)
-
-
-

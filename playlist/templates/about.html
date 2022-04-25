@@ -1,5 +1,5 @@
-<!--To Fix: icon images in features-->
 {% extends 'base.html' %}
+{% load static %}
 {% block content %}
 
     <!-- Header -->
@@ -15,23 +15,103 @@
     <!-- end of header -->
 
     <!-- Problem/Solution -->
-	<div class="split">
-		<div class="area-1">
-		</div><!-- end of area-1 on same line and no space between comments to eliminate margin white space --><div class="area-2 bg-gray">
+    <div class="split">
+        <div class="area-1">
+        </div><!-- end of area-1 on same line and no space between comments to eliminate margin white space -->
+        <div class="area-2 bg-gray">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
+
                         <!-- Text Container -->
                         <div class="text-container">
                             <h4>PROBLEM SUMMARY</h4>
-                            <p>Resonate administrators and community members require a user centric site that allows for members to diversify their playlist generating through a recommendation tool to find the most popular tracks for each tag. The purpose of this project is to create a site that will allow users to build and publish playlists and update the metadata to classify the playlist to the Resonate community. This can be used as a metric to sell advertisement space and promote playlist popularity.</p>
+                            <p>Resonate administrators and community members require a user centric site that allows for
+                                members to diversify their playlist generating through a recommendation tool to find the
+                                most popular tracks for each tag. The purpose of this project is to create a site that
+                                will allow users to build and publish playlists and update the metadata to classify the
+                                playlist to the Resonate community. This can be used as a metric to sell advertisement
+                                space and promote playlist popularity.</p>
                             <h4>SOLUTION</h4>
-                            <p>The solution proposed here is to enhance the experience of a Resonate user by allowing users to search for the most popular tracks for each tag/genre. This search algorithm helps users to discover new songs and improve the variety in a customized playlist. Users will be able to build a custom playlist using these recommendations tailored towards their taste in similar tracks. </p>
-                            </div> <!-- end of text-container -->
+                            <p>The solution proposed here is to enhance the experience of a Resonate user by allowing
+                                users to search for the most popular tracks for each tag/genre. This search algorithm
+                                helps users to discover new songs and improve the variety in a customized playlist.
+                                Users will be able to build a custom playlist using these recommendations tailored
+                                towards their taste in similar tracks. </p>
+                        </div> <!-- end of text-container -->
                         <!-- end of text container -->
+
                     </div> <!-- end of col -->
                 </div> <!-- end of row -->
             </div> <!-- end of container -->
-		</div> <!-- end of area-2 -->
+        </div> <!-- end of area-2 -->
     </div> <!-- end of split -->
+    <!-- end of details -->
+
+    <!-- Key Features -->
+    <div id="services" class="basic-2">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2 class="h2-heading">Key Features</h2>
+                    <br>
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="text-box">
+                        <img src="{% static 'img/computer.png' %}"
+                             alt="alternative" width="50" height="50">
+                        <br>
+                        <br>
+                        <h4>USER-INTERFACE</h4>
+                        <p>User-friendly site navigation with visually appealing graphics.</p>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                    </div> <!-- end of text-box -->
+                </div> <!-- end of col -->
+                <div class="col-lg-4">
+                    <div class="text-box">
+                        <img src="{% static 'img/brush.png' %}"
+                             alt="alternative" width="50" height="50">
+                        <br>
+                        <br>
+                        <h4>CUSTOMIZATION</h4>
+                        <p>Users can add/remove recommended tracks to create a customized playlist to be displayed
+                            natively on the site.</p>
+                        <br>
+                        <br>
+                    </div> <!-- end of text-box -->
+                </div> <!-- end of col -->
+                <div class="col-lg-4">
+                    <div class="text-box">
+                        <img src="{% static 'img/earth-globe.png' %}"
+                             alt="alternative" width="50" height="50">
+                        <br>
+                        <br>
+                        <h4>EXPLORE</h4>
+                        <p>Users can play recommended tracks through an embedded music player.</p>
+                        <p>Users can utilize a search feature to find the most popular, relevant tracks for each
+                            tag/genre.</p>
+                    </div> <!-- end of text-box -->
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of basic-2 -->
+    <!-- end of services -->
+
+    <div id="projects" class="basic-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <!-- Linked Button -->
+                    <a class="btn-solid-lg page-scroll"
+                       href="https://github.com/Neologic-Audio/reso-neo-playlist/issues">Github Issues</a>
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of basic-3 -->
+
 {% endblock %}

@@ -1,4 +1,8 @@
 @charset "UTF-8";
+@import url(bootstrap-grid.css);
+@import url(bootstrap-reboot.css);
+@import url(bootstrap-utilities.css);
+
 /*!
  * Bootstrap v5.1.3 (https://getbootstrap.com/)
  * Copyright 2011-2021 The Bootstrap Authors

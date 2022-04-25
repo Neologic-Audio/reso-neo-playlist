@@ -15,50 +15,40 @@
 
 
     <!-- Basic -->
-    <div class="ex-basic-1 pt-4">
+    <div class="basic-1 pt-4">
         <div class="container">
             <div class="row">
-                <div class="col-md-3 offset-xl-1">
+                <div class="col-lg-4">
                     <div class="card">
                         <div class="card-header">
                             <a>Create a Track to Add to Playlist</a>
                         </div>
                         <div class="card-body">
-                            <h5 class="card-title">Bla bla bla</h5>
                             <p class="card-text">Complete the following form to save your playlist.</p>
                             <br/>
                             <form method='POST' id='myform'>
                                 {% csrf_token %}
-
                                 <a>Playlist</a>
                                 {{ playlist_form.as_p }}
-
 
                                 <a>Track</a>
                                 {{ playlisttrack_form.as_p }}
 
                                 <a>Tag</a>
                                 {{ playlisttag_form.as_p }}
-
-                                <a>User</a>
-                                {{ playlistuser_form.as_p }}
-
-                                <a>Country</a>
-                                {{ playlistcountry_form.as_p }}
                                 <input class="form-control-submit-button" type='submit' value='Save'/>
                             </form>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-md-4">
+                <div class="col-lg-4">
                     <div class="card">
                         <div class="card-header">
                             <a>Search by Tag</a>
                         </div>
                         <div class="card-body">
-                            <h5 class="card-title">Bla bla bla</h5>
-                            <p class="card-text">Description</p>
+                            <p class="card-text">Please enter a tag to search for a track.</p>
                             <br/>
                             <form role="search" class="navbar-form" id="search">
                                 <div class="form-group">
@@ -74,8 +64,8 @@
                             <a>Top Playlisted Track by Tag</a>
                         </div>
                         <div class="card-body">
-                            <h5 class="card-title">Bla bla bla</h5>
-                            <p class="card-text">Description</p>
+                            <p class="card-text">Below is a track matching your tag that has been saved to a user's
+                                playlist the most.</p>
                             <br/>
                             <table id="results" class="table table-striped table-hover">
                                 <thead>
@@ -97,8 +87,8 @@
                             <a>Recommended Tracks</a>
                         </div>
                         <div class="card-body">
-                            <h5 class="card-title">Bla bla bla</h5>
-                            <p class="card-text">Description</p>
+                            <p class="card-text">Below are the tracks matching your tag that are the most
+                                recommended.</p>
                             <br/>
                             <table id="results2" class="table table-striped table-hover">
                                 <thead>
@@ -116,7 +106,7 @@
                     </div>
                 </div>
 
-                <div class="col-md-4">
+                <div class="col-lg-4">
                     <div class="card">
                         <div class="card-header">
                             <a>Resonate Player</a>
