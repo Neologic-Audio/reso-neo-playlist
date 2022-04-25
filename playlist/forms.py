@@ -11,7 +11,7 @@ class PlayListForm(ModelForm):
 class PlayListTrackForm(ModelForm):
     class Meta:
         model = PlayListTracks
-        fields = ['title']
+        fields = ['track']
 
 
 class PlayListTagForm(ModelForm):

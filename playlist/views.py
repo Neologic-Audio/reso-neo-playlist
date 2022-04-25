@@ -29,7 +29,7 @@ def build_playlist(request):
     if request.POST:
         if playlist_form.is_valid() and playlisttrack_form.is_valid() and playlisttag_form.is_valid():
             playlist_title = playlist_form.cleaned_data.get("title")
-            track_title = playlisttrack_form.cleaned_data.get("title")
+            track_title = playlisttrack_form.cleaned_data.get("track")
             tag = playlisttag_form.cleaned_data.get("name")
 
             merge_nodes(playlist_title, track_title, tag)

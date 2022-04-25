@@ -33,7 +33,7 @@ class PlayListTracks(DjangoNode):
     artist = StringProperty()
     creator_id = IntegerProperty()
     tags_imported = StringProperty(false=True)
-    title = StringProperty()
+    track = StringProperty()
     url = StringProperty()
     uuid = UniqueIdProperty(primary_key=True)
 
@@ -200,7 +200,7 @@ class Country(DjangoNode):
 def merge_nodes(p_title, t_title, t_name):
     playlist = PlayList(title=p_title).save()
 
-    track = PlayListTracks(title=t_title).save()
+    track = PlayListTracks(track=t_title).save()
 
     tag = PlayListTag(name=t_name).save()
 
