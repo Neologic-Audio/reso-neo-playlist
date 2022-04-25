@@ -1,4 +1,5 @@
 
+
 <div id="top"></div>
 
 <!-- PROJECT LOGO -->
@@ -318,9 +319,9 @@ Option 1: Windows
 </summary>
 
 ```python  
-py manage.py migrate (python3 manage.py migrate for mac) 
-py manage.py createsuperuser (python3 manage.py createsuperuser for mac) #only for the first time
-py manage.py runserver (python3 manage.py runserver for mac)
+py manage.py migrate 
+py manage.py createsuperuser
+py manage.py runserver
 ```  
 </details>
 <details>
@@ -329,9 +330,9 @@ Option 2: Mac
 </summary>
 
 ```python  
-python3 manage.py migrate for mac
-python3 manage.py createsuperuser for mac #only for the first time
-python3 manage.py runserver for mac
+python3 manage.py migrate
+python3 manage.py createsuperuser #only for the first time
+python3 manage.py runserver
 ```  
 </details>
 
