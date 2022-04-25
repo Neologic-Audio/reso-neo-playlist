@@ -24,7 +24,8 @@ SECRET_KEY = 'django-insecure-fzxcj)f5&6h91sgvzc@0+y3wpwjtwi%khann94#wp-0a%*nz#6
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ['*',
+                 'https://neologic-audio.herokuapp.com/']
 
 NEOMODEL_NEO4J_BOLT_URL = os.environ.get('NEO4J_BOLT_URL',
                                          'neo4j+s://neo4j:1unmwKN4sMU7wim1mPWJCAF4JKKDJi60joves2J5hTE@ec948bc4.databases.neo4j.io:7687')
