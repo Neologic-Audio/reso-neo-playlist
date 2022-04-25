@@ -197,21 +197,13 @@ class Country(DjangoNode):
         app_label = 'tracks'
 
 
-def merge_nodes(p_slug, p_title, t_album, t_artist, t_title, t_url, t_name, u_country, u_twitter, c_name):
-    playlist = PlayList(slug=p_slug, title=p_title).save()
+def merge_nodes(p_title, t_title, t_name):
+    playlist = PlayList(title=p_title).save()
 
-    track = PlayListTracks(album=t_album, artist=t_artist, url=t_url, title=t_title).save()
+    track = PlayListTracks(title=t_title).save()
 
     tag = PlayListTag(name=t_name).save()
-
-    user = PlayListUser(country=u_country, twitter=u_twitter).save()
-
-    country = PlayListCountry(name=c_name).save()
 
     playlist.has_track.connect(track)
 
     playlist.has_tag.connect(tag)
-
-    user.owns.connect(playlist)
-
-    country.in_country.connect(user)
