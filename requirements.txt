@@ -1,6 +1,7 @@
 django==3.2.13
 gunicorn==20.1.0
 psycopg2==2.9.3
+whitenoise==6.0.0
 django-neomodel==0.0.7
 neo4j==4.4.0
 neo4j-driver==4.3.6
