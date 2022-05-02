@@ -27,8 +27,7 @@ DEBUG = True
 ALLOWED_HOSTS = ['*',
                  'https://neologic-audio.herokuapp.com/']
 
-NEOMODEL_NEO4J_BOLT_URL = os.environ.get('NEO4J_BOLT_URL',
-                                         'neo4j+s://neo4j:1unmwKN4sMU7wim1mPWJCAF4JKKDJi60joves2J5hTE@ec948bc4.databases.neo4j.io:7687')
+NEOMODEL_NEO4J_BOLT_URL = os.environ.get('NEO4J_BOLT_URL','neo4j+s://neo4j:cgkKfYbz70cLGcTK6B7LnD4l7MjIVtD-hLTuZhTbRHI@712c260b.databases.neo4j.io:7687')
 # Application references
 # https://docs.djangoproject.com/en/2.1/ref/settings/#std:setting-INSTALLED_APPS
 INSTALLED_APPS = [
@@ -41,7 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'playlist',
     'django_neomodel',
-    'fontawesomefree'
+    'fontawesomefree',
 
 ]
 
