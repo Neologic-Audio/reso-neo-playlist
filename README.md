@@ -346,12 +346,44 @@ Go to your Heroku dashboard and create a new app and add its git remote to your 
 Go your Heroku's app's settings and add the `NEO4J_BOLT_URL` environment variable with the correct credentials:  
   
 ```NEO4J_BOLT_URL="bolt://neo4j:password@host-or-ip:port"```  
-  
+
+Follow the deployment instructions inside your Heroku app.
+
+```Adding gunicorn to your project for web deployment```
+
+(https://devcenter.heroku.com/articles/python-gunicorn)
+
 Now you can push to Heroku:  
   
 ```shell  
-git push heroku master
+git push heroku master/main (depending on how project's original git branch is named)
 ```  
+
+Noted issues that can interfere with deployment:
+
+``` Libgeos C DLL missing ```
+
+To fix:
+
+```
+"This is ultimately because Shapely is currently an install requirement of Neomodel. Shapely requires a C lib to be installed which may/may not be present on your OS.
+On UNIX you can simply install this with 'apt-get install libgeos-dev'"
+
+To actually install via Heroku requires several steps:
+1. You would need to include a Heroku buildpack into your application (https://github.com/heroku/heroku-buildpack-apt)
+2. Create an Aptfile in your root directory and add 'libgeos-dev' as its contents (similar problem here https://stackoverflow.com/questions/34104909/heroku-python-app-with-custom-package-in-aptfile-no-python-packages-installed)
+3. Make sure that Gunicorn is installed so that this works
+4. Push to Heroku
+```
+
+```Application only loads HTML, no Javascript or CSS```
+
+To fix:
+
+```
+1. Add Whitenoise to your application (https://devcenter.heroku.com/articles/django-assets)
+2. Use Postgresql provided by Heroku application and add to project settings (extract credentials necessary via clicking on the DB in Heroku)
+```
   
 <p align="right">(<a href="#top">back to top</a>)</p>  
   
