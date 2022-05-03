@@ -198,19 +198,15 @@ class Country(DjangoNode):
 
 
 def merge_nodes(p_title, t_title, t_name):
-    playlist = PlayList.nodes.first_or_none(title=p_title)
-    track_existing = PlayListTracks.nodes.first_or_none(track = t_title)
+   # playlist = PlayList.nodes.first_or_none(title=p_title)
+   # track_existing = PlayListTracks.nodes.first_or_none(track = t_title)
 
-    if playlist == None:
-        playlistnew = PlayList(title=p_title).save()
-
-        tag = PlayListTag(name=t_name).save()
-
-        playlistnew.has_track.connect(track)
-
-        playlistnew.has_tag.connect(tag)
-
-    else:
-
-        playlist.has_track.connect(track_existing)
-        print(playlist.has_track)
+    query = f'''
+        MERGE (tag:Tag {name:'{t_name}'})
+        MERGE (playlist:Playlist {title:'{p_title}'})
+        MATCH (track:Track {title:'{t_title}'})
+        WITH tag, playlist, track
+        MERGE (tag)<-[:HAS_TAG]-(playlist)<-[:HAS_PLAYLIST]-(track)
+        '''
+    print(query)
+    db.cypher_query(query)
