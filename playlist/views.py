@@ -32,7 +32,17 @@ def build_playlist(request):
             track_title = playlisttrack_form.cleaned_data.get("track")
             tag = playlisttag_form.cleaned_data.get("name")
 
-            merge_nodes(playlist_title, track_title, tag)
+            output = db.cypher_query(
+                '''
+                MATCH (track:Track {title:$track_title})
+                MERGE (playlist:PlayList {title:$playlist_title})
+                MERGE (tag:Tag {name:$tag})
+                WITH tag, playlist, track
+                MERGE (tag)<-[:HAS_TAG]-(playlist)<-[:HAS_PLAYLIST]-(track)
+                RETURN track.title, playlist.title
+                ''',
+                    {'playlist_title':playlist_title,'track_title':track_title,'tag':tag })
+            print(output)
 
     context = {
         'playlist_form': playlist_form,
