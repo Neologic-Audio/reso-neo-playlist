@@ -1,5 +1,6 @@
 from typing import ValuesView
 from django.db import models
+from django.shortcuts import redirect
 from django_neomodel import DjangoNode
 from neomodel import db as db, config, ArrayProperty, StringProperty, IntegerProperty, Relationship, RelationshipFrom, \
     RelationshipTo, StructuredRel, UniqueIdProperty, StructuredNode, DateTimeProperty
@@ -203,15 +204,12 @@ def merge_nodes(p_title, t_title, t_name):
 
     if playlist == None:
         playlistnew = PlayList(title=p_title).save()
-
         tag = PlayListTag(name=t_name).save()
-
-        playlistnew.has_track.connect(track)
-
+        playlistnew.has_track.connect(track_existing)
         playlistnew.has_tag.connect(tag)
 
     else:
-
         playlist.has_track.connect(track_existing)
-        print(playlist.has_track)
-      
+        
+    
+   

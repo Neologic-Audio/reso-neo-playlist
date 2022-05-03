@@ -1,9 +1,12 @@
 {
   "ExpandedNodes": [
     "",
+    "\\django_project",
+    "\\env1\\Include",
+    "\\env1\\Scripts",
     "\\playlist",
     "\\playlist\\templates"
   ],
-  "SelectedNode": "\\playlist\\templates\\build_playlist.html",
+  "SelectedNode": "\\playlist\\models.py",
   "PreviewInSolutionExplorer": false
 }
