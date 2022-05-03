@@ -1,10 +1,21 @@
-<!--To Fix: icon images in features-->
 {% extends 'base.html' %}
+{% load static %}
 {% block content %}
 
-    {% load static %}
+    <!-- Header -->
+    <header class="ex-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 >About</h1>
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </header> <!-- end of ex-header -->
+    <!-- end of header -->
 
-    <!-- Problem/Solution -->
+
+   <!-- Details -->
 	<div class="split">
 		<div class="area-1">
 		</div><!-- end of area-1 on same line and no space between comments to eliminate margin white space --><div class="area-2 bg-gray">
@@ -14,11 +25,14 @@
 
                         <!-- Text Container -->
                         <div class="text-container">
-                            <h4>PROBLEM SUMMARY</h4>
-                            <p>Resonate administrators and community members require a user centric site that allows for members to diversify their playlist generating through a recommendation tool to find the most popular tracks for each tag. The purpose of this project is to create a site that will allow users to build and publish playlists and update the metadata to classify the playlist to the Resonate community. This can be used as a metric to sell advertisement space and promote playlist popularity.</p>
-                            <h4>SOLUTION</h4>
-                            <p>The solution proposed here is to enhance the experience of a Resonate user by allowing users to search for the most popular tracks for each tag/genre. This search algorithm helps users to discover new songs and improve the variety in a customized playlist. Users will be able to build a custom playlist using these recommendations tailored towards their taste in similar tracks. </p>
-                            </div> <!-- end of text-container -->
+                            <h3>PROBLEM SUMMARY</h3>
+                            <p>
+                               Resonate administrators and community members require a user centric site that allows for members to diversify their playlist generating through a recommendation tool to find the most popular tracks for each tag. The purpose of this project is to create a site that will allow users to build and publish playlists and update the metadata to classify the playlist to the Resonate community. This can be used as a metric to sell advertisement space and promote playlist popularity.
+                            </p>
+                            <h3>SOLUTION</h3>
+                            <p>The solution proposed here is to enhance the experience of a Resonate user by allowing users to search for the most popular tracks for each tag/genre. This search algorithm helps users to discover new songs and improve the variety in a customized playlist. Users will be able to build a custom playlist using these recommendations tailored towards their taste in similar tracks.
+                            </p>
+                        </div> <!-- end of text-container -->
                         <!-- end of text container -->
 
                     </div> <!-- end of col -->
@@ -60,7 +74,8 @@
                         <br>
                         <br>
                         <h4>CUSTOMIZATION</h4>
-                        <p>Users can add/remove recommended tracks to create a customized playlist to be displayed natively on the site.</p>
+                        <p>Users can add/remove recommended tracks to create a customized playlist to be displayed
+                            natively on the site.</p>
                         <br>
                         <br>
                     </div> <!-- end of text-box -->
@@ -73,7 +88,8 @@
                         <br>
                         <h4>EXPLORE</h4>
                         <p>Users can play recommended tracks through an embedded music player.</p>
-                        <p>Users can utilize a search feature to find the most popular, relevant tracks for each tag/genre.</p>
+                        <p>Users can utilize a search feature to find the most popular, relevant tracks for each
+                            tag/genre.</p>
                     </div> <!-- end of text-box -->
                 </div> <!-- end of col -->
             </div> <!-- end of row -->
@@ -81,15 +97,31 @@
     </div> <!-- end of basic-2 -->
     <!-- end of services -->
 
-    <div id="projects" class="basic-3">
+
+    <!-- Button -->
+    <div id="contact" class="form-1 bg-gray">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <!-- Linked Button -->
-                    <a class="btn-solid-lg page-scroll" href="https://github.com/Neologic-Audio/reso-neo-playlist/issues">Github Issues</a>
+                    <h2>Github Issues</h2>
+                    <p class="p-heading">Want to report bugs, request features, submit feedback, or view discussions?
+                    Click the button below!</p>
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <!-- Contact Form -->
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <button type="submit" class="form-control-submit-button">
+                            <a href="https://github.com/Neologic-Audio/reso-neo-playlist/issues">Github</a></button>
+                        </div>
+                    </form>
+                    <!-- end of contact form -->
                 </div> <!-- end of col -->
             </div> <!-- end of row -->
         </div> <!-- end of container -->
-    </div> <!-- end of basic-3 -->
+    </div> <!-- end of form-1 -->
+    <!-- end of contact -->
 
 {% endblock %}

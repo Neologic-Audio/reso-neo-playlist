@@ -1,7 +1,85 @@
-<!--To Fix: header image-->
-{% extends 'base.html' %}
-{% block content %}
-        {% load static %}
+{% load static %}   <!--Fix: Moved Icons in T&T sect -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Django Playlist Builder">
+
+    <!-- Webpage Title -->
+    <title> Neologic Audio </title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="{% static 'img/favicon.png' %}">
+
+    <!-- Custom Styles -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&family=Poppins:wght@600&display=swap"
+        rel="stylesheet">
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap/bootstrap.css' %}">
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/fontawesome-all.css' %}">
+
+
+</head>
+
+<body data-spy="scroll" data-target=".fixed-top">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark">
+        <div class="container">
+
+            <!-- Image Logo -->
+            <a class="navbar-brand logo-image" href="{% url 'index' %}"><img src="{% static 'img/logo.png' %}"
+                    alt="alternative"></a>
+
+            <!-- Text Logo - Use this if you don't have a graphic logo -->
+            <!-- <a class="navbar-brand logo-text page-scroll" href="index.html">Mark</a> -->
+
+            <button class="navbar-toggler p-0 border-0" type="button" data-toggle="offcanvas">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'index' %}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'about' %}">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'team' %}">Team</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="{% url 'player' %}" id="dropdown01"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Listen</a>
+                        <div class="dropdown-menu" aria-labelledby="dropdown01">
+                            <a class="dropdown-item page-scroll" href="{% url 'build_playlist' %}">Build Playlist</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item page-scroll" href="{% url 'view_playlist' %}">View Playlist</a>
+                        </div>
+                    </li>
+                </ul>
+                <span class="nav-item social-icons">
+                    <span class="fa-stack">
+                        <a href="https://github.com/Neologic-Audio">
+                            <i class="fas fa-circle fa-stack-2x"></i>
+                            <i class="fab fa-github fa-stack-1x"></i>
+                        </a>
+                    </span>
+                </span>
+            </div> <!-- end of navbar-collapse -->
+        </div> <!-- end of container -->
+    </nav> <!-- end of navbar -->
+    <!-- end of navigation -->
 
 
     <!-- Header -->
@@ -15,7 +93,7 @@
                         <!--  Button   -->
                         <a class="btn-solid-lg page-scroll" href="{% url 'player' %}">Listen Now</a>
                         <!--Another button:
-                        <a class="btn-outline-lg page-scroll" href="#contact"><i class="fas fa-user"></i>Contact Me</a> -->
+                    <a class="btn-outline-lg page-scroll" href="#contact"><i class="fas fa-user"></i>Contact Me</a> -->
                     </div> <!-- end of text-container -->
                 </div> <!-- end of col -->
             </div> <!-- end of row -->
@@ -23,56 +101,125 @@
     </header> <!-- end of header -->
     <!-- end of header -->
 
-    <!-- Projects -->
+    <!-- Index Description -->
     <div id="projects" class="basic-3">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
                     <h2 class="h2-heading">Experience a new way to enjoying music!</h2>
-                    <p class="p-heading">The Neomodel Music Player is a new and exciting way to experience the music you love.</p>
+                    <p class="p-heading">The Neomodel Music Player is a new and exciting way to experience the music you
+                        love.</p>
                 </div> <!-- end of col -->
             </div> <!-- end of row -->
         </div> <!-- end of container -->
     </div> <!-- end of basic-3 -->
     <!-- end of projects -->
 
-
+    <!-- Tools and Tech -->
     <div id="projects" class="basic-3">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <h2 class="h2-heading">Tools and Technologies</h2>
+                    <!--Heading -->
+                    <h2 class="h2-heading"><img src="{% static 'img/wrench.png' %}" alt="alternative" width="50" height="50">     Tools and Technologies
+                        <img src="{% static 'img/settings (1).png' %}" alt="alternative" width="50" height="50"
+                                align="center"></h2>
+                    <br>
+                    <br>
                 </div> <!-- end of col -->
             </div> <!-- end of row -->
         </div> <!-- end of container -->
     </div> <!-- end of basic-3 -->
-    <!-- Tools and Tech -->
+    <!-- Info -->
     <div class="basic-4">
         <div class="container">
             <div class="row">
                 <div class="col-lg-6">
                     <div class="text-container">
-                        <div class="image-container">
-                            <a href="project.html">
-                                <img src="{% static 'img/wrench.png' %}"
-                                     alt="alternative" width="50" height="50">                            </a>
-                        </div> <!-- end of image-container -->
-                        <p>Python 3.9+, Django Python Web Framework, Django-Neomodel Plugin, PyCharm/Visual Studio, Neo4j Graph Database, Neo4j Aura, Neo4j Desktop, Neuler Data Science Playground, GitHub, Heroku.</p>
+                        <!-- <div class="image-container">
+                            Note: Icon can go here if issues occure
+                        </div> -->
+                        <h5>TOOLS</h5> <!-- end of image-container -->
+                        <p>Python 3.9+, Django Python Web Framework, Django-Neomodel Plugin, PyCharm/Visual Studio,
+                            Neo4j
+                            Graph Database, Neo4j Aura, Neo4j Desktop, Neuler Data Science Playground, GitHub, Heroku.
+                        </p>
                     </div> <!-- end of text-container -->
                 </div> <!-- end of col -->
                 <div class="col-lg-6">
                     <div class="text-container">
-                        <div class="image-container">
-                            <a href="project.html">
-                                <img src="{% static 'img/settings (1).png' %}"
-                                     alt="alternative" width="50" height="50" align="center">                            </a>
-                        </div> <!-- end of image-container -->
-                        <p>REST API Implementation, Algorithm Development, Web Application Development, Cloud/Local Database Management, UI Design, Version Control</p>
+                        <!--<div class="image-container">
+                            Note: Icon can go here if issues occure
+                        </div> -->
+                        <h5>DEVELOPMENT SKILLS</h5><!-- end of image-container -->
+                        <p>REST API Implementation, Algorithm Development, Web Application Development, Cloud/Local
+                            Database
+                            Management, UI Design, Version Control</p>
                     </div> <!-- end of text-container -->
                 </div> <!-- end of col -->
+
+
+                {# <div class="col-lg-6">#}
+                    {# <div class="icons-container">#}
+                        {# <img src="{% static 'img/details-icon-illustrator.png' %}" alt="alternative">#}
+                        {# <img src="{% static 'img/details-icon-html.png' %}" alt="alternative">#}
+                        {# <img src="{% static 'img/details-icon-css.png' %}" alt="alternative">#}
+                        {# <img src="{% static 'img/details-icon-bootstrap.png' %}" alt="alternative">#}
+                        {# <img src="{% static 'img/details-icon-javascript.png' %}" alt="alternative">#}
+                        {# </div> <!-- end of icons-container -->#}
+                    {# </div> <!-- end of col -->#}
+
+
             </div> <!-- end of row -->
         </div> <!-- end of container -->
     </div> <!-- end of basic-4 -->
     <!-- end of works -->
 
-{% endblock %}
+    <!-- Footer -->
+    </br>
+    <div class="footer bg-gray">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <a class="nav-item" href="{% url 'index' %}">Home</a> -
+                    <a class="nav-item" href="{% url 'about' %}">About</a> -
+                    <a class="nav-item" href="{% url 'team' %}">Team</a> -
+                    <a class="nav-item" href="{% url 'player' %}">Search</a> -
+                    <a class="nav-item" href="{% url 'build_playlist' %}">Create</a> -
+                    <a class="nav-item" href="{% url 'view_playlist' %}">Listen</a> -
+                    <a class="nav-item" href="https://github.com/Neologic-Audio/reso-neo-playlist/issues">Help</a>
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of footer -->
+    <!-- end of footer -->
+
+    <!-- Copyright -->
+    <div class="copyright bg-gray">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <p class="p-small">Copyright © 2022 <a class="no-line"
+                            href="https://github.com/Neologic-Audio/">NeoLogic
+                            Audio</a></p>
+                </div> <!-- end of col -->
+            </div> <!-- enf of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of copyright -->
+
+    <!-- ##### Footer Area Start ##### -->
+    <!-- jQuery 3.6.0 -->
+    <script src="{% static 'js/jquery/jquery-3.6.0.js' %}"></script>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="{% static  'js/bootstrap/popper.min.js' %}"></script>
+    <script src="{% static  'js/bootstrap/bootstrap.bundle.min.js' %}"></script>
+
+    <!-- jQuery Easing for smooth scrolling between anchors -->
+    <script src="{% static  'js/jquery/jquery.easing.min.js' %}"></script>
+    <!-- Custom JS Scripts -->
+    <script src="{% static  'js/scripts.js' %}"></script>
+
+</body>
+
+</html>
