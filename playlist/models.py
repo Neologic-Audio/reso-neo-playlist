@@ -198,12 +198,19 @@ class Country(DjangoNode):
 
 
 def merge_nodes(p_title, t_title, t_name):
-    playlist = PlayList(title=p_title).save()
+    playlist = PlayList.nodes.first_or_none(title=p_title)
+    track_existing = PlayListTracks.nodes.first_or_none(track = t_title)
 
-    track = PlayListTracks(track=t_title).save()
+    if playlist == None:
+        playlistnew = PlayList(title=p_title).save()
 
-    tag = PlayListTag(name=t_name).save()
+        tag = PlayListTag(name=t_name).save()
 
-    playlist.has_track.connect(track)
+        playlistnew.has_track.connect(track)
 
-    playlist.has_tag.connect(tag)
+        playlistnew.has_tag.connect(tag)
+
+    else:
+
+        playlist.has_track.connect(track_existing)
+        print(playlist.has_track)
