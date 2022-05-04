@@ -1,6 +1,8 @@
 {% extends 'base.html' %}
 
 {% block content %}
+
+
     <!-- Header -->
     <header class="ex-header">
         <div class="container">
@@ -12,8 +14,20 @@
         </div> <!-- end of container -->
     </header> <!-- end of ex-header -->
     <!-- end of header -->
-
-
+    </br>
+    <!-- Index Description -->
+    <div class="ex-basic-1 pt-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h3 style="text-align: center;" class="h3-heading">This page is currently undergoing maintenance for
+                        the addition of new features! </h3>
+                </div> <!-- end of row -->
+            </div> <!-- end of container -->
+        </div> <!-- end of basic-3 -->
+        <!-- end of projects -->
+    </div>
+    </br>
     <!-- Basic -->
     <div class="ex-basic-1 pt-4">
         <div class="container">
@@ -21,14 +35,18 @@
                 <div class="col-lg-4">
                     <div class="card">
                         <div class="card-header">
-                            <a>Search by Playlist Title</a>
+                            <h5 class="titles">Search by Playlist Title
+                                <button type="button" class="btn btn-light btn-circle" data-bs-toggle="tooltip"
+                                        title="Please enter your playlist title.">
+                                    <i class="fa fa-info"></i>
+                                </button>
+                            </h5>
                         </div>
                         <div class="card-body">
-                            <p class="card-text">Please enter your playlist title.</p>
-                            <br/>
                             <form role="search" class="navbar-form" id="search">
                                 <div class="form-group">
-                                    <input type="text" value="indie" class="form-control" name="search">
+                                    <input type="text" placeholder="Enter a tag (Ex: indie)" class="form-control"
+                                           name="search">
                                 </div>
                                 <button class="form-control-submit-button" type="submit">Search</button>
                             </form>
@@ -39,11 +57,14 @@
                 <div class="col-lg-4">
                     <div class="card">
                         <div class="card-header">
-                            <a>Playlist</a>
+                            <h5 class="titles">Playlist
+                                <button type="button" class="btn btn-light btn-circle" data-bs-toggle="tooltip"
+                                        title="Below are the tracks that have been saved to the playlist.">
+                                    <i class="fa fa-info"></i>
+                                </button>
+                            </h5>
                         </div>
                         <div class="card-body">
-                            <p class="card-text">Below are the tracks that have been saved to the playlist.</p>
-                            <br/>
                             <table id="playlist" class="table table-striped table-hover">
                                 <thead>
                                 <tr>
@@ -52,18 +73,18 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                   <tr>
+                                <tr>
                                     <td>indie</td>
-                                       <td> Song 1</td>
-                                    </tr>
-                                  <tr>
+                                    <td> Song 1</td>
+                                </tr>
+                                <tr>
                                     <td>pop</td>
-                                       <td> Song 2</td>
-                                    </tr>
-                                    <tr>
+                                    <td> Song 2</td>
+                                </tr>
+                                <tr>
                                     <td>alternative</td>
-                                       <td> Song 3</td>
-                                    </tr>
+                                    <td> Song 3</td>
+                                </tr>
                                 </tbody>
 
                             </table>
@@ -73,25 +94,22 @@
                 <div class="col-lg-4">
                     <div class="card">
                         <div class="card-header">
-                            <a>Resonate Player</a>
+                            <h5 class="titles">Resonate Player</h5>
                         </div>
                         <div class="card-body">
-                            <a id="listen" target="_blank" href="https://stream.resonate.coop/track/20786">Listen to the
+                            <a id="listen" target="_blank" href="https://stream.resonate.coop/track/2300">Listen to the
                                 full
                                 track
                                 on Resonate</a>
 
                             <iframe style="margin:0;width:100%;height:600px;border: 1px solid #000;" id="player"
-                                    src="https://stream.resonate.coop/embed/track/20786">
+                                    src="https://stream.resonate.coop/embed/track/2300
+">
                             </iframe>
                             <p class="card-text">
-                                This unofficial side project uses <b>
+                                This project uses <b>
                                 <a target="_blank" href="https://stream.resonate.coop/releases?type=playlist">playlist
-                                    data</a>
-                            </b> from Resonate. Join as a <b>
-                                <a href="https://resonate.is/join/" target="_blank">listener</a></b>, or check out the
-                                <b>
-                                    <a href="https://github.com/whatSocks/reso-tag-charts" target="_blank">code</a></b>
+                                    data</a></b> from Resonate.
                             </p>
                         </div>
                     </div>

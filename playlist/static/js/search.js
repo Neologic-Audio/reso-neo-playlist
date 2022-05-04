@@ -70,7 +70,7 @@ $(function () {
     //     return false;
     // }
 
-    $("#search").submit(searchPlaylist);
-    searchPlaylist();
+   // $("#search").submit(searchPlaylist);
+   // searchPlaylist();
 
 })

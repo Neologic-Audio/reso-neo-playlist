@@ -1,5 +1,6 @@
 from typing import ValuesView
 from django.db import models
+from django.shortcuts import redirect
 from django_neomodel import DjangoNode
 from neomodel import db as db, config, ArrayProperty, StringProperty, IntegerProperty, Relationship, RelationshipFrom, \
     RelationshipTo, StructuredRel, UniqueIdProperty, StructuredNode, DateTimeProperty
@@ -8,7 +9,7 @@ from neomodel import db as db, config, ArrayProperty, StringProperty, IntegerPro
 class PlayList(DjangoNode):
     slug = StringProperty()
     status = StringProperty(checked=True)
-    title = StringProperty()
+    Title = StringProperty()
     tags_imported = StringProperty(false=True)
     type = StringProperty(playlist=True)
     uuid = UniqueIdProperty(primary_key=True)
@@ -33,7 +34,7 @@ class PlayListTracks(DjangoNode):
     artist = StringProperty()
     creator_id = IntegerProperty()
     tags_imported = StringProperty(false=True)
-    track = StringProperty()
+    Track = StringProperty()
     url = StringProperty()
     uuid = UniqueIdProperty(primary_key=True)
 
@@ -45,7 +46,7 @@ class PlayListTracks(DjangoNode):
 
 class PlayListTag(DjangoNode):
     uuid = UniqueIdProperty(primary_key=True)
-    name = StringProperty()
+    Name = StringProperty()
     tg_count = IntegerProperty()
 
     has_tag = RelationshipFrom('PlayList', 'HAS_TAG')
@@ -210,3 +211,4 @@ def merge_nodes(p_title, t_title, t_name):
         '''
     print(query)
     db.cypher_query(query)
+
