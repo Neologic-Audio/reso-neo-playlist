@@ -6,7 +6,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/Neologic-Audio/reso-neo-playlist">
-    <img src="https://github.com/Neologic-Audio/reso-neo-playlist/blob/qa/playlist/static/img/logo.png" alt="Logo" width="800px">
+    <img src="https://github.com/Neologic-Audio/reso-neo-playlist/blob/main/playlist/static/img/logo2.png" alt="Logo" width="800px">
   </a>
 
 <h3 align="center">Neologic Audio</h3>
@@ -17,7 +17,7 @@
     <a href="https://github.com/Neologic-Audio/reso-neo-playlist"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="#">View Demo</a>
+    <a href="https://neologic-audio.herokuapp.com/">View on Heroku</a>
     ·
     <a href="https://github.com/Neologic-Audio/reso-neo-playlist/issues">Report Bug</a>
     ·
@@ -42,7 +42,7 @@
         <li><a href="#prerequisites">Prerequisites</a></li>
         <li><a href="#installation">Installation</a></li>
         <ul>
-        <li><a href="#how-to-setup-locally">How to Setup Locally</a></li>
+        <li><a href="#how-to-setup-locally-">How to Setup Locally</a></li>
         <li><a href="#how-to-deploy-to-heroku">How to Deploy to Heroku</a></li>
       </ul>
       </ul>
