@@ -34,11 +34,13 @@
                 <div class="col-lg-4">
                     <div class="card">
                         <div class="card-header" >
-                            <h5  class="titles">Search by Tag</h5>
+                            <h5  class="titles">Search by Tag     <img src="{% static 'img/bg-img/q.png' %}" alt="alternative" width="20" height="20">
+                            </h5>
                         </div>
                         <div class="card-body">
                             <form role="search" class="navbar-form" id="search">
                                 <div class="form-group">
+                                    <p id="invisible">Blah blah blah</p>
                                     <input type="text" placeholder="Enter a tag (Ex: indie)" class="form-control" name="search">
                                 </div>
                                 <button class="form-control-submit-button" type="submit">Search</button>
@@ -127,5 +129,16 @@
     </div> <!-- end of ex-basic-1 -->
     <!-- end of basic -->
 
+    <script src="{% static  'code.jquery/jquery-latest.min.js' %}"></script>
+    <script>
+        $(function() {
+            $('#visible').click(function() {
+                $('#invisible').toggleClass("show");
+            });
+            .hide{display:none;}
+        .show{display:block;}
+            });
+
+    </script>
 
 {% endblock %}
