@@ -73,4 +73,5 @@
 		$(this).blur();
 	});
 
+
 })(jQuery);

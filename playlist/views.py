@@ -28,9 +28,9 @@ def build_playlist(request):
 
     if request.POST:
         if playlist_form.is_valid() and playlisttrack_form.is_valid() and playlisttag_form.is_valid():
-            playlist_title = playlist_form.cleaned_data.get("title")
-            track_title = playlisttrack_form.cleaned_data.get("track")
-            tag = playlisttag_form.cleaned_data.get("name")
+            playlist_title = playlist_form.cleaned_data.get("Title")
+            track_title = playlisttrack_form.cleaned_data.get("Track")
+            tag = playlisttag_form.cleaned_data.get("Name")
 
             output = db.cypher_query(
                 '''
@@ -41,7 +41,7 @@ def build_playlist(request):
                 MERGE (tag)<-[:HAS_TAG]-(playlist)<-[:HAS_PLAYLIST]-(track)
                 RETURN track.title, playlist.title
                 ''',
-                    {'playlist_title':playlist_title,'track_title':track_title,'tag':tag })
+                {'playlist_title': playlist_title, 'track_title': track_title, 'tag': tag})
             print(output)
 
     context = {
@@ -115,14 +115,14 @@ def suggested_search(request):
     for tags_to_update in Tag.nodes.filter(name__icontains=q):
         tags_to_update.suggested_track()
 
-    tags = Tag.nodes.filter(name__icontains=q).has(related_from=True)
+    tags = Tag.nodes.filter(name__icontains=q).has(top_track=True)
     return JsonResponse([{
         'id': tag.uuid,
         'title': tag.name,
         'tagline': tag.top_track.single().title,
         'released': tag.top_track.single().uuid,
         'label': 'track'
-    } for tag in tags[:]], safe=False)
+    } for tag in tags[1:4]], safe=False)
 
 
 def search_playlists(request):

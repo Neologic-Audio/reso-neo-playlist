@@ -5,19 +5,19 @@ from .models import PlayList, PlayListTracks, PlayListTag, PlayListUser, PlayLis
 class PlayListForm(ModelForm):
     class Meta:
         model = PlayList
-        fields = ['title']
+        fields = ['Title']
 
 
 class PlayListTrackForm(ModelForm):
     class Meta:
         model = PlayListTracks
-        fields = ['track']
+        fields = ['Track']
 
 
 class PlayListTagForm(ModelForm):
     class Meta:
         model = PlayListTag
-        fields = ['name']
+        fields = ['Name']
 
 
 # class PlayListUserForm(ModelForm):

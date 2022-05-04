@@ -1,4 +1,4 @@
-{% load static %}
+{% load static %}   <!--Fix: Moved Icons in T&T sect -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -101,7 +101,7 @@
     </header> <!-- end of header -->
     <!-- end of header -->
 
-    <!-- Projects -->
+    <!-- Index Description -->
     <div id="projects" class="basic-3">
         <div class="container">
             <div class="row">
@@ -115,25 +115,30 @@
     </div> <!-- end of basic-3 -->
     <!-- end of projects -->
 
-
+    <!-- Tools and Tech -->
     <div id="projects" class="basic-3">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <h2 class="h2-heading">Tools and Technologies</h2>
+                    <!--Heading -->
+                    <h2 class="h2-heading"><img src="{% static 'img/wrench.png' %}" alt="alternative" width="50" height="50">     Tools and Technologies
+                        <img src="{% static 'img/settings (1).png' %}" alt="alternative" width="50" height="50"
+                                align="center"></h2>
+                    <br>
+                    <br>
                 </div> <!-- end of col -->
             </div> <!-- end of row -->
         </div> <!-- end of container -->
     </div> <!-- end of basic-3 -->
-    <!-- Tools and Tech -->
+    <!-- Info -->
     <div class="basic-4">
         <div class="container">
             <div class="row">
                 <div class="col-lg-6">
                     <div class="text-container">
-                        <div class="image-container">
-                            <img src="{% static 'img/wrench.png' %}" alt="alternative" width="50" height="50">
-                        </div>
+                        <!-- <div class="image-container">
+                            Note: Icon can go here if issues occure
+                        </div> -->
                         <h5>TOOLS</h5> <!-- end of image-container -->
                         <p>Python 3.9+, Django Python Web Framework, Django-Neomodel Plugin, PyCharm/Visual Studio,
                             Neo4j
@@ -143,10 +148,9 @@
                 </div> <!-- end of col -->
                 <div class="col-lg-6">
                     <div class="text-container">
-                        <div class="image-container">
-                            <img src="{% static 'img/settings (1).png' %}" alt="alternative" width="50" height="50"
-                                align="center">
-                        </div>
+                        <!--<div class="image-container">
+                            Note: Icon can go here if issues occure
+                        </div> -->
                         <h5>DEVELOPMENT SKILLS</h5><!-- end of image-container -->
                         <p>REST API Implementation, Algorithm Development, Web Application Development, Cloud/Local
                             Database
@@ -217,5 +221,4 @@
     <script src="{% static  'js/scripts.js' %}"></script>
 
 </body>
-
 </html>
